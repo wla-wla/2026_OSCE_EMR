@@ -587,6 +587,7 @@ function renderDiagnostics(diagnosticTests, procedures, surgicalHistory) {
       <td>${escapeHtml(test.status || "")}</td>
     </tr>
   `).join("");
+  const imagePanels = diagnosticTests.map(renderDiagnosticImages).filter(Boolean).join("");
   const procedureRows = [...procedures, ...surgicalHistory].map((item) => typeof item === "object" ? `
     <tr>
       <td>${escapeHtml(formatDateTime(item.dateTime || item.date || ""))}</td>
@@ -604,9 +605,29 @@ function renderDiagnostics(diagnosticTests, procedures, surgicalHistory) {
   setHtml("diagnostics", `
     <h2 class="section-title">영상/진단검사</h2>
     ${diagnosticRows ? table(["Date", "Type", "Name", "Summary", "Status"], diagnosticRows) : emptyState("조회된 진단검사 기록이 없습니다.")}
+    ${imagePanels}
     <h3 class="subhead">Procedures</h3>
     ${procedureRows ? table(["Date", "Procedure", "Details"], procedureRows) : emptyState("조회된 시술/수술 기록이 없습니다.")}
   `);
+}
+
+function renderDiagnosticImages(test) {
+  const images = Array.isArray(test.images) ? test.images : [];
+  if (!images.length) return "";
+  const title = joinParts([test.testName, test.testType, test.timing || test.date], " · ");
+  return `
+    <div class="panel">
+      <h3 class="panel-title">${escapeHtml(title || "검사 이미지")}</h3>
+      <div class="panel-body image-grid">
+        ${images.map((image) => `
+          <figure class="diagnostic-image">
+            <img src="${escapeAttrPath(image.imageUrl || "")}" alt="${escapeHtml(image.altText || image.caption || test.testName || "diagnostic image")}">
+            <figcaption>${escapeHtml(image.caption || image.fileName || "")}</figcaption>
+          </figure>
+        `).join("")}
+      </div>
+    </div>
+  `;
 }
 
 function renderHomeMedications(meds) {
@@ -889,4 +910,8 @@ function escapeHtml(input) {
 
 function escapeAttr(input) {
   return String(input ?? "").replace(/[^a-zA-Z0-9_-]/g, "");
+}
+
+function escapeAttrPath(input) {
+  return String(input ?? "").replace(/["'<>\s]/g, "");
 }

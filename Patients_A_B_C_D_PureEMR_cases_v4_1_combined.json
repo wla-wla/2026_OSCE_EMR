@@ -1182,6 +1182,15 @@
           "sourceLevel": "original",
           "interpretationFlags": [
             "T-score low"
+          ],
+          "images": [
+            {
+              "imageUrl": "data/patientA_BMD.png",
+              "fileName": "patientA_BMD.png",
+              "caption": "골밀도 검사 (BMD) - 입원 4일차(2026.05.17)",
+              "altText": "이정희 환자 골밀도 검사 BMD 이미지",
+              "sourceLevel": "original"
+            }
           ]
         },
         {

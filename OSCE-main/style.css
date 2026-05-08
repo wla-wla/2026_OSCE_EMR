@@ -370,6 +370,33 @@ tr:nth-child(even) td {
   white-space: pre-wrap;
 }
 
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.diagnostic-image {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.diagnostic-image img {
+  display: block;
+  width: 100%;
+  max-height: 760px;
+  object-fit: contain;
+  background: #f6f8fa;
+}
+
+.diagnostic-image figcaption {
+  padding: 8px 10px;
+  border-top: 1px solid var(--line);
+  color: #3c4a55;
+  font-size: 12px;
+}
+
 .timeline {
   margin: 0;
   padding-left: 0;
