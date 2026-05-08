@@ -1,0 +1,11 @@
+{
+  "name": "ppc-pure-emr-v4-1",
+  "version": "4.1.0",
+  "private": true,
+  "scripts": {
+    "start": "python -m http.server 8000"
+  },
+  "dependencies": {
+    "vercel": "^41.7.4"
+  }
+}

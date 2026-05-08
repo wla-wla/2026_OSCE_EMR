@@ -1,0 +1,2073 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pure EMR Wireframe v4.1 - Patient B</title>
+<style>
+  :root {
+    --bg:#e9edf3;
+    --paper:#ffffff;
+    --paper2:#f8fafc;
+    --ink:#122033;
+    --sub:#5f6f85;
+    --muted:#8794a8;
+    --line:#d3dbe7;
+    --line2:#e8edf4;
+    --nav:#18283f;
+    --nav2:#213653;
+    --nav3:#0d7aa3;
+    --accent:#0b668a;
+    --accent-soft:#e8f5fa;
+    --danger:#b42318;
+    --danger-bg:#fff0f0;
+    --warn:#b76b00;
+    --warn-bg:#fff6df;
+    --ok:#0a7c49;
+    --ok-bg:#e9f8ef;
+    --blue:#1d5a9e;
+    --blue-bg:#ecf4ff;
+    --purple:#6941c6;
+    --purple-bg:#f4efff;
+    --shadow:0 10px 25px rgba(19,35,59,.08);
+  }
+  * { box-sizing:border-box; }
+  html,body { height:100%; }
+  body {
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Arial, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+    font-size:14px;
+    line-height:1.45;
+  }
+  button,input,select { font-family:inherit; }
+  .app { min-height:100vh; display:flex; flex-direction:column; }
+  .topbar {
+    height:42px;
+    background:#0e1b2e;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:0 14px;
+    border-bottom:1px solid #06101e;
+  }
+  .brand { font-weight:800; letter-spacing:.2px; white-space:nowrap; }
+  .top-tabs { display:flex; gap:2px; height:100%; align-items:flex-end; }
+  .top-tab {
+    padding:9px 12px 10px;
+    color:#d7e4f5;
+    border-radius:6px 6px 0 0;
+    font-size:12px;
+    letter-spacing:.1px;
+  }
+  .top-tab.active { background:#1b304c; color:#fff; font-weight:700; }
+  .searchbar { flex:1; max-width:520px; display:flex; align-items:center; gap:8px; margin-left:auto; }
+  .searchbar span { color:#b8c7da; font-size:12px; white-space:nowrap; }
+  .searchbar input {
+    width:100%;
+    height:28px;
+    border:1px solid #3d536f;
+    background:#fff;
+    color:#222;
+    border-radius:4px;
+    padding:0 10px;
+  }
+  .clock { color:#b8c7da; font-size:12px; white-space:nowrap; }
+  .patient-banner {
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:12px;
+    padding:10px 14px;
+    box-shadow:0 1px 0 rgba(0,0,0,.02);
+  }
+  .patient-name { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .patient-name b { font-size:20px; }
+  .patient-name span { color:var(--sub); font-size:14px; }
+  .patient-lines { margin-top:4px; color:var(--sub); display:flex; flex-wrap:wrap; gap:8px 13px; font-size:12px; }
+  .patient-lines i { color:var(--line); font-style:normal; }
+  .badge-row { display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end; align-content:flex-start; max-width:560px; }
+  .badge {
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    border:1px solid var(--line);
+    background:#f3f6fa;
+    color:#2f3f55;
+    border-radius:999px;
+    padding:4px 8px;
+    font-size:12px;
+    white-space:nowrap;
+    min-height:24px;
+  }
+  .badge.allergy { background:var(--danger-bg); color:var(--danger); border-color:#ffc9c9; font-weight:700; }
+  .badge.problem { background:var(--blue-bg); color:var(--blue); border-color:#cbe0ff; }
+  .badge.lab { background:var(--warn-bg); color:var(--warn); border-color:#ffe0a3; }
+  .badge.status { background:var(--ok-bg); color:var(--ok); border-color:#bdebcf; }
+  .main {
+    flex:1;
+    min-height:0;
+    display:grid;
+    grid-template-columns:252px minmax(0,1fr) 304px;
+    gap:12px;
+    padding:12px;
+  }
+  .left-nav,.center,.right-panel {
+    min-height:0;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .left-nav { background:var(--nav); color:#dfebf8; overflow-y:auto; }
+  .nav-head {
+    padding:11px 14px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    background:#122237;
+    font-size:12px;
+    color:#b7c7dc;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .nav-section {
+    padding:14px 14px 5px;
+    font-size:11px;
+    color:#91a6c1;
+    text-transform:uppercase;
+    letter-spacing:.7px;
+    font-weight:800;
+  }
+  .nav-btn {
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-align:left;
+    border:0;
+    background:transparent;
+    color:#e7f0fb;
+    padding:8px 14px 8px 16px;
+    border-left:3px solid transparent;
+    cursor:pointer;
+    font-size:13px;
+  }
+  .nav-btn:hover { background:var(--nav2); }
+  .nav-btn.active {
+    background:#fff;
+    color:#0e2036;
+    border-left-color:#14a1d1;
+    font-weight:800;
+  }
+  .nav-count {
+    margin-left:auto;
+    min-width:18px;
+    text-align:center;
+    color:#c6d6e9;
+    font-size:11px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:999px;
+    padding:0 5px;
+  }
+  .nav-btn.active .nav-count { color:#31526f; border-color:#c8d8e8; }
+  .center { display:flex; flex-direction:column; }
+  .content-head {
+    height:48px;
+    min-height:48px;
+    background:#fbfcfe;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 16px;
+  }
+  .content-title { font-weight:800; font-size:16px; }
+  .content-tools { display:flex; gap:8px; align-items:center; color:var(--sub); font-size:12px; }
+  .tool-chip { border:1px solid var(--line); padding:4px 8px; border-radius:999px; background:#fff; }
+  .content-body { flex:1; min-height:0; overflow:auto; padding:15px; }
+  .right-panel { overflow:auto; }
+  .right-panel h3 {
+    margin:0;
+    background:#fbfcfe;
+    border-bottom:1px solid var(--line);
+    padding:12px 14px;
+    font-size:14px;
+  }
+  .right-block { padding:12px 14px; border-bottom:1px solid var(--line2); }
+  .right-label { color:var(--muted); font-size:11px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; margin-bottom:6px; }
+  .cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .cards.three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .card {
+    border:1px solid var(--line);
+    background:var(--paper);
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:12px;
+  }
+  .card-title {
+    background:#f6f8fb;
+    border-bottom:1px solid var(--line);
+    padding:9px 12px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+  }
+  .card-title small { color:var(--sub); font-weight:500; }
+  .card-body { padding:12px; }
+  .metric {
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:9px;
+    padding:11px;
+    min-height:83px;
+  }
+  .metric-label { color:var(--muted); font-size:11px; text-transform:uppercase; font-weight:800; letter-spacing:.4px; }
+  .metric-value { font-size:20px; font-weight:800; margin-top:4px; }
+  .metric-sub { color:var(--sub); font-size:12px; margin-top:3px; }
+  .kv { display:grid; grid-template-columns:138px minmax(0,1fr); gap:7px 12px; }
+  .kv.wide { grid-template-columns:180px minmax(0,1fr); }
+  .key { color:var(--sub); font-size:12px; }
+  .val { font-weight:600; min-width:0; }
+  .empty { color:var(--muted); font-style:italic; font-weight:400; }
+  table { width:100%; border-collapse:collapse; background:#fff; }
+  th,td {
+    border-bottom:1px solid var(--line2);
+    padding:8px 9px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th {
+    background:#f4f7fb;
+    color:#3c4d63;
+    font-size:12px;
+    font-weight:800;
+    position:sticky;
+    top:0;
+    z-index:1;
+  }
+  tbody tr:hover td { background:#fbfdff; }
+  .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:9px; }
+  .nowrap { white-space:nowrap; }
+  .pill {
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:#f4f7fb;
+    color:#34445a;
+    padding:3px 8px;
+    font-size:12px;
+    margin:2px 3px 2px 0;
+    white-space:nowrap;
+  }
+  .pill.active { background:var(--blue-bg); border-color:#cbe0ff; color:var(--blue); }
+  .pill.new { background:var(--ok-bg); border-color:#bce8cc; color:var(--ok); }
+  .pill.warn { background:var(--warn-bg); border-color:#ffe0a3; color:var(--warn); }
+  .pill.danger { background:var(--danger-bg); border-color:#ffc7c7; color:var(--danger); }
+  .note {
+    border:1px solid var(--line);
+    border-left:5px solid #86a6c9;
+    border-radius:8px;
+    background:#fcfdff;
+    padding:11px 12px;
+    margin-bottom:10px;
+  }
+  .note-meta { font-weight:800; color:#34445a; margin-bottom:8px; display:flex; justify-content:space-between; gap:10px; font-size:12px; }
+  .soap { display:grid; grid-template-columns:30px minmax(0,1fr); gap:5px 8px; }
+  .soap b { color:#2d4967; }
+  .timeline { border-left:3px solid #c7d7e9; margin-left:10px; padding-left:16px; }
+  .event {
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:9px;
+    background:#fff;
+    padding:10px 12px;
+    margin-bottom:12px;
+  }
+  .event:before {
+    content:"";
+    position:absolute;
+    left:-23px;
+    top:14px;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:#1685af;
+    border:2px solid #fff;
+    box-shadow:0 0 0 2px #c7d7e9;
+  }
+  .event-date { color:var(--sub); font-weight:800; font-size:12px; margin-bottom:4px; }
+  .event-title { font-weight:800; margin-bottom:3px; }
+  .flag {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:22px;
+    height:20px;
+    padding:0 6px;
+    border-radius:5px;
+    font-size:11px;
+    font-weight:900;
+    margin-left:5px;
+    border:1px solid transparent;
+  }
+  .flag.H,.flag.HH { background:var(--danger-bg); color:var(--danger); border-color:#ffc7c7; }
+  .flag.L,.flag.LL { background:var(--blue-bg); color:var(--blue); border-color:#cbe0ff; }
+  .flag.N { display:none; }
+  .flag.C { background:#361313; color:#fff; }
+  .lab-value { font-weight:800; white-space:nowrap; }
+  .lab-cell.abnormal { background:#fff9ed; }
+  .lab-cell.critical { background:#ffecec; }
+  .status-continued { background:#f8fafc; }
+  .status-new_on_discharge,.status-new { background:#f0fff4; }
+  .status-discontinued { background:#fff4f4; }
+  .empty-state {
+    border:1px dashed #bac7d6;
+    background:#fafcff;
+    color:var(--sub);
+    border-radius:10px;
+    padding:24px;
+    text-align:center;
+  }
+  .empty-state b { display:block; color:#34445a; margin-bottom:4px; }
+  .mini-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
+  .footer-note { color:var(--muted); font-size:12px; margin-top:10px; }
+  @media(max-width:1240px) {
+    .main { grid-template-columns:236px minmax(0,1fr); }
+    .right-panel { display:none; }
+  }
+  @media(max-width:820px) {
+    .main { grid-template-columns:1fr; height:auto; }
+    .left-nav { max-height:240px; }
+    .patient-banner { grid-template-columns:1fr; }
+    .badge-row { justify-content:flex-start; }
+    .cards,.cards.three,.mini-grid { grid-template-columns:1fr; }
+    .kv,.kv.wide { grid-template-columns:120px minmax(0,1fr); }
+    .top-tabs,.clock { display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">PPC Medical Center EMR</div>
+    <div class="top-tabs" aria-label="EMR top modules">
+      <div class="top-tab active">Chart</div>
+      <div class="top-tab">Orders</div>
+      <div class="top-tab">Results</div>
+      <div class="top-tab">Medication</div>
+      <div class="top-tab">Notes</div>
+    </div>
+    <label class="searchbar"><span>Patient Search</span><input value="김영수 / M56 / 순환기내과" /></label>
+    <div class="clock">2026-05-18 11:20</div>
+  </header>
+  <section class="patient-banner" id="patientBanner"></section>
+  <section class="main">
+    <nav class="left-nav" id="leftNav">
+      <div class="nav-head"><b>Chart Menu</b><span>Read only</span></div>
+    </nav>
+    <main class="center">
+      <div class="content-head">
+        <div class="content-title" id="contentTitle">환자 요약</div>
+        <div class="content-tools"><span class="tool-chip">Patient B</span><span class="tool-chip">Pure EMR v4.1</span></div>
+      </div>
+      <div class="content-body" id="contentBody"></div>
+    </main>
+    <aside class="right-panel" id="rightPanel"></aside>
+  </section>
+</div>
+<script>
+const caseData = {
+  "schemaVersion": "4.1",
+  "caseMeta": {
+    "caseId": "patient-b",
+    "patientId": "",
+    "displayName": "김영수",
+    "sourceType": "pdf",
+    "sourceFileName": "환자B_EMR 기입내용.pdf",
+    "status": "draft",
+    "visibleInPatientList": true,
+    "createdAt": "",
+    "updatedAt": "2026-05-08",
+    "notesForBuilder": "원자료를 변경하지 않고, 화면 표시용 보강 레이어(lab flag, med reconciliation, discharge order view)를 추가한 draft."
+  },
+  "patientHeader": {
+    "patientId": "",
+    "mrn": "",
+    "name": "김영수",
+    "sex": "M",
+    "age": 56,
+    "ageSource": "provided",
+    "birthDate": "1970-02-15",
+    "heightCm": null,
+    "weightKg": null,
+    "bloodType": "",
+    "allergies": [
+      {
+        "substance": "NKDA",
+        "reaction": "",
+        "severity": "",
+        "recordedAt": ""
+      }
+    ],
+    "safetyBadges": [
+      {
+        "label": "NKDA",
+        "type": "allergy",
+        "sourceLevel": "original"
+      },
+      {
+        "label": "HFrEF",
+        "type": "diagnosis",
+        "sourceLevel": "original"
+      },
+      {
+        "label": "고요산혈증",
+        "type": "lab",
+        "sourceLevel": "reference_flag",
+        "basedOn": "Uric acid"
+      },
+      {
+        "label": "NT-proBNP 상승",
+        "type": "lab",
+        "sourceLevel": "reference_flag",
+        "basedOn": "NT-proBNP"
+      },
+      {
+        "label": "복약불이행 의심",
+        "type": "problem",
+        "sourceLevel": "original"
+      }
+    ]
+  },
+  "hospitalRecord": {
+    "visitType": "inpatient",
+    "admissionDate": "2026-05-16",
+    "admissionDateTime": "",
+    "plannedDischargeDate": "2026-05-18",
+    "dischargeDate": "",
+    "dischargeDateTime": "",
+    "admissionRoute": "응급실 경유",
+    "department": "순환기내과",
+    "ward": "순환기내과 병동",
+    "room": "",
+    "attendingPhysician": "",
+    "insurance": "건강보험",
+    "maritalStatus": "기혼",
+    "residence": "서울특별시 강남구",
+    "isolation": "",
+    "fallRisk": "",
+    "diet": "",
+    "codeStatus": ""
+  },
+  "clinicalRecords": {
+    "chiefComplaint": "갑작스러운 호흡곤란 및 식은땀",
+    "admissionReason": "56세 남자 환자로 기존 고혈압 및 이상지질혈증 병력 있음. 최근 수개월간 계단 오를 때 호흡곤란, 누우면 답답함, 간헐적 하지부종이 있었으나 특별한 평가 없이 지내던 중, 2026-05-16 저녁 춘천 거래처 접대 중 급성 호흡곤란 및 식은땀 발생하여 119 통해 응급실 내원 후 입원함.",
+    "erRecord": {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "arrivalMode": "119",
+      "triageLevel": "",
+      "triageVital": "",
+      "initialAssessment": "",
+      "management": "",
+      "disposition": "입원",
+      "freeText": "2026-05-16 저녁 급성 호흡곤란 및 식은땀 발생하여 119 통해 응급실 내원 후 입원함."
+    },
+    "admissionNote": {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "authorRole": "physician",
+      "department": "순환기내과",
+      "freeText": ""
+    },
+    "progressNotes": [],
+    "nursingNotes": [
+      {
+        "dateTime": "2026-05-16T21:10:00+09:00",
+        "authorRole": "nurse",
+        "noteType": "nursing",
+        "subjective": "숨이 너무 차고 식은땀이 납니다. 누우면 더 답답합니다.",
+        "objective": "BP 172/104 mmHg, HR 110/min, RR 28/min, SpO₂ 89% on room air. 양측 하지 함요부종 1+ 관찰됨.",
+        "assessment": "Acute dyspnea, acute decompensated heart failure suspected.",
+        "plan": "산소 공급, 활력징후 모니터링, 심부전 관련 검사 및 처치 진행.",
+        "freeText": ""
+      },
+      {
+        "dateTime": "2026-05-17T08:45:00+09:00",
+        "authorRole": "nurse",
+        "noteType": "nursing",
+        "subjective": "숨은 어제보다 낫습니다. 그래도 오래 있긴 어렵습니다.",
+        "objective": "산소 없이 SpO₂ 유지됨. 하지부종 감소함.",
+        "assessment": "Heart failure symptoms improving.",
+        "plan": "퇴원 전 약물조정 및 복약상담 필요.",
+        "freeText": ""
+      },
+      {
+        "dateTime": "2026-05-18T07:50:00+09:00",
+        "authorRole": "nurse",
+        "noteType": "nursing",
+        "subjective": "숨은 훨씬 낫습니다. 근데 오른쪽 엄지발가락이 너무 아픕니다.",
+        "objective": "우측 1st MTP 발적, 열감, 압통 관찰됨. 보행 시 통증으로 절뚝거림.",
+        "assessment": "Acute gout flare suspected.",
+        "plan": "퇴원 전 약사 면담 및 약물 검토 예정.",
+        "freeText": ""
+      }
+    ],
+    "dischargePlanningNotes": [
+      {
+        "dateTime": "2026-05-18T10:40:00+09:00",
+        "authorRole": "",
+        "noteType": "discharge_planning",
+        "subjective": "오늘은 꼭 나가야 합니다. 회사 일이 많습니다.",
+        "objective": "호흡곤란은 호전되었으나 퇴원약 다수 처방 예정. Home medication 복용력 상세 확인 필요함.",
+        "assessment": "HFrEF discharge medication review and medication reconciliation needed.",
+        "plan": "퇴원 전 약사 복약상담 및 약물관련문제 평가 예정.",
+        "freeText": ""
+      }
+    ],
+    "consultNotes": [],
+    "dischargeSummary": null
+  },
+  "diagnosisTimeline": [],
+  "problemList": [
+    {
+      "problem": "Acute decompensated heart failure on HFrEF",
+      "status": "active",
+      "onsetDate": "",
+      "lastUpdated": "",
+      "note": ""
+    },
+    {
+      "problem": "Hypertension, previously uncontrolled",
+      "status": "active",
+      "onsetDate": "",
+      "lastUpdated": "",
+      "note": ""
+    },
+    {
+      "problem": "Dyslipidemia",
+      "status": "active",
+      "onsetDate": "",
+      "lastUpdated": "",
+      "note": ""
+    },
+    {
+      "problem": "Acute gout flare, right 1st MTP",
+      "status": "active",
+      "onsetDate": "",
+      "lastUpdated": "",
+      "note": ""
+    },
+    {
+      "problem": "Medication nonadherence suspected",
+      "status": "active",
+      "onsetDate": "",
+      "lastUpdated": "",
+      "note": ""
+    }
+  ],
+  "pastMedicalHistory": [
+    {
+      "condition": "Hypertension",
+      "diagnosedDate": "5년 전",
+      "status": "chronic",
+      "treatment": "",
+      "note": "조절 불량 병력 있음"
+    },
+    {
+      "condition": "Dyslipidemia",
+      "diagnosedDate": "4년 전",
+      "status": "chronic",
+      "treatment": "약물치료 중",
+      "note": ""
+    },
+    {
+      "condition": "Heart failure-related symptoms",
+      "diagnosedDate": "",
+      "status": "active",
+      "treatment": "",
+      "note": "최근 수개월간 운동 시 호흡곤란, 기좌호흡, 간헐적 하지부종 있었음"
+    },
+    {
+      "condition": "Gout",
+      "diagnosedDate": "",
+      "status": "suspected",
+      "treatment": "",
+      "note": "과거 진단력 없음. 이번 입원 중 우측 엄지발가락 통증으로 acute gout flare 의심/평가됨"
+    }
+  ],
+  "surgicalHistory": [],
+  "socialHistory": {
+    "smoking": "current smoker",
+    "alcohol": "",
+    "occupation": "",
+    "diet": "",
+    "exercise": "",
+    "sleep": "",
+    "livingWith": "",
+    "caregiver": "",
+    "healthSupplements": [],
+    "adherence": ""
+  },
+  "familyHistory": [
+    {
+      "relation": "",
+      "condition": "Cardiovascular disease",
+      "ageAtDiagnosis": null,
+      "status": "negative",
+      "note": "특이사항 없음"
+    },
+    {
+      "relation": "",
+      "condition": "Gout",
+      "ageAtDiagnosis": null,
+      "status": "negative",
+      "note": "특이사항 없음"
+    }
+  ],
+  "hpi": {
+    "onset": "2026-05-16 저녁 급성 악화. 최근 수개월간 운동 시 호흡곤란, 기좌호흡, 간헐적 하지부종 있었음.",
+    "location": "우측 1st MTP 통증 동반",
+    "duration": "최근 수개월간 심부전 관련 증상, 입원 전 수일 전부터 우측 엄지발가락 통증",
+    "character": "급성 호흡곤란 및 식은땀, 우측 1st MTP 발적/열감/압통",
+    "aggravatingFactors": [
+      "계단 오르기",
+      "누워있을 때 답답함"
+    ],
+    "relievingFactors": [
+      "입원 후 울혈 조절 및 약물치료 후 호흡곤란 호전"
+    ],
+    "associatedSymptoms": [
+      "식은땀",
+      "기좌호흡",
+      "하지부종",
+      "우측 엄지발가락 통증"
+    ],
+    "timelineText": "56세 남자 환자로 기존 고혈압 및 이상지질혈증 병력 있음. 최근 수개월간 운동 시 호흡곤란, 기좌호흡, 간헐적 하지부종 있었으나 특별한 평가 없이 지내던 중, 2026-05-16 저녁 춘천 거래처 접대 자리에서 급성 호흡곤란 및 식은땀 발생하여 119 통해 응급실 내원 후 입원함. 입원 후 울혈 조절 및 약물치료 후 호흡곤란은 호전되었으며, 심초음파상 LVEF 32% 확인되어 HFrEF로 평가됨. 한편 입원 전 수일 전부터 시작된 우측 엄지발가락 통증이 입원 중 지속되었고, 우측 1st MTP 부위 발적, 열감, 압통 동반되어 acute gout flare로 판단됨. 현재 호흡곤란은 입원 시보다 호전되었으며, 퇴원 전 약물 검토 및 복약상담 예정임."
+  },
+  "ros": {
+    "general": "",
+    "respiratory": "호흡곤란 호전",
+    "cardiovascular": "기좌호흡, 하지부종 병력",
+    "gi": "",
+    "gu": "",
+    "neuro": "",
+    "musculoskeletal": "우측 1st MTP 발적, 열감, 압통",
+    "skin": ""
+  },
+  "vitalSigns": [
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "bp": "172/104 mmHg",
+      "sbp": 172,
+      "dbp": 104,
+      "hr": 110,
+      "rr": 28,
+      "bt": 37.0,
+      "spo2": 89,
+      "o2Device": "RA",
+      "weightKg": 86.4,
+      "painScore": null,
+      "glucosePOCT": null
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "bp": "128/78 mmHg",
+      "sbp": 128,
+      "dbp": 78,
+      "hr": 84,
+      "rr": 18,
+      "bt": 36.7,
+      "spo2": 96,
+      "o2Device": "RA",
+      "weightKg": 83.8,
+      "painScore": null,
+      "glucosePOCT": null
+    }
+  ],
+  "labResults": [
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "Chemistry",
+      "item": "Na",
+      "result": 134,
+      "displayResult": "134",
+      "unit": "mEq/L",
+      "refLow": 135,
+      "refHigh": 145,
+      "referenceText": "135-145 mEq/L",
+      "flag": "L",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "Chemistry",
+      "item": "Na",
+      "result": 136,
+      "displayResult": "136",
+      "unit": "mEq/L",
+      "refLow": 135,
+      "refHigh": 145,
+      "referenceText": "135-145 mEq/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "Chemistry",
+      "item": "K",
+      "result": 4.2,
+      "displayResult": "4.2",
+      "unit": "mEq/L",
+      "refLow": 3.7,
+      "refHigh": 5.2,
+      "referenceText": "3.7-5.2 mEq/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "Chemistry",
+      "item": "K",
+      "result": 4.5,
+      "displayResult": "4.5",
+      "unit": "mEq/L",
+      "refLow": 3.7,
+      "refHigh": 5.2,
+      "referenceText": "3.7-5.2 mEq/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "Chemistry",
+      "item": "Cl",
+      "result": 99,
+      "displayResult": "99",
+      "unit": "mEq/L",
+      "refLow": 96,
+      "refHigh": 106,
+      "referenceText": "96-106 mEq/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "Chemistry",
+      "item": "Cl",
+      "result": 101,
+      "displayResult": "101",
+      "unit": "mEq/L",
+      "refLow": 96,
+      "refHigh": 106,
+      "referenceText": "96-106 mEq/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "Chemistry",
+      "item": "CO2",
+      "result": 24,
+      "displayResult": "24",
+      "unit": "mEq/L",
+      "refLow": 23,
+      "refHigh": 29,
+      "referenceText": "23-29 mEq/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "Chemistry",
+      "item": "CO2",
+      "result": 25,
+      "displayResult": "25",
+      "unit": "mEq/L",
+      "refLow": 23,
+      "refHigh": 29,
+      "referenceText": "23-29 mEq/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "Chemistry",
+      "item": "BUN",
+      "result": 22,
+      "displayResult": "22",
+      "unit": "mg/dL",
+      "refLow": 6,
+      "refHigh": 20,
+      "referenceText": "6-20 mg/dL",
+      "flag": "H",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "Chemistry",
+      "item": "BUN",
+      "result": 26,
+      "displayResult": "26",
+      "unit": "mg/dL",
+      "refLow": 6,
+      "refHigh": 20,
+      "referenceText": "6-20 mg/dL",
+      "flag": "H",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "Chemistry",
+      "item": "SCr",
+      "result": 1.08,
+      "displayResult": "1.08",
+      "unit": "mg/dL",
+      "refLow": 0.6,
+      "refHigh": 1.3,
+      "referenceText": "0.6-1.3 mg/dL",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "Chemistry",
+      "item": "SCr",
+      "result": 1.18,
+      "displayResult": "1.18",
+      "unit": "mg/dL",
+      "refLow": 0.6,
+      "refHigh": 1.3,
+      "referenceText": "0.6-1.3 mg/dL",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "Chemistry",
+      "item": "eGFR",
+      "result": 76,
+      "displayResult": "76",
+      "unit": "mL/min/1.73m²",
+      "refLow": 60,
+      "refHigh": null,
+      "referenceText": ">=60 mL/min/1.73m²",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "Chemistry",
+      "item": "eGFR",
+      "result": 69,
+      "displayResult": "69",
+      "unit": "mL/min/1.73m²",
+      "refLow": 60,
+      "refHigh": null,
+      "referenceText": ">=60 mL/min/1.73m²",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "Chemistry",
+      "item": "Uric acid",
+      "result": 9.7,
+      "displayResult": "9.7",
+      "unit": "mg/dL",
+      "refLow": 3.7,
+      "refHigh": 8.0,
+      "referenceText": "M >=16y: 3.7-8.0 mg/dL",
+      "flag": "H",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "Chemistry",
+      "item": "Uric acid",
+      "result": 9.4,
+      "displayResult": "9.4",
+      "unit": "mg/dL",
+      "refLow": 3.7,
+      "refHigh": 8.0,
+      "referenceText": "M >=16y: 3.7-8.0 mg/dL",
+      "flag": "H",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "Cardiac",
+      "item": "NT-proBNP",
+      "result": 4860,
+      "displayResult": "4,860",
+      "unit": "pg/mL",
+      "refLow": 0,
+      "refHigh": 210,
+      "referenceText": "M 55-64y: 0-210 pg/mL",
+      "flag": "H",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag",
+      "interpretationLabel": "above age/sex reference range"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "Cardiac",
+      "item": "NT-proBNP",
+      "result": 2910,
+      "displayResult": "2,910",
+      "unit": "pg/mL",
+      "refLow": 0,
+      "refHigh": 210,
+      "referenceText": "M 55-64y: 0-210 pg/mL",
+      "flag": "H",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag",
+      "interpretationLabel": "above age/sex reference range"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "CBC",
+      "item": "WBC",
+      "result": 10.5,
+      "displayResult": "10.5",
+      "unit": "x10³/µL",
+      "refLow": 4.0,
+      "refHigh": 10.0,
+      "referenceText": "4.0-10.0 x10³/µL; education display profile",
+      "flag": "H",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "CBC",
+      "item": "WBC",
+      "result": 9.8,
+      "displayResult": "9.8",
+      "unit": "x10³/µL",
+      "refLow": 4.0,
+      "refHigh": 10.0,
+      "referenceText": "4.0-10.0 x10³/µL; education display profile",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "CBC",
+      "item": "Hb",
+      "result": 14.3,
+      "displayResult": "14.3",
+      "unit": "g/dL",
+      "refLow": 13.0,
+      "refHigh": 18.0,
+      "referenceText": "M: 13.0-18.0 g/dL",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "CBC",
+      "item": "Hb",
+      "result": 14.0,
+      "displayResult": "14.0",
+      "unit": "g/dL",
+      "refLow": 13.0,
+      "refHigh": 18.0,
+      "referenceText": "M: 13.0-18.0 g/dL",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "CBC",
+      "item": "Platelet",
+      "result": 244,
+      "displayResult": "244",
+      "unit": "x10³/µL",
+      "refLow": 150,
+      "refHigh": 450,
+      "referenceText": "150-450 x10³/µL; education display profile",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "CBC",
+      "item": "Platelet",
+      "result": 238,
+      "displayResult": "238",
+      "unit": "x10³/µL",
+      "refLow": 150,
+      "refHigh": 450,
+      "referenceText": "150-450 x10³/µL; education display profile",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "LFT",
+      "item": "AST",
+      "result": 29,
+      "displayResult": "29",
+      "unit": "U/L",
+      "refLow": 8,
+      "refHigh": 33,
+      "referenceText": "8-33 U/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "LFT",
+      "item": "AST",
+      "result": 27,
+      "displayResult": "27",
+      "unit": "U/L",
+      "refLow": 8,
+      "refHigh": 33,
+      "referenceText": "8-33 U/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-16",
+      "dateTime": "",
+      "label": "입원 당시",
+      "category": "LFT",
+      "item": "ALT",
+      "result": 32,
+      "displayResult": "32",
+      "unit": "U/L",
+      "refLow": 4,
+      "refHigh": 36,
+      "referenceText": "4-36 U/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "퇴원 당일",
+      "category": "LFT",
+      "item": "ALT",
+      "result": 30,
+      "displayResult": "30",
+      "unit": "U/L",
+      "refLow": 4,
+      "refHigh": 36,
+      "referenceText": "4-36 U/L",
+      "flag": "N",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "",
+      "dateTime": "",
+      "label": "",
+      "category": "Lipid",
+      "item": "LDL-C",
+      "result": 138,
+      "displayResult": "138",
+      "unit": "mg/dL",
+      "refLow": null,
+      "refHigh": 100,
+      "referenceText": "optimal <100 mg/dL; 130-159 borderline high",
+      "flag": "H",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1",
+      "sourceLevel": "original_value_with_reference_flag",
+      "interpretationLabel": "borderline high"
+    }
+  ],
+  "diagnosticTests": [
+    {
+      "date": "",
+      "dateTime": "",
+      "timing": "",
+      "testType": "Echo",
+      "testName": "Echocardiography",
+      "status": "",
+      "summary": "LVEF 32%, global LV systolic dysfunction",
+      "findings": "",
+      "impression": "",
+      "reportingDepartment": ""
+    },
+    {
+      "date": "",
+      "dateTime": "",
+      "timing": "",
+      "testType": "ECG",
+      "testName": "ECG",
+      "status": "",
+      "summary": "Sinus rhythm",
+      "findings": "",
+      "impression": "",
+      "reportingDepartment": ""
+    },
+    {
+      "date": "",
+      "dateTime": "",
+      "timing": "admission",
+      "testType": "CXR",
+      "testName": "Chest X-ray",
+      "status": "",
+      "summary": "Pulmonary vascular congestion, mild cardiomegaly",
+      "findings": "",
+      "impression": "",
+      "reportingDepartment": ""
+    },
+    {
+      "date": "",
+      "dateTime": "",
+      "timing": "pre-discharge",
+      "testType": "CXR",
+      "testName": "Chest X-ray",
+      "status": "",
+      "summary": "Pulmonary congestion improved",
+      "findings": "",
+      "impression": "",
+      "reportingDepartment": ""
+    },
+    {
+      "date": "",
+      "dateTime": "",
+      "timing": "",
+      "testType": "Other",
+      "testName": "Right foot/joint exam",
+      "status": "",
+      "summary": "Right 1st MTP erythema, warmth, tenderness",
+      "findings": "",
+      "impression": "",
+      "reportingDepartment": ""
+    }
+  ],
+  "homeMedications": [
+    {
+      "drugName": "Amlodipine",
+      "ingredient": "",
+      "dose": "5 mg",
+      "route": "PO",
+      "frequency": "qd",
+      "schedule": "",
+      "indication": "",
+      "startDate": "",
+      "adherence": "",
+      "lastTaken": "",
+      "prescriber": "",
+      "note": ""
+    },
+    {
+      "drugName": "Hydrochlorothiazide",
+      "ingredient": "",
+      "dose": "25 mg",
+      "route": "PO",
+      "frequency": "qAM",
+      "schedule": "",
+      "indication": "",
+      "startDate": "",
+      "adherence": "",
+      "lastTaken": "",
+      "prescriber": "",
+      "note": ""
+    },
+    {
+      "drugName": "Ramipril",
+      "ingredient": "",
+      "dose": "5 mg",
+      "route": "PO",
+      "frequency": "qd",
+      "schedule": "",
+      "indication": "",
+      "startDate": "",
+      "adherence": "",
+      "lastTaken": "",
+      "prescriber": "",
+      "note": ""
+    },
+    {
+      "drugName": "Atorvastatin",
+      "ingredient": "",
+      "dose": "40 mg",
+      "route": "PO",
+      "frequency": "qHS",
+      "schedule": "",
+      "indication": "",
+      "startDate": "",
+      "adherence": "",
+      "lastTaken": "",
+      "prescriber": "",
+      "note": ""
+    }
+  ],
+  "medicationReconciliation": [
+    {
+      "drugName": "Amlodipine",
+      "homeDose": "5 mg",
+      "homeRoute": "PO",
+      "homeFrequency": "qd",
+      "dischargeDose": "5 mg",
+      "dischargeRoute": "PO",
+      "dischargeFrequency": "qd",
+      "reconciliationStatus": "continued",
+      "verificationStatus": "복용력 상세 확인 필요",
+      "sourceLevel": "derived_from_original_med_lists",
+      "note": "원자료의 Home medication 및 Discharge medication 목록을 대조해 생성"
+    },
+    {
+      "drugName": "Hydrochlorothiazide",
+      "homeDose": "25 mg",
+      "homeRoute": "PO",
+      "homeFrequency": "qAM",
+      "dischargeDose": "25 mg",
+      "dischargeRoute": "PO",
+      "dischargeFrequency": "qAM",
+      "reconciliationStatus": "continued",
+      "verificationStatus": "복용력 상세 확인 필요",
+      "sourceLevel": "derived_from_original_med_lists",
+      "note": "원자료의 Home medication 및 Discharge medication 목록을 대조해 생성"
+    },
+    {
+      "drugName": "Ramipril",
+      "homeDose": "5 mg",
+      "homeRoute": "PO",
+      "homeFrequency": "qd",
+      "dischargeDose": "5 mg",
+      "dischargeRoute": "PO",
+      "dischargeFrequency": "qd",
+      "reconciliationStatus": "continued",
+      "verificationStatus": "복용력 상세 확인 필요",
+      "sourceLevel": "derived_from_original_med_lists",
+      "note": "원자료의 Home medication 및 Discharge medication 목록을 대조해 생성"
+    },
+    {
+      "drugName": "Atorvastatin",
+      "homeDose": "40 mg",
+      "homeRoute": "PO",
+      "homeFrequency": "qHS",
+      "dischargeDose": "40 mg",
+      "dischargeRoute": "PO",
+      "dischargeFrequency": "qHS",
+      "reconciliationStatus": "continued",
+      "verificationStatus": "복용력 상세 확인 필요",
+      "sourceLevel": "derived_from_original_med_lists",
+      "note": "원자료의 Home medication 및 Discharge medication 목록을 대조해 생성"
+    },
+    {
+      "drugName": "Carvedilol",
+      "homeDose": "",
+      "homeRoute": "",
+      "homeFrequency": "",
+      "dischargeDose": "3.125 mg",
+      "dischargeRoute": "PO",
+      "dischargeFrequency": "bid",
+      "reconciliationStatus": "new_on_discharge",
+      "verificationStatus": "퇴원약 목록 기반",
+      "sourceLevel": "derived_from_original_med_lists",
+      "note": "원자료의 Discharge medication 목록에 있음"
+    },
+    {
+      "drugName": "Furosemide",
+      "homeDose": "",
+      "homeRoute": "",
+      "homeFrequency": "",
+      "dischargeDose": "40 mg",
+      "dischargeRoute": "PO",
+      "dischargeFrequency": "qAM",
+      "reconciliationStatus": "new_on_discharge",
+      "verificationStatus": "퇴원약 목록 기반",
+      "sourceLevel": "derived_from_original_med_lists",
+      "note": "원자료의 Discharge medication 목록에 있음"
+    },
+    {
+      "drugName": "Colchicine",
+      "homeDose": "",
+      "homeRoute": "",
+      "homeFrequency": "",
+      "dischargeDose": "0.6 mg",
+      "dischargeRoute": "PO",
+      "dischargeFrequency": "bid",
+      "reconciliationStatus": "new_on_discharge",
+      "verificationStatus": "퇴원약 목록 기반",
+      "sourceLevel": "derived_from_original_med_lists",
+      "note": "원자료의 Discharge medication 목록에 있음"
+    }
+  ],
+  "medicationOrders": [
+    {
+      "orderId": "DC-001",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "discharge",
+      "drugName": "Ramipril",
+      "dose": "5 mg",
+      "route": "PO",
+      "frequency": "qd",
+      "duration": "",
+      "status": "active_on_discharge",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_discharge_medications",
+      "note": "원자료 Discharge Medications를 처방오더 형태로 표시"
+    },
+    {
+      "orderId": "DC-002",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "discharge",
+      "drugName": "Carvedilol",
+      "dose": "3.125 mg",
+      "route": "PO",
+      "frequency": "bid",
+      "duration": "",
+      "status": "active_on_discharge",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_discharge_medications",
+      "note": "원자료 Discharge Medications를 처방오더 형태로 표시"
+    },
+    {
+      "orderId": "DC-003",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "discharge",
+      "drugName": "Furosemide",
+      "dose": "40 mg",
+      "route": "PO",
+      "frequency": "qAM",
+      "duration": "",
+      "status": "active_on_discharge",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_discharge_medications",
+      "note": "원자료 Discharge Medications를 처방오더 형태로 표시"
+    },
+    {
+      "orderId": "DC-004",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "discharge",
+      "drugName": "Amlodipine",
+      "dose": "5 mg",
+      "route": "PO",
+      "frequency": "qd",
+      "duration": "",
+      "status": "active_on_discharge",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_discharge_medications",
+      "note": "원자료 Discharge Medications를 처방오더 형태로 표시"
+    },
+    {
+      "orderId": "DC-005",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "discharge",
+      "drugName": "Hydrochlorothiazide",
+      "dose": "25 mg",
+      "route": "PO",
+      "frequency": "qAM",
+      "duration": "",
+      "status": "active_on_discharge",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_discharge_medications",
+      "note": "원자료 Discharge Medications를 처방오더 형태로 표시"
+    },
+    {
+      "orderId": "DC-006",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "discharge",
+      "drugName": "Atorvastatin",
+      "dose": "40 mg",
+      "route": "PO",
+      "frequency": "qHS",
+      "duration": "",
+      "status": "active_on_discharge",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_discharge_medications",
+      "note": "원자료 Discharge Medications를 처방오더 형태로 표시"
+    },
+    {
+      "orderId": "DC-007",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "discharge",
+      "drugName": "Colchicine",
+      "dose": "0.6 mg",
+      "route": "PO",
+      "frequency": "bid",
+      "duration": "5 days",
+      "status": "active_on_discharge",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_discharge_medications",
+      "note": "원자료 Discharge Medications를 처방오더 형태로 표시"
+    }
+  ],
+  "medicationAdministrationRecords": {
+    "status": "no_source_data",
+    "sourceLevel": "empty_not_provided",
+    "displayMessage": "입원 중 실제 투약시각/MAR 원자료 미기재",
+    "records": []
+  },
+  "dischargeMedications": [
+    {
+      "drugName": "Ramipril",
+      "ingredient": "",
+      "dose": "5 mg",
+      "route": "PO",
+      "frequency": "qd",
+      "duration": "",
+      "schedule": "",
+      "changeFromHomeMed": "continued",
+      "indication": "",
+      "note": ""
+    },
+    {
+      "drugName": "Carvedilol",
+      "ingredient": "",
+      "dose": "3.125 mg",
+      "route": "PO",
+      "frequency": "bid",
+      "duration": "",
+      "schedule": "",
+      "changeFromHomeMed": "new",
+      "indication": "",
+      "note": ""
+    },
+    {
+      "drugName": "Furosemide",
+      "ingredient": "",
+      "dose": "40 mg",
+      "route": "PO",
+      "frequency": "qAM",
+      "duration": "",
+      "schedule": "",
+      "changeFromHomeMed": "new",
+      "indication": "",
+      "note": ""
+    },
+    {
+      "drugName": "Amlodipine",
+      "ingredient": "",
+      "dose": "5 mg",
+      "route": "PO",
+      "frequency": "qd",
+      "duration": "",
+      "schedule": "",
+      "changeFromHomeMed": "continued",
+      "indication": "",
+      "note": ""
+    },
+    {
+      "drugName": "Hydrochlorothiazide",
+      "ingredient": "",
+      "dose": "25 mg",
+      "route": "PO",
+      "frequency": "qAM",
+      "duration": "",
+      "schedule": "",
+      "changeFromHomeMed": "continued",
+      "indication": "",
+      "note": ""
+    },
+    {
+      "drugName": "Atorvastatin",
+      "ingredient": "",
+      "dose": "40 mg",
+      "route": "PO",
+      "frequency": "qHS",
+      "duration": "",
+      "schedule": "",
+      "changeFromHomeMed": "continued",
+      "indication": "",
+      "note": ""
+    },
+    {
+      "drugName": "Colchicine",
+      "ingredient": "",
+      "dose": "0.6 mg",
+      "route": "PO",
+      "frequency": "bid",
+      "duration": "5 days",
+      "schedule": "",
+      "changeFromHomeMed": "new",
+      "indication": "",
+      "note": ""
+    }
+  ],
+  "procedures": [],
+  "consultations": [],
+  "pharmacyReviewRequests": [
+    {
+      "date": "",
+      "dateTime": "",
+      "requestType": "Pharmacist Review Request",
+      "freeText": "환자는 HFrEF로 퇴원 예정이며, 기존 고혈압 및 이상지질혈증 치료 중임. 이번 입원 중 우측 1st MTP 통증 및 고요산혈증 확인되어 acute gout flare로 평가됨. 퇴원약에 심부전 관련 약제 및 통풍 발작 치료제가 포함되어 있어, 퇴원 전 복약이행도, 약물 이해도, 약물관련문제 및 생활습관 관련 위험요인 확인 필요함."
+    }
+  ],
+  "dataCompleteness": {
+    "doNotAutoFill": true,
+    "reviewStatus": "source_mapped_only",
+    "missingFields": [
+      "patientHeader.mrn",
+      "patientHeader.heightCm",
+      "patientHeader.weightKg at header level",
+      "patientHeader.bloodType",
+      "hospitalRecord.room",
+      "hospitalRecord.attendingPhysician",
+      "hospitalRecord.isolation",
+      "hospitalRecord.fallRisk",
+      "hospitalRecord.diet",
+      "hospitalRecord.codeStatus",
+      "clinicalRecords.erRecord.triageLevel",
+      "clinicalRecords.erRecord.triageVital",
+      "clinicalRecords.erRecord.management",
+      "clinicalRecords.admissionNote.freeText",
+      "clinicalRecords.progressNotes",
+      "socialHistory.alcohol",
+      "socialHistory.diet",
+      "socialHistory.exercise",
+      "socialHistory.occupation",
+      "medicationReconciliation",
+      "medicationOrders",
+      "medicationAdministrationRecords",
+      "labResults.referenceText",
+      "labResults.flag"
+    ]
+  },
+  "dataPolicy": {
+    "originalCasePreservation": true,
+    "augmentationPolicy": "원자료 값은 수정하지 않고, 화면 표시용 derived/reference 필드를 별도 저장한다.",
+    "allowedAugmentations": [
+      "일반 성인 참고범위 기반 lab flag 계산",
+      "기존약/퇴원약 목록을 기반으로 medication reconciliation row 생성",
+      "퇴원약 목록을 discharge medication order view로 변환",
+      "원자료 날짜와 기록을 기반으로 timeline 생성",
+      "비어 있는 MAR/약물식별 메뉴는 실제 EMR처럼 빈 상태로 유지"
+    ],
+    "forbiddenAugmentations": [
+      "원자료에 없는 투약시각 생성",
+      "원자료에 없는 약물 용량/빈도 변경",
+      "원자료에 없는 진단명 추가",
+      "환자의 발언, 증상, 검사결과를 새로 창작",
+      "교수자 가이드, 정답, 힌트, 평가포인트를 학생 화면에 표시"
+    ]
+  },
+  "medicationIdentification": [
+    {
+      "recordedAt": "",
+      "reportedMedication": "Amlodipine",
+      "identifiedDrug": "Amlodipine",
+      "strength": "5 mg",
+      "dosageForm": "",
+      "appearance": "",
+      "patientReportedUse": "",
+      "matchedToHomeMedicationList": true,
+      "verificationStatus": "식별 외형 원자료 미기재",
+      "sourceLevel": "derived_from_home_medication_name_only",
+      "note": "약물명/용량은 원자료 Home Medications에서 가져옴. 외형정보는 추가하지 않음."
+    },
+    {
+      "recordedAt": "",
+      "reportedMedication": "Hydrochlorothiazide",
+      "identifiedDrug": "Hydrochlorothiazide",
+      "strength": "25 mg",
+      "dosageForm": "",
+      "appearance": "",
+      "patientReportedUse": "",
+      "matchedToHomeMedicationList": true,
+      "verificationStatus": "식별 외형 원자료 미기재",
+      "sourceLevel": "derived_from_home_medication_name_only",
+      "note": "약물명/용량은 원자료 Home Medications에서 가져옴. 외형정보는 추가하지 않음."
+    },
+    {
+      "recordedAt": "",
+      "reportedMedication": "Ramipril",
+      "identifiedDrug": "Ramipril",
+      "strength": "5 mg",
+      "dosageForm": "",
+      "appearance": "",
+      "patientReportedUse": "",
+      "matchedToHomeMedicationList": true,
+      "verificationStatus": "식별 외형 원자료 미기재",
+      "sourceLevel": "derived_from_home_medication_name_only",
+      "note": "약물명/용량은 원자료 Home Medications에서 가져옴. 외형정보는 추가하지 않음."
+    },
+    {
+      "recordedAt": "",
+      "reportedMedication": "Atorvastatin",
+      "identifiedDrug": "Atorvastatin",
+      "strength": "40 mg",
+      "dosageForm": "",
+      "appearance": "",
+      "patientReportedUse": "",
+      "matchedToHomeMedicationList": true,
+      "verificationStatus": "식별 외형 원자료 미기재",
+      "sourceLevel": "derived_from_home_medication_name_only",
+      "note": "약물명/용량은 원자료 Home Medications에서 가져옴. 외형정보는 추가하지 않음."
+    }
+  ],
+  "timeline": [
+    {
+      "dateTime": "2026-05-16T21:10:00+09:00",
+      "category": "nursing",
+      "title": "응급실/입원 초기 간호기록",
+      "sourceLevel": "original",
+      "summary": "급성 호흡곤란, 식은땀, SpO₂ 89% RA, 산소 공급 및 심부전 관련 검사/처치 진행"
+    },
+    {
+      "dateTime": "2026-05-17T08:45:00+09:00",
+      "category": "nursing",
+      "title": "증상 호전 기록",
+      "sourceLevel": "original",
+      "summary": "호흡곤란 호전, 산소 없이 SpO₂ 유지, 하지부종 감소"
+    },
+    {
+      "dateTime": "2026-05-18T07:50:00+09:00",
+      "category": "nursing",
+      "title": "우측 1st MTP 통증 기록",
+      "sourceLevel": "original",
+      "summary": "발적, 열감, 압통 관찰. Acute gout flare suspected"
+    },
+    {
+      "dateTime": "2026-05-18T10:40:00+09:00",
+      "category": "discharge",
+      "title": "퇴원계획 기록",
+      "sourceLevel": "original",
+      "summary": "HFrEF discharge medication review 및 medication reconciliation 필요"
+    }
+  ],
+  "displayPolicy": {
+    "showEducationTerms": false,
+    "showInstructorGuide": false,
+    "showAnswerSubmission": false,
+    "showLabFlags": true,
+    "showReferenceRanges": true,
+    "showDerivedMedicationReconciliation": true,
+    "showEmptyEmrModules": true,
+    "emptyStateText": "원자료 미기재"
+  }
+};
+const navGroups = [
+  {label:'Patient', items:[['overview','환자 요약'],['basic','기본정보/병원기록'],['timeline','전체 타임라인']]},
+  {label:'Clinical Notes', items:[['hpi','CC/HPI/ROS'],['er','응급실 기록'],['nursing','간호일지'],['dischargePlan','퇴원계획']]},
+  {label:'History', items:[['diagnosis','진단명/Problem List'],['pmh','과거력'],['social','사회력/가족력']]},
+  {label:'Clinical Data', items:[['vitals','Vital Signs'],['labs','Lab Results'],['tests','영상/진단검사']]},
+  {label:'Medication', items:[['homeMed','기존 복용약'],['medId','약물 식별'],['medRec','Medication Reconciliation'],['orders','Medication Orders'],['mar','MAR'],['dischargeMed','퇴원약']]},
+  {label:'Collaboration', items:[['pharmacy','약사 검토 요청']]},
+];
+const titles = Object.fromEntries(navGroups.flatMap(g=>g.items));
+const el = (id)=>document.getElementById(id);
+const esc = (v)=>String(v ?? '').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const blank = (v)=> v===undefined || v===null || v==='' || (Array.isArray(v)&&!v.length);
+const val = (v)=> blank(v) ? '<span class="empty">미기재</span>' : esc(v);
+const fmtDateTime = (s)=> {
+  if(blank(s)) return '<span class="empty">미기재</span>';
+  return esc(String(s).replace('T',' ').replace('+09:00',''));
+};
+const pill = (text, cls='') => `<span class="pill ${cls}">${esc(text)}</span>`;
+const statusLabel = (s)=>({
+  continued:'계속', new:'신규', new_on_discharge:'퇴원 신규', active:'active', suspected:'suspected', chronic:'chronic', active_on_discharge:'퇴원처방'
+}[s] || s || '');
+function table(headers, rows, cls='') {
+  return `<div class="table-wrap"><table class="${cls}"><thead><tr>${headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
+}
+function td(v, cls='') { return `<td class="${cls}">${v}</td>`; }
+function chipFlag(flag) {
+  if(!flag || flag==='N') return '';
+  return `<span class="flag ${esc(flag)}">${esc(flag)}</span>`;
+}
+function patientBanner() {
+  const p=caseData.patientHeader, h=caseData.hospitalRecord;
+  const allergy = (p.allergies||[]).map(a=>a.substance).filter(Boolean).join(', ') || '미기재';
+  const badges = (p.safetyBadges||[]).map(b=>`<span class="badge ${esc(b.type || '')}">${esc(b.label)}</span>`).join('');
+  el('patientBanner').innerHTML = `
+    <div>
+      <div class="patient-name"><b>${val(p.name)}</b><span>${val(p.sex)}/${val(p.age)}</span><span>DOB ${val(p.birthDate)}</span></div>
+      <div class="patient-lines">
+        <span>MRN ${val(p.mrn)}</span><i>|</i>
+        <span>${val(h.department)}</span><i>|</i>
+        <span>${val(h.ward)}</span><i>|</i>
+        <span>입원 ${val(h.admissionDate)}</span><i>|</i>
+        <span>퇴원예정 ${val(h.plannedDischargeDate)}</span><i>|</i>
+        <span>보험 ${val(h.insurance)}</span><i>|</i>
+        <span>Allergy ${esc(allergy)}</span>
+      </div>
+    </div>
+    <div class="badge-row">${badges || '<span class="badge">No active badge</span>'}</div>`;
+}
+function nav() {
+  el('leftNav').innerHTML = '<div class="nav-head"><b>Chart Menu</b><span>Read only</span></div>' + navGroups.map(g=>
+    `<div class="nav-section">${esc(g.label)}</div>` + g.items.map(([id,label],idx)=>`<button class="nav-btn ${id==='overview'?'active':''}" data-tab="${id}"><span>${esc(label)}</span>${countBadge(id)}</button>`).join('')
+  ).join('');
+}
+function countBadge(id) {
+  const counts = {
+    nursing: caseData.clinicalRecords.nursingNotes?.length,
+    labs: caseData.labResults?.length,
+    tests: caseData.diagnosticTests?.length,
+    homeMed: caseData.homeMedications?.length,
+    medId: caseData.medicationIdentification?.length,
+    medRec: caseData.medicationReconciliation?.length,
+    orders: caseData.medicationOrders?.length,
+    dischargeMed: caseData.dischargeMedications?.length,
+    pharmacy: caseData.pharmacyReviewRequests?.length,
+    vitals: caseData.vitalSigns?.length,
+  };
+  return counts[id] ? `<span class="nav-count">${counts[id]}</span>` : '';
+}
+function rightPanel() {
+  const probs = (caseData.problemList||[]).slice(0,6).map(p=>pill(p.problem,'active')).join('');
+  const lastVitals = caseData.vitalSigns?.[caseData.vitalSigns.length-1];
+  const abn = (caseData.labResults||[]).filter(l=>l.flag && l.flag!=='N').slice(0,8)
+    .map(l=>`<div><b>${esc(l.item)}</b> ${esc(l.displayResult)}${chipFlag(l.flag)} <span class="muted">${esc(l.date || l.label)}</span></div>`).join('');
+  const dc = (caseData.dischargeMedications||[]).map(m=>pill(m.drugName, m.changeFromHomeMed==='new'?'new':'')).join('');
+  el('rightPanel').innerHTML = `
+    <h3>Chart Summary</h3>
+    <div class="right-block"><div class="right-label">Active Problems</div>${probs}</div>
+    <div class="right-block"><div class="right-label">Latest Vital</div>${lastVitals ? `BP ${esc(lastVitals.bp)}, HR ${esc(lastVitals.hr)}, RR ${esc(lastVitals.rr)}, SpO₂ ${esc(lastVitals.spo2)}% ${esc(lastVitals.o2Device)}` : '<span class="empty">미기재</span>'}</div>
+    <div class="right-block"><div class="right-label">Abnormal Labs</div>${abn || '<span class="empty">해당 없음</span>'}</div>
+    <div class="right-block"><div class="right-label">Discharge Medications</div>${dc || '<span class="empty">미기재</span>'}</div>
+    <div class="right-block"><div class="right-label">Allergy</div><b>${esc((caseData.patientHeader.allergies||[]).map(a=>a.substance).join(', ') || '미기재')}</b></div>
+  `;
+}
+function section(title, body, small='') { return `<div class="card"><div class="card-title"><span>${esc(title)}</span>${small?`<small>${esc(small)}</small>`:''}</div><div class="card-body">${body}</div></div>`; }
+function kv(obj) {
+  return `<div class="kv">${obj.map(([k,v])=>`<div class="key">${esc(k)}</div><div class="val">${v}</div>`).join('')}</div>`;
+}
+function renderOverview() {
+  const c=caseData.clinicalRecords, h=caseData.hpi;
+  const latestV = caseData.vitalSigns?.[caseData.vitalSigns.length-1];
+  const firstV = caseData.vitalSigns?.[0];
+  const abnCount=(caseData.labResults||[]).filter(l=>l.flag && l.flag!=='N').length;
+  return `
+    <div class="cards three">
+      <div class="metric"><div class="metric-label">Chief Complaint</div><div class="metric-value" style="font-size:17px">${val(c.chiefComplaint)}</div><div class="metric-sub">응급실 경유 입원</div></div>
+      <div class="metric"><div class="metric-label">입원 당시</div><div class="metric-value">${firstV?esc(firstV.bp):'--'}</div><div class="metric-sub">HR ${firstV?esc(firstV.hr):'--'}, SpO₂ ${firstV?esc(firstV.spo2):'--'}% ${firstV?esc(firstV.o2Device):''}</div></div>
+      <div class="metric"><div class="metric-label">퇴원 당일</div><div class="metric-value">${latestV?esc(latestV.bp):'--'}</div><div class="metric-sub">BW ${latestV?esc(latestV.weightKg):'--'} kg, abnormal lab ${abnCount}</div></div>
+    </div>
+    ${section('Problem List', (caseData.problemList||[]).map(p=>pill(p.problem,'active')).join(''))}
+    ${section('Clinical Course Summary', val(h.timelineText))}
+    ${section('Medication Snapshot', `<div class="cards"><div>${miniTable('Home Medication', caseData.homeMedications.map(m=>`${esc(m.drugName)} ${esc(m.dose)} ${esc(m.frequency)}`))}</div><div>${miniTable('Discharge Medication', caseData.dischargeMedications.map(m=>`${esc(m.drugName)} ${esc(m.dose)} ${esc(m.frequency)}`))}</div></div>`)}
+  `;
+}
+function miniTable(title, rows) { return `<div class="card" style="margin:0"><div class="card-title">${esc(title)}</div><div class="card-body">${rows.map(r=>`<div style="padding:3px 0">${r}</div>`).join('')}</div></div>`; }
+function renderBasic() {
+  const p=caseData.patientHeader,h=caseData.hospitalRecord;
+  return `
+  <div class="cards">
+    ${section('Patient Demographics', kv([
+      ['성명',val(p.name)],['성별/나이',`${val(p.sex)} / ${val(p.age)}`],['생년월일',val(p.birthDate)],['병록번호',val(p.mrn)],['키/체중',`${val(p.heightCm)} / ${val(p.weightKg)}`],['혈액형',val(p.bloodType)],['알레르기',val((p.allergies||[]).map(a=>a.substance).join(', '))]
+    ]))}
+    ${section('Hospital Record', kv([
+      ['입원일',val(h.admissionDate)],['퇴원예정일',val(h.plannedDischargeDate)],['퇴원일',val(h.dischargeDate)],['입원경로',val(h.admissionRoute)],['진료과',val(h.department)],['병동/병실',`${val(h.ward)} / ${val(h.room)}`],['담당의',val(h.attendingPhysician)],['보험',val(h.insurance)],['결혼상태',val(h.maritalStatus)],['거주지',val(h.residence)],['식이',val(h.diet)],['Code status',val(h.codeStatus)]
+    ]))}
+  </div>`;
+}
+function renderTimeline() {
+  const rows=(caseData.timeline||[]).map(e=>`<div class="event"><div class="event-date">${fmtDateTime(e.dateTime)}</div><div class="event-title">${val(e.title)}</div><div>${val(e.summary)}</div></div>`).join('');
+  return `<div class="timeline">${rows || '<div class="empty-state"><b>Timeline 없음</b>원자료 미기재</div>'}</div>`;
+}
+function renderHpi() {
+  const c=caseData.clinicalRecords,h=caseData.hpi,r=caseData.ros;
+  return `
+    ${section('Chief Complaint', `<b>${val(c.chiefComplaint)}</b>`)}
+    ${section('Admission Reason', val(c.admissionReason))}
+    ${section('HPI', val(h.timelineText))}
+    <div class="cards">
+    ${section('HPI Details', kv([
+      ['Onset',val(h.onset)],['Duration',val(h.duration)],['Character',val(h.character)],['Location',val(h.location)],['Aggravating factors',(h.aggravatingFactors||[]).map(x=>pill(x,'warn')).join('') || val('')],['Relieving factors',(h.relievingFactors||[]).map(x=>pill(x,'new')).join('') || val('')],['Associated symptoms',(h.associatedSymptoms||[]).map(x=>pill(x)).join('') || val('')]
+    ]))}
+    ${section('ROS', kv([
+      ['General',val(r.general)],['Respiratory',val(r.respiratory)],['Cardiovascular',val(r.cardiovascular)],['GI',val(r.gi)],['GU',val(r.gu)],['Neuro',val(r.neuro)],['Musculoskeletal',val(r.musculoskeletal)],['Skin',val(r.skin)]
+    ]))}
+    </div>`;
+}
+function renderER() {
+  const e=caseData.clinicalRecords.erRecord;
+  return section('Emergency Record', kv([
+    ['내원일',val(e.date)],['내원시각',val(e.dateTime)],['내원수단',val(e.arrivalMode)],['KTAS/Triage',`${val(e.triageLevel)} / ${val(e.triageVital)}`],['초기평가',val(e.initialAssessment)],['처치',val(e.management)],['Disposition',val(e.disposition)],['기록',val(e.freeText)]
+  ]));
+}
+function noteBlock(n) {
+  return `<div class="note"><div class="note-meta"><span>${fmtDateTime(n.dateTime)} ${esc(n.noteType || '')}</span><span>${esc(n.authorRole || '')}</span></div><div class="soap"><b>S</b><span>${val(n.subjective)}</span><b>O</b><span>${val(n.objective)}</span><b>A</b><span>${val(n.assessment)}</span><b>P</b><span>${val(n.plan)}</span></div>${n.freeText?`<div style="margin-top:8px">${esc(n.freeText)}</div>`:''}</div>`;
+}
+function renderNursing() {
+  return (caseData.clinicalRecords.nursingNotes||[]).map(noteBlock).join('') || '<div class="empty-state"><b>간호기록 없음</b>원자료 미기재</div>';
+}
+function renderDischargePlan() {
+  return (caseData.clinicalRecords.dischargePlanningNotes||[]).map(noteBlock).join('') || '<div class="empty-state"><b>퇴원계획 없음</b>원자료 미기재</div>';
+}
+function renderDiagnosis() {
+  const rows=(caseData.problemList||[]).map((p,i)=>`<tr>${td(String(i+1))}${td(val(p.problem))}${td(pill(statusLabel(p.status),'active'))}${td(val(p.onsetDate))}${td(val(p.lastUpdated))}${td(val(p.note))}</tr>`);
+  const diag=(caseData.diagnosisTimeline||[]).map(d=>`<div class="event"><div class="event-date">${fmtDateTime(d.dateTime || d.date)}</div><div class="event-title">${val(d.diagnosis)} ${pill(d.status||'')}</div><div>${val(d.note)}</div></div>`).join('');
+  return `${table(['#','Problem','Status','Onset','Updated','Note'],rows)}${section('Diagnosis Timeline', diag || '<div class="empty-state"><b>Diagnosis timeline 없음</b>시간대별 R/O → 확진 기록은 원자료 미기재</div>')}`;
+}
+function renderPMH() {
+  const rows=(caseData.pastMedicalHistory||[]).map(p=>`<tr>${td(val(p.condition))}${td(val(p.diagnosedDate))}${td(pill(statusLabel(p.status), p.status==='suspected'?'warn':'active'))}${td(val(p.treatment))}${td(val(p.note))}</tr>`);
+  return table(['Condition','Diagnosed','Status','Treatment','Note'], rows);
+}
+function renderSocial() {
+  const s=caseData.socialHistory, f=caseData.familyHistory||[];
+  const famRows=f.map(x=>`<tr>${td(val(x.relation))}${td(val(x.condition))}${td(val(x.status))}${td(val(x.note))}</tr>`);
+  return `<div class="cards">
+    ${section('Social History', kv([
+      ['Smoking',val(s.smoking)],['Alcohol',val(s.alcohol)],['Occupation',val(s.occupation)],['Diet',val(s.diet)],['Exercise',val(s.exercise)],['Sleep',val(s.sleep)],['Living with',val(s.livingWith)],['Caregiver',val(s.caregiver)],['Supplements',(s.healthSupplements||[]).join(', ') || val('')],['Adherence',val(s.adherence)]
+    ]))}
+    ${section('Family History', table(['Relation','Condition','Status','Note'], famRows))}
+  </div>`;
+}
+function renderVitals() {
+  const rows=(caseData.vitalSigns||[]).map(v=>`<tr>${td(val(v.label))}${td(val(v.date || v.dateTime))}${td(`<b>${val(v.bp)}</b>`)}${td(val(v.hr))}${td(val(v.rr))}${td(val(v.bt)+' ℃')}${td(`<b>${val(v.spo2)}%</b>`)}${td(val(v.o2Device))}${td(val(v.weightKg)+' kg')}${td(val(v.painScore))}</tr>`);
+  return table(['Label','Date','BP','HR','RR','BT','SpO₂','O₂','BW','Pain'], rows);
+}
+function renderLabs() {
+  const labs=caseData.labResults||[];
+  const dates=[...new Set(labs.map(l=>l.label || l.date || ''))];
+  const items=[...new Set(labs.map(l=>l.item))];
+  const order=['Na','K','Cl','CO2','BUN','SCr','eGFR','Uric acid','NT-proBNP','WBC','Hb','Platelet','AST','ALT','LDL-C'];
+  items.sort((a,b)=>(order.indexOf(a)<0?999:order.indexOf(a))-(order.indexOf(b)<0?999:order.indexOf(b)) || a.localeCompare(b));
+  const rows=items.map(item=>{
+    const byItem=labs.filter(l=>l.item===item);
+    const first=byItem[0]||{};
+    const cells=dates.map(d=>{
+      const r=byItem.find(x=>(x.label||x.date||'')===d);
+      if(!r) return td('<span class="empty">-</span>');
+      const abnormal = r.flag && r.flag!=='N';
+      return td(`<span class="lab-value">${esc(r.displayResult ?? r.result)}</span>${chipFlag(r.flag)}`, `lab-cell ${abnormal?'abnormal':''} ${r.critical?'critical':''}`);
+    }).join('');
+    return `<tr>${td(`<b>${esc(item)}</b>`)}${td(val(first.unit))}${td(val(first.referenceText))}${cells}</tr>`;
+  });
+  const abn = labs.filter(l=>l.flag && l.flag!=='N').length;
+  return `
+    <div class="cards three">
+      <div class="metric"><div class="metric-label">Total results</div><div class="metric-value">${labs.length}</div><div class="metric-sub">${dates.join(' / ')}</div></div>
+      <div class="metric"><div class="metric-label">Abnormal flags</div><div class="metric-value">${abn}</div><div class="metric-sub">H/L 표시 적용</div></div>
+      <div class="metric"><div class="metric-label">Reference profile</div><div class="metric-value" style="font-size:15px">General Adult v1</div><div class="metric-sub">일반 성인 참고치</div></div>
+    </div>
+    ${table(['검사명','단위','참고치',...dates], rows, 'labs')}
+    <div class="footer-note">Lab 값은 원자료 값을 유지하고, 참고치와 H/L 표시는 화면 표시용 reference profile로 계산한 보강 레이어입니다.</div>
+  `;
+}
+function renderTests() {
+  const rows=(caseData.diagnosticTests||[]).map(t=>`<tr>${td(val(t.testType))}${td(val(t.testName))}${td(val(t.timing || t.date || t.dateTime))}${td(val(t.summary))}${td(val(t.findings))}${td(val(t.impression))}</tr>`);
+  return table(['Type','Test','Timing/Date','Summary','Findings','Impression'], rows);
+}
+function renderHomeMed() {
+  const rows=(caseData.homeMedications||[]).map(m=>`<tr>${td(`<b>${val(m.drugName)}</b>`)}${td(val(m.dose))}${td(val(m.route))}${td(val(m.frequency))}${td(val(m.schedule))}${td(val(m.indication))}${td(val(m.adherence))}${td(val(m.lastTaken))}</tr>`);
+  return table(['Drug','Dose','Route','Freq','Schedule','Indication','Adherence','Last taken'], rows);
+}
+function renderMedId() {
+  const rows=(caseData.medicationIdentification||[]).map(m=>`<tr>${td(val(m.recordedAt))}${td(`<b>${val(m.reportedMedication)}</b>`)}${td(val(m.identifiedDrug))}${td(val(m.strength))}${td(val(m.dosageForm))}${td(val(m.appearance))}${td(val(m.verificationStatus))}${td(val(m.note))}</tr>`);
+  return table(['Recorded','Reported med','Identified drug','Strength','Form','Appearance','Verification','Note'], rows) + '<div class="footer-note">외형정보는 원자료에 없어 비워두고, 기존 복용약명과 용량만 식별 목록 형태로 표시했습니다.</div>';
+}
+function renderMedRec() {
+  const rows=(caseData.medicationReconciliation||[]).map(m=>`<tr class="status-${esc(m.reconciliationStatus)}">${td(`<b>${val(m.drugName)}</b>`)}${td(`${val(m.homeDose)} ${val(m.homeRoute)} ${val(m.homeFrequency)}`)}${td(`${val(m.dischargeDose)} ${val(m.dischargeRoute)} ${val(m.dischargeFrequency)}`)}${td(pill(statusLabel(m.reconciliationStatus), m.reconciliationStatus==='new_on_discharge'?'new':'active'))}${td(val(m.verificationStatus))}${td(val(m.note))}</tr>`);
+  return table(['Drug','Home med','Discharge med','Status','Verification','Note'], rows);
+}
+function renderOrders() {
+  const rows=(caseData.medicationOrders||[]).map(o=>`<tr class="status-${esc(o.status)}">${td(val(o.orderId))}${td(val(o.orderDate || o.orderDateTime))}${td(pill(o.orderType||''))}${td(`<b>${val(o.drugName)}</b>`)}${td(val(o.dose))}${td(val(o.route))}${td(val(o.frequency))}${td(val(o.duration))}${td(pill(statusLabel(o.status),'new'))}${td(val(o.indication))}</tr>`);
+  return table(['Order ID','Date','Type','Drug','Dose','Route','Freq','Duration','Status','Indication'], rows) + '<div class="footer-note">퇴원약 목록을 처방오더 화면 형태로 변환했습니다. 실제 오더 시작/종료시각은 원자료에 없으면 비워둡니다.</div>';
+}
+function renderMAR() {
+  const mar=caseData.medicationAdministrationRecords;
+  if(!mar || !mar.records || !mar.records.length) return `<div class="empty-state"><b>Medication Administration Record</b>${val(mar?.displayMessage || '원자료 미기재')}</div>`;
+  const rows=mar.records.map(r=>`<tr>${td(val(r.time))}${td(val(r.drugName))}${td(val(r.dose))}${td(val(r.status))}${td(val(r.nurse))}</tr>`);
+  return table(['Time','Drug','Dose','Status','Nurse'], rows);
+}
+function renderDischargeMed() {
+  const rows=(caseData.dischargeMedications||[]).map(m=>`<tr class="status-${esc(m.changeFromHomeMed)}">${td(`<b>${val(m.drugName)}</b>`)}${td(val(m.dose))}${td(val(m.route))}${td(val(m.frequency))}${td(val(m.duration))}${td(pill(statusLabel(m.changeFromHomeMed), m.changeFromHomeMed==='new'?'new':'active'))}${td(val(m.indication))}${td(val(m.note))}</tr>`);
+  return table(['Drug','Dose','Route','Freq','Duration','Change','Indication','Note'], rows);
+}
+function renderPharmacy() {
+  const notes=(caseData.pharmacyReviewRequests||[]).map(n=>`<div class="note"><div class="note-meta"><span>Pharmacist Review Request</span><span>${fmtDateTime(n.dateTime || n.date)}</span></div><div>${val(n.requestText || n.freeText || n.note)}</div></div>`).join('');
+  return notes || '<div class="empty-state"><b>약사 검토 요청 없음</b>원자료 미기재</div>';
+}
+const renderers = {overview:renderOverview,basic:renderBasic,timeline:renderTimeline,hpi:renderHpi,er:renderER,nursing:renderNursing,dischargePlan:renderDischargePlan,diagnosis:renderDiagnosis,pmh:renderPMH,social:renderSocial,vitals:renderVitals,labs:renderLabs,tests:renderTests,homeMed:renderHomeMed,medId:renderMedId,medRec:renderMedRec,orders:renderOrders,mar:renderMAR,dischargeMed:renderDischargeMed,pharmacy:renderPharmacy};
+function selectTab(id) {
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+  el('contentTitle').textContent = titles[id] || id;
+  el('contentBody').innerHTML = (renderers[id] || renderOverview)();
+}
+patientBanner(); nav(); rightPanel(); selectTab('overview');
+el('leftNav').addEventListener('click', e=>{ const btn=e.target.closest('.nav-btn'); if(btn) selectTab(btn.dataset.tab); });
+</script>
+</body>
+</html>

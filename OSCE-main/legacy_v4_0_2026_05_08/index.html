@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강원 PPC 병원 - EMR 시뮬레이터</title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-header">
+    <h1>강원 PPC 병원</h1>
+    <div class="search-container-header">
+        <input type="text" id="patientIdInput" placeholder="환자 ID 입력 (예: P001)">
+        <button id="searchPatientBtn">검색</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sidebar">
+        <h2>환자 메뉴</h2>
+        <div id="sidebarPatientInfo" class="sidebar-patient-info">
+            </div>
+        <hr class="sidebar-divider">
+        <ul id="patientMenu" class="disabled-menu">
+            <li data-section="demographics">환자 기본정보</li>
+            <li data-section="visitHistorySummary">전체 방문 이력</li>
+            <li data-section="labResultSummary">전체 검사 이력</li>
+            <li data-section="med_history">처방 이력</li>
+            <li data-section="admissionHistory">입원/시술 기록</li>
+            <li data-section="comprehensivePastHistory">과거력/유전자/영상</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="initialMessage" class="content-section active">
+            <h2>환자 정보를 검색해주세요.</h2>
+            <p>상단 검색창에 환자 ID를 입력하고 검색 버튼을 눌러주세요.</p>
+        </div>
+
+        <div id="demographics" class="content-section">
+            <h2>환자 기본정보</h2>
+            <div id="demographicsContent" class="info-grid"></div>
+            <h3>주요 진단명</h3>
+            <ul id="diagnosisList"></ul>
+        </div>
+
+        <div id="visitHistorySummary" class="content-section"> 
+            <h2 id="visitHistorySummaryTitle">전체 방문 이력</h2> 
+            <div id="visitHistorySummaryContent"></div>
+        </div>
+
+        <div id="labResultSummary" class="content-section"> 
+            <h2 id="labResultSummaryTitle">전체 검사 이력</h2> 
+            <div id="labResultSummaryContent"></div>
+        </div>
+
+        <div id="med_history" class="content-section">
+            <h2>처방 이력</h2>
+            <div id="medHistoryContent"></div>
+        </div>
+        
+        <div id="admissionHistory" class="content-section">
+            <h2>입원/시술 기록</h2>
+            <div id="admissionHistoryContent"></div>
+        </div>
+
+        <div id="comprehensivePastHistory" class="content-section">
+            <h2>과거력 / 유전자 검사 / 영상검사 결과</h2>
+            <div id="comprehensivePastHistoryContent">
+                </div>
+        </div>
+        
+        <div id="patientNotFoundMessage" class="content-section" style="text-align: center;">
+            <h2>환자 정보를 찾을 수 없습니다.</h2>
+            <p>입력한 ID를 다시 확인해주세요.</p>
+        </div>
+    </div>
+</div>
+
+<div class="watermark">
+    <img src="ppc_lab_logo.png" alt="PPC LAB 로고" id="watermarkLogo"> <div class="watermark-text">
+        <div>Developed by PPC LAB</div>
+        <div>강원대학교 맞춤형약료학연구실</div>
+    </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+<script src="script.js"></script> 
+
+</body>
+</html>

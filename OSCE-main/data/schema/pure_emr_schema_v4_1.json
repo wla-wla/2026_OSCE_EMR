@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "4.1",
+  "requiredTopLevelFields": [
+    "schemaVersion",
+    "caseMeta",
+    "dataPolicy",
+    "patientHeader",
+    "hospitalRecord",
+    "clinicalRecords",
+    "timeline",
+    "problemList",
+    "diagnosisTimeline",
+    "pastMedicalHistory",
+    "socialHistory",
+    "familyHistory",
+    "hpi",
+    "vitalSigns",
+    "labResults",
+    "diagnosticTests",
+    "homeMedications",
+    "medicationIdentification",
+    "medicationReconciliation",
+    "medicationOrders",
+    "medicationAdministrationRecords",
+    "dischargeMedications",
+    "pharmacyReviewRequests",
+    "displayPolicy"
+  ],
+  "emptyStateText": "원자료 미기재",
+  "sourceLevelPolicy": "sourceLevel fields are retained for data governance and are not displayed directly in the student-facing chart."
+}

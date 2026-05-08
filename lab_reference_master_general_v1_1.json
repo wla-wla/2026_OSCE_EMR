@@ -1,0 +1,271 @@
+{
+  "version": "general-adult-reference-v1.1",
+  "profileName": "교육용 일반 성인 참고범위 프로파일 v1.1",
+  "scope": "Pure EMR 화면의 H/L 표시용. 원자료 수치를 수정하지 않으며 병원별 검사실 기준으로 교체 가능.",
+  "rules": {
+    "doNotOverwriteOriginalCaseValue": true,
+    "storeComputedFlagSeparately": true,
+    "flagSource": "education_general_reference",
+    "noFlagWhenReferenceUnavailable": true
+  },
+  "items": {
+    "WBC": {
+      "unit": "x10³/µL",
+      "refLow": 4.0,
+      "refHigh": 10.0,
+      "referenceText": "4.0-10.0 x10³/µL"
+    },
+    "Hb": {
+      "unit": "g/dL",
+      "sexSpecific": {
+        "M": {
+          "refLow": 13.0,
+          "refHigh": 18.0,
+          "referenceText": "M: 13.0-18.0 g/dL"
+        },
+        "F": {
+          "refLow": 12.0,
+          "refHigh": 16.0,
+          "referenceText": "F: 12.0-16.0 g/dL"
+        }
+      }
+    },
+    "Platelet": {
+      "unit": "x10³/µL",
+      "refLow": 150,
+      "refHigh": 450,
+      "referenceText": "150-450 x10³/µL"
+    },
+    "Hct": {
+      "unit": "%",
+      "sexSpecific": {
+        "M": {
+          "refLow": 41,
+          "refHigh": 53,
+          "referenceText": "M: 41-53%"
+        },
+        "F": {
+          "refLow": 36,
+          "refHigh": 46,
+          "referenceText": "F: 36-46%"
+        }
+      }
+    },
+    "Na": {
+      "unit": "mEq/L",
+      "refLow": 135,
+      "refHigh": 145,
+      "referenceText": "135-145 mEq/L"
+    },
+    "K": {
+      "unit": "mEq/L",
+      "refLow": 3.7,
+      "refHigh": 5.2,
+      "referenceText": "3.7-5.2 mEq/L"
+    },
+    "Cl": {
+      "unit": "mEq/L",
+      "refLow": 96,
+      "refHigh": 106,
+      "referenceText": "96-106 mEq/L"
+    },
+    "CO2": {
+      "unit": "mEq/L",
+      "refLow": 23,
+      "refHigh": 29,
+      "referenceText": "23-29 mEq/L"
+    },
+    "CO₂": {
+      "unit": "mEq/L",
+      "refLow": 23,
+      "refHigh": 29,
+      "referenceText": "23-29 mEq/L"
+    },
+    "BUN": {
+      "unit": "mg/dL",
+      "refLow": 6,
+      "refHigh": 20,
+      "referenceText": "6-20 mg/dL"
+    },
+    "SCr": {
+      "unit": "mg/dL",
+      "refLow": 0.6,
+      "refHigh": 1.3,
+      "referenceText": "0.6-1.3 mg/dL"
+    },
+    "Scr": {
+      "unit": "mg/dL",
+      "refLow": 0.6,
+      "refHigh": 1.3,
+      "referenceText": "0.6-1.3 mg/dL"
+    },
+    "eGFR": {
+      "unit": "mL/min/1.73m²",
+      "refLow": 60,
+      "refHigh": null,
+      "referenceText": ">=60 mL/min/1.73m²"
+    },
+    "Mg": {
+      "unit": "mg/dL",
+      "refLow": 1.7,
+      "refHigh": 2.2,
+      "referenceText": "1.7-2.2 mg/dL"
+    },
+    "Ca": {
+      "unit": "mg/dL",
+      "refLow": 8.6,
+      "refHigh": 10.2,
+      "referenceText": "8.6-10.2 mg/dL"
+    },
+    "P": {
+      "unit": "mg/dL",
+      "refLow": 2.5,
+      "refHigh": 4.5,
+      "referenceText": "2.5-4.5 mg/dL"
+    },
+    "Glucose": {
+      "unit": "mg/dL",
+      "refLow": 70,
+      "refHigh": 110,
+      "referenceText": "70-110 mg/dL; fasting status unspecified"
+    },
+    "HbA1c": {
+      "unit": "%",
+      "refLow": 4.0,
+      "refHigh": 5.6,
+      "referenceText": "4.0-5.6%; diabetes control target may differ"
+    },
+    "Uric acid": {
+      "unit": "mg/dL",
+      "sexSpecific": {
+        "M": {
+          "refLow": 3.7,
+          "refHigh": 8.0,
+          "referenceText": "M >=16y: 3.7-8.0 mg/dL"
+        },
+        "F": {
+          "refLow": 2.7,
+          "refHigh": 6.1,
+          "referenceText": "F >=13y: 2.7-6.1 mg/dL"
+        }
+      }
+    },
+    "Albumin": {
+      "unit": "g/dL",
+      "refLow": 3.5,
+      "refHigh": 5.0,
+      "referenceText": "3.5-5.0 g/dL"
+    },
+    "AST": {
+      "unit": "U/L",
+      "refLow": 8,
+      "refHigh": 33,
+      "referenceText": "8-33 U/L"
+    },
+    "ALT": {
+      "unit": "U/L",
+      "refLow": 4,
+      "refHigh": 36,
+      "referenceText": "4-36 U/L"
+    },
+    "Cholesterol": {
+      "unit": "mg/dL",
+      "refLow": null,
+      "refHigh": 200,
+      "referenceText": "desirable <200 mg/dL"
+    },
+    "LDL-C": {
+      "unit": "mg/dL",
+      "refLow": null,
+      "refHigh": 100,
+      "referenceText": "optimal <100 mg/dL; risk-based goal may differ"
+    },
+    "HDL-C": {
+      "unit": "mg/dL",
+      "sexSpecific": {
+        "M": {
+          "refLow": 40,
+          "refHigh": null,
+          "referenceText": "M: >=40 mg/dL"
+        },
+        "F": {
+          "refLow": 50,
+          "refHigh": null,
+          "referenceText": "F: >=50 mg/dL"
+        }
+      }
+    },
+    "Triglyceride": {
+      "unit": "mg/dL",
+      "refLow": null,
+      "refHigh": 150,
+      "referenceText": "normal <150 mg/dL"
+    },
+    "Eosinophil": {
+      "unit": "%",
+      "refLow": 0,
+      "refHigh": 5.0,
+      "referenceText": "0-5%"
+    },
+    "총 IgE": {
+      "unit": "IU/mL",
+      "refLow": 0,
+      "refHigh": 100,
+      "referenceText": "0-100 IU/mL; lab-specific range may vary"
+    },
+    "Troponin I (hs)": {
+      "unit": "ng/mL",
+      "refLow": null,
+      "refHigh": 0.04,
+      "referenceText": "<0.04 ng/mL"
+    },
+    "CK-MB": {
+      "unit": "ng/mL",
+      "refLow": null,
+      "refHigh": 5.0,
+      "referenceText": "<5.0 ng/mL"
+    },
+    "pH": {
+      "unit": "",
+      "refLow": 7.35,
+      "refHigh": 7.45,
+      "referenceText": "7.35-7.45"
+    },
+    "pCO2": {
+      "unit": "mmHg",
+      "refLow": 35,
+      "refHigh": 45,
+      "referenceText": "35-45 mmHg"
+    },
+    "pO2": {
+      "unit": "mmHg",
+      "refLow": 80,
+      "refHigh": 100,
+      "referenceText": "80-100 mmHg"
+    },
+    "HCO3": {
+      "unit": "mEq/L",
+      "refLow": 22,
+      "refHigh": 26,
+      "referenceText": "22-26 mEq/L"
+    },
+    "SaO2": {
+      "unit": "%",
+      "refLow": 95,
+      "refHigh": 100,
+      "referenceText": "95-100%"
+    },
+    "TSH": {
+      "unit": "µIU/mL",
+      "refLow": 0.4,
+      "refHigh": 4.0,
+      "referenceText": "0.4-4.0 µIU/mL"
+    },
+    "Free T4": {
+      "unit": "ng/dL",
+      "refLow": 0.8,
+      "refHigh": 1.8,
+      "referenceText": "0.8-1.8 ng/dL"
+    }
+  }
+}

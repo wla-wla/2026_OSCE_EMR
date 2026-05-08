@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPC 병원 EMR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">PPC</div>
+      <div>
+        <h1>PPC 병원 EMR</h1>
+        <p>Pure Electronic Medical Record</p>
+      </div>
+    </div>
+    <form id="patientSearchForm" class="search-form">
+      <input id="patientIdInput" type="search" autocomplete="off" placeholder="환자번호 또는 이름 입력">
+      <button type="submit">조회</button>
+    </form>
+  </header>
+
+  <section id="patientBanner" class="patient-banner is-empty">
+    <div>
+      <p class="eyebrow">Patient Chart</p>
+      <h2>환자를 조회해 주세요</h2>
+      <p class="muted">예: P001, P002, patient-a, 김영수</p>
+    </div>
+    <div id="safetyBadges" class="badge-row"></div>
+  </section>
+
+  <main class="workspace">
+    <nav class="sidebar" aria-label="EMR menu">
+      <div id="loadedPatientLabel" class="loaded-patient">No patient loaded</div>
+      <button class="nav-item is-active" data-section="summary">환자 요약</button>
+      <button class="nav-item" data-section="base">기본정보/병원기록</button>
+      <button class="nav-item" data-section="timeline">전체 타임라인</button>
+      <button class="nav-item" data-section="hpi">CC/HPI/ROS</button>
+      <button class="nav-item" data-section="er">응급실 기록</button>
+      <button class="nav-item" data-section="notes">입원/경과/간호/퇴원계획</button>
+      <button class="nav-item" data-section="problems">Problem List</button>
+      <button class="nav-item" data-section="history">과거력/사회력/가족력</button>
+      <button class="nav-item" data-section="vitals">Vital Signs</button>
+      <button class="nav-item" data-section="labs">Lab Results</button>
+      <button class="nav-item" data-section="diagnostics">영상/진단검사</button>
+      <button class="nav-item" data-section="homeMeds">Home Medications</button>
+      <button class="nav-item" data-section="medId">Medication Identification</button>
+      <button class="nav-item" data-section="medRec">Medication Reconciliation</button>
+      <button class="nav-item" data-section="orders">Orders</button>
+      <button class="nav-item" data-section="mar">MAR</button>
+      <button class="nav-item" data-section="dischargeMeds">Discharge Medications</button>
+      <button class="nav-item" data-section="pharmacy">약사 검토 요청</button>
+    </nav>
+
+    <section class="content-shell">
+      <div id="statusMessage" class="status-message">상단 검색창에서 환자를 조회하면 차트가 표시됩니다.</div>
+      <section id="summary" class="content-section is-active"></section>
+      <section id="base" class="content-section"></section>
+      <section id="timeline" class="content-section"></section>
+      <section id="hpi" class="content-section"></section>
+      <section id="er" class="content-section"></section>
+      <section id="notes" class="content-section"></section>
+      <section id="problems" class="content-section"></section>
+      <section id="history" class="content-section"></section>
+      <section id="vitals" class="content-section"></section>
+      <section id="labs" class="content-section"></section>
+      <section id="diagnostics" class="content-section"></section>
+      <section id="homeMeds" class="content-section"></section>
+      <section id="medId" class="content-section"></section>
+      <section id="medRec" class="content-section"></section>
+      <section id="orders" class="content-section"></section>
+      <section id="mar" class="content-section"></section>
+      <section id="dischargeMeds" class="content-section"></section>
+      <section id="pharmacy" class="content-section"></section>
+    </section>
+
+    <aside id="rightSummary" class="right-panel">
+      <h2>Chart Summary</h2>
+      <div class="empty-state">조회된 환자 차트가 없습니다.</div>
+    </aside>
+  </main>
+
+  <div class="watermark">
+    <img src="ppc_lab_logo.png" alt="PPC LAB">
+    <span>Developed by PPC LAB</span>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

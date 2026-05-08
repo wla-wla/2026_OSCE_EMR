@@ -1,0 +1,326 @@
+/* 전체 페이지 기본 스타일 */
+body {
+    font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    display: flex; /* 헤더와 컨테이너를 세로로 배치하기 위함 */
+    flex-direction: column; /* 세로 방향으로 아이템 정렬 */
+    min-height: 100vh; /* 최소 높이를 화면 전체로 설정 */
+}
+
+/* 상단 헤더 스타일 */
+.app-header {
+    background-color: #2c3e50; /* 어두운 파랑-회색 */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between; /* 로고와 검색창 양쪽 정렬 */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%; /* 헤더 너비 전체 */
+    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 1.6em;
+    color: white; /* 헤더 제목 색상 흰색으로 명시 */
+    border-bottom: none; /* 기존 h1 스타일 오버라이드 */
+    padding-bottom: 0;
+}
+
+.search-container-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container-header input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #7f8c8d;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    width: 200px; /* 검색창 너비 조절 */
+}
+.search-container-header input[type="text"]::placeholder {
+    color: #7f8c8d;
+}
+
+.search-container-header button {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.search-container-header button:hover {
+    background-color: #2980b9;
+}
+
+
+/* 메인 컨테이너 (사이드바 + 콘텐츠) */
+.container {
+    max-width: 100%; /* 헤더 아래에서는 너비를 100%로 */
+    margin: 0 auto; /* 위쪽 마진 제거, 좌우 중앙 정렬 */
+    background-color: #fff;
+    /* box-shadow: 0 0 15px rgba(0,0,0,0.1); 헤더가 있으므로 컨테이너 그림자 제거 가능 */
+    border-radius: 0; /* 헤더와 붙어있으므로 모서리 둥글림 제거 가능 */
+    display: flex;
+    flex-grow: 1; /* 남은 세로 공간을 모두 차지하도록 */
+    width: 100%; /* 너비 100% */
+}
+
+/* 왼쪽 사이드바 메뉴 영역 */
+.sidebar {
+    width: 250px; /* 사이드바 너비 약간 조정 */
+    background-color: #34495e; /* 사이드바 배경색 변경 (헤더와 구분) */
+    padding: 20px;
+    color: #ecf0f1;
+    /* border-radius 제거 (컨테이너와 붙음) */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 15px; /* 여백 조정 */
+    font-size: 1.3em; /* 크기 조정 */
+    border-bottom: 1px solid #4a627a; /* 구분선 색상 조정 */
+    padding-bottom: 10px; /* 여백 조정 */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* 메뉴가 남은 공간 차지 */
+}
+
+.sidebar ul li {
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.95em;
+}
+
+.sidebar ul li:hover, .sidebar ul li.active {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+/* 오른쪽 메인 콘텐츠 영역 */
+.content {
+    flex-grow: 1;
+    padding: 25px 30px;
+    overflow-y: auto;
+    /* max-height 제거 또는 조정 (전체 레이아웃에 따라) */
+}
+
+.content-section {
+    display: none; 
+    animation: fadeIn 0.5s;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 콘텐츠 내 제목 스타일 */
+.content h1, .content h2, .content h3 { /* .content 내부의 제목에만 적용 */
+    color: #2c3e50;
+}
+
+.content h1 { /* EMR 시스템 헤더의 h1과 구분하기 위해 .content 내부 h1만 스타일링 */
+    font-size: 1.8em;
+    margin-top: 0;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.content h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+.content h3 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+
+/* 표 스타일 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #ecf0f1;
+    font-weight: bold;
+    color: #2c3e50;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 정보 그리드 레이아웃 */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.info-item {
+    background-color: #fdfdfd;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+.info-item strong {
+    display: inline-block;
+    margin-right: 5px;
+    color: #555;
+}
+
+/* 의사 소견/메모 스타일 */
+.physician-note {
+    background-color: #e8f4fd;
+    border-left: 5px solid #3498db;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-style: italic;
+    white-space: pre-wrap;
+}
+
+/* 약물 목록 스타일 */
+.med-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.med-list li {
+    background-color: #f9f9f9;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    border: 1px solid #eee;
+}
+
+/* 강조 스타일 */
+.highlight {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.normal { 
+    color: #27ae60;
+}
+
+/* 사이드바 내 환자 정보 및 메뉴 스타일 */
+.sidebar-divider {
+    border: none;
+    height: 1px;
+    background-color: #4a627a; /* 구분선 색상 조정 */
+    margin: 15px 0; /* 여백 조정 */
+}
+
+.disabled-menu li {
+    color: #7f8c8d !important;
+    cursor: not-allowed !important;
+    background-color: transparent !important;
+}
+.disabled-menu li:hover {
+    background-color: transparent !important;
+}
+
+.sidebar-patient-info {
+    margin-bottom: 15px; /* 구분선 위 여백 */
+    padding: 10px;
+    background-color: #2c3e50; /* 배경색 조정 */
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #ecf0f1;
+    display: none; /* 처음엔 숨김 */
+}
+/* style.css 파일에 추가 */
+.social-notes-item {
+    grid-column: 1 / -1; /* 그리드의 첫 번째 열부터 마지막 열까지 모두 차지 */
+    background-color: #f9f9f9; /* 다른 info-item과 약간 다른 배경색 (선택 사항) */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    margin-top: 10px; /* 위에 있는 항목들과 약간의 간격 */
+}
+
+.social-notes-item h4 { /* "사회력 참고사항" 제목 스타일 */
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.1em; /* 기본 h3보다 약간 작게 */
+    color: #34495e;
+}
+
+.social-notes-item ul {
+    list-style-position: inside; /* 목록 기호가 안쪽으로 */
+    padding-left: 0; /* 기본 패딩 제거 */
+    margin: 0;
+}
+
+.social-notes-item li {
+    margin-bottom: 4px;
+}
+
+/* --- 워터마크 스타일 수정 --- */
+.watermark {
+    position: fixed; /* 화면에 고정 */
+    bottom: 10px;    /* 아래쪽에서 10px */
+    left: 15px;      /* 왼쪽에서 15px (기존 right에서 left로 변경) */
+    padding: 8px 12px;
+    background-color: rgba(240, 240, 240, 0.15); /* 배경색 약간 더 밝게 조정 (선택 사항) */
+    color: #a0a0a0;     /* 글자색 약간 더 진하게 (선택 사항) */
+    font-size: 0.65em; /* 글자 크기 약간 더 작게 (선택 사항) */
+    text-align: left;  /* 텍스트 왼쪽 정렬 (기존 right에서 left로 변경) */
+    z-index: 1000;     
+    pointer-events: none; 
+    border-radius: 5px; 
+    line-height: 1.3;
+    display: flex; /* 로고와 텍스트를 가로로 배열 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+#watermarkLogo {
+    height: 30px; /* 로고 이미지 높이 (가로세로 비율 유지됨) - 원하는 크기로 조절 */
+    margin-right: 8px; /* 로고와 텍스트 사이 간격 */
+    opacity: 0.5; /* 로고 투명도 */
+}
+
+.watermark-text div {
+    opacity: 0.7; /* 글자 자체의 투명도 */
+}

@@ -1,0 +1,772 @@
+{
+  "schemaVersion": "4.1",
+  "caseMeta": {
+    "caseId": "patient-d",
+    "patientId": "patient-d",
+    "displayName": "김정남",
+    "sourceType": "docx",
+    "sourceFileName": "환자D_EMR 기입내용.docx",
+    "status": "draft",
+    "visibleInPatientList": true,
+    "createdAt": "",
+    "updatedAt": "2026-05-08",
+    "notesForBuilder": "원자료를 변경하지 않고, 화면 표시용 보강 레이어(lab flag, medication identification/reconciliation/order shell)를 추가한 draft."
+  },
+  "patientHeader": {
+    "patientId": "patient-d",
+    "mrn": "",
+    "name": "김정남",
+    "sex": "M",
+    "age": 32,
+    "ageSource": "provided",
+    "birthDate": "1993-06-20",
+    "heightCm": 180,
+    "weightKg": 70.4,
+    "bloodType": "",
+    "allergies": [
+      {
+        "substance": "NKDA",
+        "reaction": "",
+        "severity": "",
+        "recordedAt": ""
+      }
+    ],
+    "safetyBadges": [
+      {
+        "label": "NKDA",
+        "type": "allergy",
+        "sourceLevel": "original"
+      },
+      {
+        "label": "Palpitations",
+        "type": "symptom",
+        "sourceLevel": "original"
+      },
+      {
+        "label": "Near-syncope",
+        "type": "symptom",
+        "sourceLevel": "original"
+      },
+      {
+        "label": "K 낮음",
+        "type": "lab",
+        "sourceLevel": "reference_flag",
+        "basedOn": "K"
+      },
+      {
+        "label": "HR 상승",
+        "type": "vital",
+        "sourceLevel": "reference_flag",
+        "basedOn": "HR"
+      }
+    ]
+  },
+  "hospitalRecord": {
+    "visitType": "outpatient",
+    "admissionDate": "",
+    "admissionDateTime": "",
+    "visitDate": "2026-05-18",
+    "plannedDischargeDate": "",
+    "dischargeDate": "",
+    "dischargeDateTime": "",
+    "admissionRoute": "정신건강의학과 외래 추적관찰 중 약물면담 의뢰",
+    "department": "정신건강의학과",
+    "ward": "",
+    "room": "",
+    "attendingPhysician": "",
+    "insurance": "",
+    "maritalStatus": "기혼",
+    "residence": "",
+    "isolation": "",
+    "fallRisk": "",
+    "diet": "",
+    "codeStatus": ""
+  },
+  "clinicalRecords": {
+    "chiefComplaint": "최근 심장이 두근거리고 순간적으로 핑 도는 느낌이 있음",
+    "admissionReason": "우울증 외래 추적관찰 중인 환자로, 최근 며칠 사이 palpitations, dizziness, near-syncope episode 발생하여 진료 전 약물면담 의뢰됨.",
+    "erRecord": {
+      "dateTime": "",
+      "arrivalMode": "",
+      "triageLevel": "",
+      "triageVital": "",
+      "initialAssessment": "",
+      "management": "",
+      "disposition": ""
+    },
+    "admissionNote": {
+      "dateTime": "",
+      "authorRole": "physician",
+      "department": "",
+      "freeText": ""
+    },
+    "progressNotes": [],
+    "nursingNotes": [
+      {
+        "dateTime": "2026-05-18T00:00:00+09:00",
+        "noteType": "OPD Triage Nursing Note",
+        "S": "최근 수일간 intermittent palpitations 및 dizziness 호소함. 오늘 아침 순간적으로 핑 도는 느낌 있었다고 진술함.",
+        "O": "현재 chest pain 없음. 불안감은 약간 있으나 coherent하고 cooperative한 상태임.",
+        "A": "최근 타과 방문 및 추가 약 복용 가능성 있어 medication review 요청함.",
+        "P": "Medication review 요청."
+      }
+    ],
+    "dischargePlanningNotes": [],
+    "consultNotes": [],
+    "dischargeSummary": {
+      "dateTime": "",
+      "freeText": ""
+    }
+  },
+  "diagnosisTimeline": [
+    {
+      "dateTime": "",
+      "diagnosis": "Major depressive disorder",
+      "status": "active",
+      "department": "정신건강의학과",
+      "sourceLevel": "original",
+      "note": "4개월 전 진단"
+    },
+    {
+      "dateTime": "2026-05-18T00:00:00+09:00",
+      "diagnosis": "Recent palpitations / dizziness",
+      "status": "active_symptom",
+      "department": "정신건강의학과",
+      "sourceLevel": "original",
+      "note": "near-syncope episode 발생하여 약물면담 의뢰"
+    }
+  ],
+  "problemList": [
+    {
+      "problem": "Major depressive disorder",
+      "status": "active",
+      "onsetDate": "4개월 전",
+      "lastUpdated": "",
+      "note": ""
+    },
+    {
+      "problem": "Insomnia symptoms",
+      "status": "active",
+      "onsetDate": "",
+      "lastUpdated": "",
+      "note": ""
+    },
+    {
+      "problem": "Recent palpitations / dizziness",
+      "status": "active",
+      "onsetDate": "최근 수일",
+      "lastUpdated": "2026-05-18",
+      "note": "near-syncope 양상"
+    },
+    {
+      "problem": "Medication review needed",
+      "status": "active",
+      "onsetDate": "2026-05-18",
+      "lastUpdated": "",
+      "note": "외부 의료기관 처방 약물 여부 포함"
+    }
+  ],
+  "pastMedicalHistory": [
+    {
+      "condition": "Major depressive disorder",
+      "diagnosedDate": "4개월 전",
+      "status": "active",
+      "treatment": "on med",
+      "note": ""
+    },
+    {
+      "condition": "Dyslipidemia",
+      "diagnosedDate": "",
+      "status": "active",
+      "treatment": "Rosuvastatin",
+      "note": ""
+    },
+    {
+      "condition": "Recent upper respiratory infection / sinusitis treatment history",
+      "diagnosedDate": "recent",
+      "status": "history",
+      "treatment": "",
+      "note": ""
+    }
+  ],
+  "surgicalHistory": [],
+  "socialHistory": {
+    "smoking": "(-)",
+    "alcohol": "거의 하지 않음",
+    "occupation": "",
+    "diet": "식사 감소 가능성",
+    "exercise": "",
+    "sleep": "irregular sleep (+)",
+    "livingWith": "",
+    "caregiver": "",
+    "healthSupplements": "",
+    "adherence": "외부 의료기관 처방 약물 여부 포함하여 medication reconciliation 시행 예정",
+    "coffee": "Coffee intake frequent",
+    "stress": "최근 업무 스트레스 증가"
+  },
+  "familyHistory": [],
+  "hpi": {
+    "onset": "최근 수일",
+    "location": "심혈관/신경계 증상",
+    "duration": "며칠 사이",
+    "character": "intermittent palpitations, dizziness, almost fainting sensation",
+    "aggravatingFactors": "최근 스트레스, 피로, 카페인 섭취 증가 또는 컨디션 저하 가능성",
+    "relievingFactors": "",
+    "associatedSymptoms": "fatigue, appetite decreased, mild anxiety/restlessness, irregular sleep",
+    "timelineText": "32세 남성 환자. Major depressive disorder로 본과 외래 추적관찰 중임. 최근 수일간 intermittent palpitations, dizziness, almost fainting sensation 호소함. 환자 스스로는 최근 스트레스, 피로, 카페인 섭취 증가 또는 컨디션 저하 가능성으로 생각 중임. 현재 chest pain은 부인하며, syncope는 없음. 최근 타과 방문 및 추가 약 복용 가능성 있어 medication review 위해 약사 면담 시행 예정임."
+  },
+  "ros": {
+    "general": [
+      "fatigue (+)"
+    ],
+    "respiratory": [],
+    "cardiovascular": [
+      "palpitations (+)",
+      "presyncope (+/-)",
+      "chest pain (-)",
+      "syncope (-)"
+    ],
+    "gi": [
+      "appetite decreased (+)"
+    ],
+    "gu": [],
+    "neuro": [
+      "dizziness (+)"
+    ],
+    "psychiatric": [
+      "mild anxiety/restlessness (+)",
+      "depressed mood improved compared with initial visit"
+    ],
+    "sleep": [
+      "irregular sleep (+)"
+    ]
+  },
+  "vitalSigns": [
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "외래",
+      "bp": "106/68 mmHg",
+      "sbp": 106,
+      "dbp": 68,
+      "hr": 102,
+      "rr": 18,
+      "bt": 37.1,
+      "spo2": 99,
+      "o2Device": "room air",
+      "weightKg": 70.4,
+      "heightCm": 180,
+      "bmi": null,
+      "painScore": null,
+      "glucosePOCT": null,
+      "flags": [
+        "HR_H"
+      ]
+    }
+  ],
+  "labResults": [
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "CBC",
+      "item": "WBC",
+      "result": 7.1,
+      "displayResult": "7.1",
+      "unit": "x10³/µL",
+      "refLow": 4.0,
+      "refHigh": 10.0,
+      "referenceText": "4.0-10.0 x10³/µL",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "CBC",
+      "item": "Hb",
+      "result": 14.4,
+      "displayResult": "14.4",
+      "unit": "g/dL",
+      "refLow": 13.0,
+      "refHigh": 18.0,
+      "referenceText": "M: 13.0-18.0 g/dL",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "CBC",
+      "item": "Platelet",
+      "result": 236,
+      "displayResult": "236",
+      "unit": "x10³/µL",
+      "refLow": 150,
+      "refHigh": 450,
+      "referenceText": "150-450 x10³/µL",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Chemistry",
+      "item": "Na",
+      "result": 138,
+      "displayResult": "138",
+      "unit": "mEq/L",
+      "refLow": 135,
+      "refHigh": 145,
+      "referenceText": "135-145 mEq/L",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Chemistry",
+      "item": "K",
+      "result": 3.4,
+      "displayResult": "3.4",
+      "unit": "mEq/L",
+      "refLow": 3.7,
+      "refHigh": 5.2,
+      "referenceText": "3.7-5.2 mEq/L",
+      "flag": "L",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Chemistry",
+      "item": "Cl",
+      "result": 102,
+      "displayResult": "102",
+      "unit": "mEq/L",
+      "refLow": 96,
+      "refHigh": 106,
+      "referenceText": "96-106 mEq/L",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Chemistry",
+      "item": "CO2",
+      "result": 24,
+      "displayResult": "24",
+      "unit": "mEq/L",
+      "refLow": 23,
+      "refHigh": 29,
+      "referenceText": "23-29 mEq/L",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Chemistry",
+      "item": "BUN",
+      "result": 14,
+      "displayResult": "14",
+      "unit": "mg/dL",
+      "refLow": 6,
+      "refHigh": 20,
+      "referenceText": "6-20 mg/dL",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Chemistry",
+      "item": "SCr",
+      "result": 0.86,
+      "displayResult": "0.86",
+      "unit": "mg/dL",
+      "refLow": 0.6,
+      "refHigh": 1.3,
+      "referenceText": "0.6-1.3 mg/dL",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Chemistry",
+      "item": "Mg",
+      "result": 1.8,
+      "displayResult": "1.8",
+      "unit": "mg/dL",
+      "refLow": 1.7,
+      "refHigh": 2.2,
+      "referenceText": "1.7-2.2 mg/dL",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Chemistry",
+      "item": "AST",
+      "result": 20,
+      "displayResult": "20",
+      "unit": "U/L",
+      "refLow": 8,
+      "refHigh": 33,
+      "referenceText": "8-33 U/L",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Chemistry",
+      "item": "ALT",
+      "result": 18,
+      "displayResult": "18",
+      "unit": "U/L",
+      "refLow": 4,
+      "refHigh": 36,
+      "referenceText": "4-36 U/L",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    },
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "label": "Recent Laboratory Findings",
+      "category": "Thyroid",
+      "item": "TSH",
+      "result": 1.41,
+      "displayResult": "1.41",
+      "unit": "µIU/mL",
+      "refLow": 0.4,
+      "refHigh": 4.0,
+      "referenceText": "0.4-4.0 µIU/mL",
+      "flag": "",
+      "flagSource": "education_general_reference",
+      "critical": false,
+      "note": "",
+      "referenceProfileVersion": "general-adult-reference-v1.1",
+      "sourceLevel": "original_value_with_reference_flag"
+    }
+  ],
+  "diagnosticTests": [],
+  "homeMedications": [
+    {
+      "drugName": "Escitalopram",
+      "ingredient": "Escitalopram",
+      "dose": "20 mg",
+      "route": "PO",
+      "frequency": "qAM",
+      "schedule": "아침",
+      "duration": "",
+      "indication": "",
+      "originalText": "Escitalopram 20 mg PO qAM"
+    },
+    {
+      "drugName": "Trazodone",
+      "ingredient": "Trazodone",
+      "dose": "50 mg",
+      "route": "PO",
+      "frequency": "qHS",
+      "schedule": "취침 전",
+      "duration": "",
+      "indication": "",
+      "originalText": "Trazodone 50 mg PO qHS"
+    },
+    {
+      "drugName": "Rosuvastatin",
+      "ingredient": "Rosuvastatin",
+      "dose": "10 mg",
+      "route": "PO",
+      "frequency": "qHS",
+      "schedule": "취침 전",
+      "duration": "",
+      "indication": "",
+      "originalText": "Rosuvastatin 10 mg PO qHS"
+    }
+  ],
+  "medicationReconciliation": [
+    {
+      "drugName": "Escitalopram",
+      "homeDose": "20 mg",
+      "homeRoute": "PO",
+      "homeFrequency": "qAM",
+      "currentDose": "20 mg",
+      "currentRoute": "PO",
+      "currentFrequency": "qAM",
+      "reconciliationStatus": "current_medication_listed",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "sourceLevel": "derived_from_current_medication_list",
+      "note": "원자료 Current Medication List를 EMR reconciliation 화면에 표시하기 위해 재배치"
+    },
+    {
+      "drugName": "Trazodone",
+      "homeDose": "50 mg",
+      "homeRoute": "PO",
+      "homeFrequency": "qHS",
+      "currentDose": "50 mg",
+      "currentRoute": "PO",
+      "currentFrequency": "qHS",
+      "reconciliationStatus": "current_medication_listed",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "sourceLevel": "derived_from_current_medication_list",
+      "note": "원자료 Current Medication List를 EMR reconciliation 화면에 표시하기 위해 재배치"
+    },
+    {
+      "drugName": "Rosuvastatin",
+      "homeDose": "10 mg",
+      "homeRoute": "PO",
+      "homeFrequency": "qHS",
+      "currentDose": "10 mg",
+      "currentRoute": "PO",
+      "currentFrequency": "qHS",
+      "reconciliationStatus": "current_medication_listed",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "sourceLevel": "derived_from_current_medication_list",
+      "note": "원자료 Current Medication List를 EMR reconciliation 화면에 표시하기 위해 재배치"
+    }
+  ],
+  "medicationOrders": [
+    {
+      "orderId": "ORD-001",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "active_outpatient",
+      "drugName": "Escitalopram",
+      "ingredient": "Escitalopram",
+      "dose": "20 mg",
+      "route": "PO",
+      "frequency": "qAM",
+      "duration": "",
+      "schedule": "아침",
+      "status": "active_current",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_original_medication_list",
+      "note": "원자료 Current Medication List를 처방오더 형태로 표시"
+    },
+    {
+      "orderId": "ORD-002",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "active_outpatient",
+      "drugName": "Trazodone",
+      "ingredient": "Trazodone",
+      "dose": "50 mg",
+      "route": "PO",
+      "frequency": "qHS",
+      "duration": "",
+      "schedule": "취침 전",
+      "status": "active_current",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_original_medication_list",
+      "note": "원자료 Current Medication List를 처방오더 형태로 표시"
+    },
+    {
+      "orderId": "ORD-003",
+      "orderDate": "2026-05-18",
+      "orderDateTime": "",
+      "orderType": "active_outpatient",
+      "drugName": "Rosuvastatin",
+      "ingredient": "Rosuvastatin",
+      "dose": "10 mg",
+      "route": "PO",
+      "frequency": "qHS",
+      "duration": "",
+      "schedule": "취침 전",
+      "status": "active_current",
+      "prescriber": "",
+      "indication": "",
+      "sourceLevel": "derived_from_original_medication_list",
+      "note": "원자료 Current Medication List를 처방오더 형태로 표시"
+    }
+  ],
+  "medicationAdministrationRecords": {
+    "status": "source_not_provided",
+    "sourceLevel": "empty_emr_module",
+    "displayMessage": "원자료에 실제 투약시각/MAR 기록이 없어 빈 EMR 모듈로 표시합니다.",
+    "records": []
+  },
+  "dischargeMedications": [],
+  "procedures": [],
+  "consultations": [],
+  "pharmacyReviewRequests": [
+    {
+      "date": "2026-05-18",
+      "dateTime": "",
+      "requestType": "Medication Review Request",
+      "freeText": "최근 심계항진, 어지럼, near-syncope 양상 있어 약물 관련성 평가 필요함. 현재 escitalopram 및 trazodone 복용 중이며, 외부 의료기관 처방 약물 여부 포함하여 medication reconciliation 시행 예정임. 최근 식사 감소 및 카페인 섭취 증가 가능성 있음. 필요 시 ECG 포함 추가 평가 고려 필요."
+    }
+  ],
+  "dataCompleteness": {
+    "doNotAutoFill": false,
+    "reviewStatus": "draft_from_source_with_display_augmentation",
+    "missingFields": [
+      "등록번호",
+      "보험",
+      "거주지",
+      "담당의",
+      "ECG 결과",
+      "외부 의료기관 처방 약물 상세",
+      "약물 식별 외형정보",
+      "실제 MAR 투약시각",
+      "진단검사 결과"
+    ]
+  },
+  "dataPolicy": {
+    "originalCasePreservation": "원자료의 임상 내용, 날짜, 검사값, 약물명, 용량, 환자 발언을 수정하지 않는다.",
+    "augmentationPolicy": "실제 EMR 화면 품질을 위한 표시 보강만 허용한다. 보강 정보는 sourceLevel로 구분한다.",
+    "allowedAugmentations": [
+      "일반 교육용 참고치 기반 lab flag",
+      "원자료 약물목록을 medication order 화면으로 재배치",
+      "원자료 약물목록 기반 medication identification shell 생성",
+      "원자료 약물목록 기반 medication reconciliation shell 생성",
+      "원자료가 없는 MAR은 빈 EMR 모듈로 표시"
+    ],
+    "forbiddenAugmentations": [
+      "새로운 진단명 생성",
+      "원자료에 없는 처방 추가",
+      "원자료에 없는 투약시각 생성",
+      "정답, 교수자 가이드, 루브릭, 힌트 삽입"
+    ]
+  },
+  "medicationIdentification": [
+    {
+      "recordedAt": "",
+      "reportedMedication": "Escitalopram",
+      "identifiedDrug": "Escitalopram",
+      "strength": "20 mg",
+      "dosageForm": "",
+      "appearance": "",
+      "patientReportedUse": "아침",
+      "matchedToHomeMedicationList": true,
+      "verificationStatus": "식별 외형 원자료 미기재",
+      "sourceLevel": "derived_from_medication_name_only",
+      "note": "약물명/용량은 원자료 Current Medication List에서 가져옴. 외형정보는 추가하지 않음."
+    },
+    {
+      "recordedAt": "",
+      "reportedMedication": "Trazodone",
+      "identifiedDrug": "Trazodone",
+      "strength": "50 mg",
+      "dosageForm": "",
+      "appearance": "",
+      "patientReportedUse": "취침 전",
+      "matchedToHomeMedicationList": true,
+      "verificationStatus": "식별 외형 원자료 미기재",
+      "sourceLevel": "derived_from_medication_name_only",
+      "note": "약물명/용량은 원자료 Current Medication List에서 가져옴. 외형정보는 추가하지 않음."
+    },
+    {
+      "recordedAt": "",
+      "reportedMedication": "Rosuvastatin",
+      "identifiedDrug": "Rosuvastatin",
+      "strength": "10 mg",
+      "dosageForm": "",
+      "appearance": "",
+      "patientReportedUse": "취침 전",
+      "matchedToHomeMedicationList": true,
+      "verificationStatus": "식별 외형 원자료 미기재",
+      "sourceLevel": "derived_from_medication_name_only",
+      "note": "약물명/용량은 원자료 Current Medication List에서 가져옴. 외형정보는 추가하지 않음."
+    }
+  ],
+  "timeline": [
+    {
+      "dateTime": "",
+      "category": "diagnosis",
+      "title": "Major depressive disorder 진단",
+      "sourceLevel": "original",
+      "summary": "4개월 전 진단"
+    },
+    {
+      "dateTime": "2026-05-18T00:00:00+09:00",
+      "category": "triage",
+      "title": "OPD triage nursing note",
+      "sourceLevel": "original",
+      "summary": "최근 수일간 palpitations 및 dizziness, near-syncope 양상 호소"
+    },
+    {
+      "dateTime": "2026-05-18T00:00:00+09:00",
+      "category": "pharmacy",
+      "title": "Medication review request",
+      "sourceLevel": "original",
+      "summary": "escitalopram/trazodone 복용 중, 외부 처방 포함 medication reconciliation 예정"
+    }
+  ],
+  "displayPolicy": {
+    "showEducationTerms": false,
+    "showInstructorGuide": false,
+    "showAnswerSubmission": false,
+    "showLabFlags": true,
+    "showReferenceRanges": true,
+    "showDerivedMedicationReconciliation": true,
+    "showEmptyEmrModules": true,
+    "emptyStateText": "원자료에 미기재"
+  }
+}

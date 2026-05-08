@@ -1,0 +1,242 @@
+{
+  "version": "general-adult-reference-v1",
+  "profileName": "교육용 일반 성인 참고범위 프로파일",
+  "scope": "Pure EMR 시뮬레이터 화면에서 high/low 표시를 하기 위한 기본값. 병원/검사실 기준으로 언제든 교체 가능.",
+  "rules": {
+    "doNotOverwriteOriginalCaseValue": true,
+    "storeComputedFlagSeparately": true,
+    "flagSource": "education_general_reference",
+    "sexAgeSpecificWhenAvailable": true,
+    "noFlagWhenReferenceUnavailable": true
+  },
+  "references": [
+    {
+      "name": "UCSF Health - Comprehensive Metabolic Panel",
+      "url": "https://www.ucsfhealth.org/care/medical-tests/comprehensive-metabolic-panel",
+      "usedFor": [
+        "Na",
+        "K",
+        "Cl",
+        "CO2",
+        "BUN",
+        "SCr",
+        "AST",
+        "ALT"
+      ]
+    },
+    {
+      "name": "Mayo Clinic Laboratories - Comprehensive Metabolic Panel",
+      "url": "https://www.mayocliniclabs.com/test-catalog/overview/113631",
+      "usedFor": [
+        "Na",
+        "K",
+        "Cl",
+        "CO2"
+      ]
+    },
+    {
+      "name": "Mayo Clinic Laboratories - Uric Acid, Serum",
+      "url": "https://www.mayocliniclabs.com/test-catalog/overview/8440",
+      "usedFor": [
+        "Uric acid"
+      ]
+    },
+    {
+      "name": "Labcorp - NT-proBNP",
+      "url": "https://www.labcorp.com/tests/143000/nt-probnp",
+      "usedFor": [
+        "NT-proBNP"
+      ]
+    },
+    {
+      "name": "UCSF Health - CBC blood test",
+      "url": "https://www.ucsfhealth.org/care/medical-tests/cbc-blood-test",
+      "usedFor": [
+        "WBC",
+        "Hb",
+        "Platelet"
+      ]
+    },
+    {
+      "name": "MedlinePlus - LDL cholesterol levels",
+      "url": "https://medlineplus.gov/ldlthebadcholesterol.html",
+      "usedFor": [
+        "LDL-C"
+      ]
+    }
+  ],
+  "items": {
+    "Na": {
+      "displayName": "Sodium",
+      "unit": "mEq/L",
+      "refLow": 135,
+      "refHigh": 145,
+      "referenceText": "135-145 mEq/L"
+    },
+    "K": {
+      "displayName": "Potassium",
+      "unit": "mEq/L",
+      "refLow": 3.7,
+      "refHigh": 5.2,
+      "referenceText": "3.7-5.2 mEq/L"
+    },
+    "Cl": {
+      "displayName": "Chloride",
+      "unit": "mEq/L",
+      "refLow": 96,
+      "refHigh": 106,
+      "referenceText": "96-106 mEq/L"
+    },
+    "CO2": {
+      "displayName": "Carbon dioxide",
+      "unit": "mEq/L",
+      "refLow": 23,
+      "refHigh": 29,
+      "referenceText": "23-29 mEq/L"
+    },
+    "BUN": {
+      "displayName": "Blood urea nitrogen",
+      "unit": "mg/dL",
+      "refLow": 6,
+      "refHigh": 20,
+      "referenceText": "6-20 mg/dL"
+    },
+    "SCr": {
+      "displayName": "Serum creatinine",
+      "unit": "mg/dL",
+      "refLow": 0.6,
+      "refHigh": 1.3,
+      "referenceText": "0.6-1.3 mg/dL"
+    },
+    "eGFR": {
+      "displayName": "eGFR",
+      "unit": "mL/min/1.73m²",
+      "refLow": 60,
+      "refHigh": null,
+      "referenceText": ">=60 mL/min/1.73m²"
+    },
+    "Uric acid": {
+      "displayName": "Uric acid",
+      "unit": "mg/dL",
+      "sexSpecific": {
+        "M": {
+          "refLow": 3.7,
+          "refHigh": 8.0,
+          "referenceText": "M >=16y: 3.7-8.0 mg/dL"
+        },
+        "F": {
+          "refLow": 2.7,
+          "refHigh": 6.1,
+          "referenceText": "F >=13y: 2.7-6.1 mg/dL"
+        }
+      }
+    },
+    "NT-proBNP": {
+      "displayName": "NT-proBNP",
+      "unit": "pg/mL",
+      "ageSexSpecific": [
+        {
+          "sex": "M",
+          "minAge": 55,
+          "maxAge": 64,
+          "refLow": 0,
+          "refHigh": 210,
+          "referenceText": "M 55-64y: 0-210 pg/mL"
+        }
+      ],
+      "fallback": {
+        "refLow": 0,
+        "refHigh": 125,
+        "referenceText": "adult fallback: 0-125 pg/mL"
+      },
+      "interpretiveThresholds": [
+        {
+          "label": "acute HF rule-out",
+          "operator": "<",
+          "value": 300
+        },
+        {
+          "label": "acute HF rule-in, age 50-75",
+          "operator": ">=",
+          "value": 900
+        }
+      ]
+    },
+    "WBC": {
+      "displayName": "White blood cell",
+      "unit": "x10³/µL",
+      "refLow": 4.0,
+      "refHigh": 10.0,
+      "referenceText": "4.0-10.0 x10³/µL; education display profile"
+    },
+    "Hb": {
+      "displayName": "Hemoglobin",
+      "unit": "g/dL",
+      "sexSpecific": {
+        "M": {
+          "refLow": 13.0,
+          "refHigh": 18.0,
+          "referenceText": "M: 13.0-18.0 g/dL"
+        },
+        "F": {
+          "refLow": 12.0,
+          "refHigh": 16.0,
+          "referenceText": "F: 12.0-16.0 g/dL"
+        }
+      }
+    },
+    "Platelet": {
+      "displayName": "Platelet",
+      "unit": "x10³/µL",
+      "refLow": 150,
+      "refHigh": 450,
+      "referenceText": "150-450 x10³/µL; education display profile"
+    },
+    "AST": {
+      "displayName": "AST",
+      "unit": "U/L",
+      "refLow": 8,
+      "refHigh": 33,
+      "referenceText": "8-33 U/L"
+    },
+    "ALT": {
+      "displayName": "ALT",
+      "unit": "U/L",
+      "refLow": 4,
+      "refHigh": 36,
+      "referenceText": "4-36 U/L"
+    },
+    "LDL-C": {
+      "displayName": "LDL cholesterol",
+      "unit": "mg/dL",
+      "refLow": null,
+      "refHigh": 100,
+      "referenceText": "optimal <100 mg/dL; 130-159 borderline high",
+      "categoryThresholds": [
+        {
+          "label": "optimal",
+          "max": 99
+        },
+        {
+          "label": "near optimal",
+          "min": 100,
+          "max": 129
+        },
+        {
+          "label": "borderline high",
+          "min": 130,
+          "max": 159
+        },
+        {
+          "label": "high",
+          "min": 160,
+          "max": 189
+        },
+        {
+          "label": "very high",
+          "min": 190
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,554 @@
+{
+    "patients": {
+      "P001": {
+        "demographics": {
+          "name": "박영숙 (가명)",
+          "patientIdDisplay": "P001 (570315-2XXXXXX)",
+          "ageGender": "68세/여성",
+          "allergy": "특이사항 기록 없음 (NKDA)",
+          "smoking": "비흡연",
+          "drinking": "월 1-2회, 사교적 소량 음주",
+          "occupation": "은퇴한 초등학교 교사",
+          "diagnosis": [
+            "C50.9 상세불명의 유방의 악성 신생물 (재발성, 전이성)",
+            "M81.0 폐경 후 골다공증",
+            "E11.9 상세불명을 동반하지 않은 인슐린 비의존 당뇨병",
+            "I10.9 상세불명의 본태성 고혈압"
+          ]
+        },
+        "visitHistory": [
+          {
+            "visitDate": "2025-05-07",
+            "department": "종양내과",
+            "visitType": "외래 (Outpatient)",
+            "reasonForVisit": "유방암 표적치료제 부작용 상담 및 정기 추적 관찰, 약물 처방 지속",
+            "historyOfPresentIllness": "환자는 현재 Fulvestrant + Palbociclib 치료 중으로, 최근 피로감과 식욕부진을 호소함. 월 1회 Ibandronate 제제로 변경 후 첫 추적 관찰. 기타 만성질환 관련 특이 증상 호소는 이전과 유사함.",
+            "physicalExam": {
+              "height": "158 cm",
+              "weight": "65 kg",
+              "bmi": "26.0 kg/m² (과체중)",
+              "bp": "145/85 mmHg (우측 팔, 좌위)",
+              "hr": "72 회/분 (regular)",
+              "rr": "16 회/분",
+              "bt": "36.7 °C",
+              "ecogPs": "1",
+              "generalAppearance": "Alert, mild fatigue noted."
+            },
+            "physicianNote": "환자 상태 전반적으로 안정적이나, Palbociclib 관련 부작용 관리 필요. 혈압 및 혈당 조절 지속 교육."
+          },
+          {
+            "visitDate": "2025-04-21",
+            "department": "종양내과 주사센터",
+            "visitType": "항암주사 (Chemo Day Ward)",
+            "procedure": "Fulvestrant 500mg IM (Lt.gluteal, Rt.gluteal 각 250mg)",
+            "physicianNote": "Vital stable pre/post injection. Administered as per protocol. Patient tolerated well. No acute adverse events observed during stay (approx. 1 hr). Discharged in good condition. Next injection scheduled in 4 weeks."
+          },
+          {
+            "visitDate": "2025-04-07",
+            "department": "종양내과",
+            "visitType": "외래 (Outpatient)",
+            "reasonForVisit": "정기 추적 관찰 및 약물 변경 상담",
+            "physicalExam": {
+                "height": "158 cm",
+                "weight": "64.5 kg",
+                "bmi": "25.8 kg/m² (과체중)",
+                "bp": "140/84 mmHg (우측 팔, 좌위)",
+                "hr": "74 회/분 (regular)",
+                "rr": "17 회/분",
+                "bt": "36.6 °C"
+            },
+            "physicianNote": "Breast ca. on Palbociclib/Fulvestrant, generally stable. Mild fatigue reported.\nBP 142/88, A1c 7.7% - lifestyle mod emphasized.\nOsteoporosis: Pt c/o MSK pain and inconvenience of weekly dosing.\nChanged Risedronate 70mg QW to Ibandronate 150mg QM for improved convenience and potential adherence. Counseling on proper administration provided.\nRTC 4 weeks with labs (CBC/diff, Chem, LFT, CA15-3, VitD, HbA1c, UA)."
+          }
+        ],
+        "imagingResults": [
+          {
+            "date": "2023-11-20",
+            "category": "영상의학 검사/유방촬영및초음파",
+            "testName": "유방촬영술 및 유방 초음파 (Mammography & Breast USG)",
+            "summary": "(2024년 11월 전신 PET-CT 기준으로) 수술 받은 우측 유방에 새로운 종괴 또는 국소 재발 의심 소견 없음."
+          },
+          {
+            "date": "2024-11-10",
+            "category": "핵의학 검사 / PET-CT",
+            "testName": "전신 PET-CT (Whole Body PET-CT)",
+            "summary": "간, 폐, 다발성 뼈에 원격 전이를 동반한 유방암 재발 소견."
+          },
+          {
+            "date": "2025-01-20",
+            "category": "골밀도 검사 / DXA",
+            "testName": "골밀도 검사 (Bone Mineral Densitometry - DXA)",
+            "summary": "WHO 기준상 골다공증 진단 (요추 T-score: -2.8, 대퇴골 경부 T-score: -2.9). 2년 전(2023-01) 검사 대비 골밀도 소폭 감소 소견. 골절 위험도 높음."
+          },
+          {
+            "date": "2025-03-15",
+            "category": "영상의학 검사 / CT",
+            "testName": "CT - 복부,골반,흉부 (CT Abdomen-Pelvis & Chest)",
+            "summary": "기존 간, 폐, 뼈의 다발성 전이 병변들은 이전(2024-11) PET-CT 대비 전반적으로 치료에 대한 부분 반응 또는 안정 상태 보임. 새로운 전이 의심 병변 없음."
+          },
+          {
+            "date": "2025-03-20",
+            "category": "핵의학 검사 / Bone Scan",
+            "testName": "전신 골주사 검사 (Whole Body Bone Scan)",
+            "summary": "다발성 골 전이 소견, 이전(2024-11) 대비 치료에 대한 부분 반응 시사. 새로운 골 전이 의심 병변 없음. 다발성 관절의 퇴행성 변화는 지속적으로 관찰됨."
+          }
+        ],
+        "labRecords": [
+          {
+            "date": "2025-05-05",
+            "cbc": [
+              {"item": "WBC", "result": "3.5", "unit": "x10³/µL", "ref": "4.0 - 10.0", "highlight": true},
+              {"item": "Seg. Neutrophil (%)", "result": "45.0", "unit": "%", "ref": "40-74"}, 
+              {"item": "Lymphocyte (%)", "result": "40.0", "unit": "%", "ref": "19-48"}, 
+              {"item": "Monocyte (%)", "result": "10.0", "unit": "%", "ref": "3.4-9.0", "highlight": true}, 
+              {"item": "Eosinophil (%)", "result": "4.0", "unit": "%", "ref": "0-7"}, 
+              {"item": "Basophil (%)", "result": "1.0", "unit": "%", "ref": "0-1.5"}, 
+              {"item": "Neutrophil (Absolute #)", "result": "1.4", "unit": "x10³/µL", "ref": "1.8 - 7.0", "highlight": true},
+              {"item": "Lymphocyte (Absolute #)", "result": "1.5", "unit": "x10³/µL", "ref": "0.8-3.9"}, 
+              {"item": "Monocyte (Absolute #)", "result": "0.4", "unit": "x10³/µL", "ref": "0.2-0.8"}, 
+              {"item": "Eosinophil (Absolute #)", "result": "0.15", "unit": "x10³/µL", "ref": "0-0.5"}, 
+              {"item": "Basophil (Absolute #)", "result": "0.05", "unit": "x10³/µL", "ref": "0-0.1"}, 
+              {"item": "RBC", "result": "3.8", "unit": "x10⁶/µL", "ref": "4.0 - 5.2 (여성)", "highlight": true},
+              {"item": "Hemoglobin", "result": "11.5", "unit": "g/dL", "ref": "12.0 - 16.0 (여성)", "highlight": true},
+              {"item": "Hematocrit", "result": "34.0", "unit": "%", "ref": "36.0 - 46.0 (여성)", "highlight": true},
+              {"item": "MCV", "result": "89.5", "unit": "fL", "ref": "80.0 - 100.0"},
+              {"item": "MCH", "result": "30.3", "unit": "pg", "ref": "26.0 - 34.0"},
+              {"item": "MCHC", "result": "33.8", "unit": "g/dL", "ref": "32.0 - 36.0"},
+              {"item": "RDW", "result": "13.5", "unit": "%", "ref": "11.5 - 14.5"},
+              {"item": "Platelet Count", "result": "140", "unit": "x10³/µL", "ref": "150 - 450", "highlight": true},
+              {"item": "ESR (Erythrocyte Sed. Rate)", "result": "25", "unit": "mm/hr", "ref": "0 - 20 (여성)", "highlight": true},
+              {"item": "CRP (C-Reactive Protein)", "result": "6.0", "unit": "mg/L", "ref": "< 5.0", "highlight": true} 
+            ],
+            "chemistry": [
+              {"item": "Glucose, Fasting", "result": "150", "unit": "mg/dL", "ref": "70 - 99", "highlight": true},
+              {"item": "BUN (Blood Urea Nitrogen)", "result": "22", "unit": "mg/dL", "ref": "8 - 23"},
+              {"item": "Creatinine", "result": "1.1", "unit": "mg/dL", "ref": "0.5 - 0.9 (여성)", "highlight": true},
+              {"item": "eGFR (MDRD)", "result": "55", "unit": "mL/min/1.73m²", "ref": "> 60", "highlight": true},
+              {"item": "BUN/Creatinine Ratio", "result": "20", "unit": "", "ref": "10-20"}, 
+              {"item": "Sodium (Na)", "result": "140", "unit": "mEq/L", "ref": "135 - 145"},
+              {"item": "Potassium (K)", "result": "4.2", "unit": "mEq/L", "ref": "3.5 - 5.1"},
+              {"item": "Chloride (Cl)", "result": "102", "unit": "mEq/L", "ref": "96 - 108"},
+              {"item": "Total CO2 (Bicarbonate)", "result": "25", "unit": "mEq/L", "ref": "22 - 32"},
+              {"item": "Anion Gap", "result": "13", "unit": "mEq/L", "ref": "8-16"}, 
+              {"item": "Calcium", "result": "8.8", "unit": "mg/dL", "ref": "8.6 - 10.2"},
+              {"item": "Phosphorus (Inorganic)", "result": "3.5", "unit": "mg/dL", "ref": "2.5 - 4.5"},
+              {"item": "Magnesium", "result": "2.0", "unit": "mg/dL", "ref": "1.6 - 2.6"},
+              {"item": "Total Protein", "result": "7.0", "unit": "g/dL", "ref": "6.4 - 8.3"},
+              {"item": "Albumin", "result": "3.8", "unit": "g/dL", "ref": "3.5 - 5.2"},
+              {"item": "Globulin (Calculated)", "result": "3.2", "unit": "g/dL", "ref": "2.3 - 3.5"},
+              {"item": "A/G Ratio", "result": "1.19", "unit": "", "ref": "1.2-2.2", "highlight": true}, 
+              {"item": "AST (SGOT)", "result": "45", "unit": "U/L", "ref": "0 - 40", "highlight": true},
+              {"item": "ALT (SGPT)", "result": "50", "unit": "U/L", "ref": "0 - 40", "highlight": true},
+              {"item": "ALP (Alkaline Phosphatase)", "result": "120", "unit": "U/L", "ref": "35 - 105 (여성)", "highlight": true},
+              {"item": "GGT (Gamma-GT)", "result": "55", "unit": "U/L", "ref": "9-48 (여성)", "highlight": true}, 
+              {"item": "Total Bilirubin", "result": "0.8", "unit": "mg/dL", "ref": "0.2 - 1.2"},
+              {"item": "Direct Bilirubin", "result": "0.2", "unit": "mg/dL", "ref": "0-0.3"}, 
+              {"item": "LDH (Lactate Dehydrogenase)", "result": "200", "unit": "U/L", "ref": "135 - 225"},
+              {"item": "Uric Acid", "result": "5.5", "unit": "mg/dL", "ref": "2.4 - 5.7 (여성)"},
+              {"item": "CK (Creatine Kinase)", "result": "150", "unit": "U/L", "ref": "26-192 (여성)"} 
+            ],
+            "lipids": [
+              {"item": "Total Cholesterol", "result": "210", "unit": "mg/dL", "ref": "< 200", "highlight": true},
+              {"item": "Triglyceride", "result": "160", "unit": "mg/dL", "ref": "< 150", "highlight": true},
+              {"item": "HDL-Cholesterol", "result": "45", "unit": "mg/dL", "ref": "> 60 (여성)", "highlight": true},
+              {"item": "LDL-Cholesterol (Calc.)", "result": "135", "unit": "mg/dL", "ref": "< 100 (고위험군)", "highlight": true},
+              {"item": "Non-HDL Cholesterol (Calc.)", "result": "165", "unit": "mg/dL", "ref": "< 130 (고위험군)", "highlight": true} 
+            ],
+            "endoSpecial": [
+              {"item": "HbA1c (Glycohemoglobin)", "result": "7.8", "unit": "%", "ref": "4.0 - 6.0 (정상) / <6.5 (당뇨조절)", "highlight": true},
+              {"item": "25-OH Vitamin D", "result": "22", "unit": "ng/mL", "ref": "30 - 100 (충분)", "highlight": true},
+              {"item": "TSH (Thyroid Stim. Hormone)", "result": "2.5", "unit": "µIU/mL", "ref": "0.4 - 4.0"},
+              {"item": "Free T4 (Thyroxine)", "result": "1.2", "unit": "ng/dL", "ref": "0.8 - 1.8"},
+              {"item": "PTH, Intact (Parathyroid H)", "result": "60", "unit": "pg/mL", "ref": "15-65"} 
+            ],
+            "tumorMarkers": [
+              {"item": "CA 15-3", "result": "35", "unit": "U/mL", "ref": "< 30", "highlight": true},
+              {"item": "CEA", "result": "3.0", "unit": "ng/mL", "ref": "< 5.0 (비흡연)"}
+            ],
+            "urinalysis": {
+              "Color": "Yellow", "Clarity": "Clear", "Specific Gravity": "1.015", "pH": "6.0",
+              "Protein": "Trace (1+)", "Glucose": "Negative", "Ketone": "Negative", "Bilirubin": "Negative",
+              "Urobilinogen": "Normal", "Blood": "Negative", "Nitrite": "Negative", "Leukocyte Esterase": "Negative",
+              "WBC_UA": "0-1 /HPF", "RBC_UA": "0-1 /HPF", "EpithelialCells": "Few", "Casts": "Hyaline casts 0-1 /LPF",
+              "Bacteria": "None", "Crystals": "None",
+              "proteinHighlight": true
+            }
+          },
+          {
+            "date": "2025-04-07", 
+            "cbc": [ 
+              {"item": "WBC", "result": "4.2", "unit": "x10³/µL", "ref": "4.0 - 10.0"},
+              {"item": "Seg. Neutrophil (%)", "result": "55.0", "unit": "%", "ref": "40-74"},
+              {"item": "Lymphocyte (%)", "result": "35.0", "unit": "%", "ref": "19-48"},
+              {"item": "Monocyte (%)", "result": "7.0", "unit": "%", "ref": "3.4-9.0"},
+              {"item": "Eosinophil (%)", "result": "2.5", "unit": "%", "ref": "0-7"},
+              {"item": "Basophil (%)", "result": "0.5", "unit": "%", "ref": "0-1.5"},
+              {"item": "Neutrophil (Absolute #)", "result": "2.31", "unit": "x10³/µL", "ref": "1.8 - 7.0"},
+              {"item": "Lymphocyte (Absolute #)", "result": "1.47", "unit": "x10³/µL", "ref": "0.8-3.9"},
+              {"item": "Monocyte (Absolute #)", "result": "0.29", "unit": "x10³/µL", "ref": "0.2-0.8"},
+              {"item": "Eosinophil (Absolute #)", "result": "0.11", "unit": "x10³/µL", "ref": "0-0.5"},
+              {"item": "Basophil (Absolute #)", "result": "0.02", "unit": "x10³/µL", "ref": "0-0.1"},
+              {"item": "RBC", "result": "4.0", "unit": "x10⁶/µL", "ref": "4.0 - 5.2 (여성)"},
+              {"item": "Hemoglobin", "result": "12.1", "unit": "g/dL", "ref": "12.0 - 16.0 (여성)"},
+              {"item": "Hematocrit", "result": "36.5", "unit": "%", "ref": "36.0 - 46.0 (여성)"},
+              {"item": "MCV", "result": "91.3", "unit": "fL", "ref": "80.0 - 100.0"},
+              {"item": "MCH", "result": "30.3", "unit": "pg", "ref": "26.0 - 34.0"},
+              {"item": "MCHC", "result": "33.2", "unit": "g/dL", "ref": "32.0 - 36.0"},
+              {"item": "RDW", "result": "13.0", "unit": "%", "ref": "11.5 - 14.5"},
+              {"item": "Platelet Count", "result": "180", "unit": "x10³/µL", "ref": "150 - 450"},
+              {"item": "ESR (Erythrocyte Sed. Rate)", "result": "22", "unit": "mm/hr", "ref": "0 - 20 (여성)", "highlight": true},
+              {"item": "CRP (C-Reactive Protein)", "result": "3.0", "unit": "mg/L", "ref": "< 5.0"}
+            ],
+            "chemistry": [ 
+              {"item": "Glucose, Fasting", "result": "140", "unit": "mg/dL", "ref": "70 - 99", "highlight": true},
+              {"item": "BUN (Blood Urea Nitrogen)", "result": "20", "unit": "mg/dL", "ref": "8 - 23"},
+              {"item": "Creatinine", "result": "1.0", "unit": "mg/dL", "ref": "0.5 - 0.9 (여성)", "highlight": true},
+              {"item": "eGFR (MDRD)", "result": "59", "unit": "mL/min/1.73m²", "ref": "> 60", "highlight": true}, 
+              {"item": "BUN/Creatinine Ratio", "result": "20", "unit": "", "ref": "10-20"},
+              {"item": "Sodium (Na)", "result": "141", "unit": "mEq/L", "ref": "135 - 145"},
+              {"item": "Potassium (K)", "result": "4.0", "unit": "mEq/L", "ref": "3.5 - 5.1"},
+              {"item": "Chloride (Cl)", "result": "103", "unit": "mEq/L", "ref": "96 - 108"},
+              {"item": "Total CO2 (Bicarbonate)", "result": "24", "unit": "mEq/L", "ref": "22 - 32"},
+              {"item": "Anion Gap", "result": "14", "unit": "mEq/L", "ref": "8-16"},
+              {"item": "Calcium", "result": "9.0", "unit": "mg/dL", "ref": "8.6 - 10.2"},
+              {"item": "Phosphorus (Inorganic)", "result": "3.3", "unit": "mg/dL", "ref": "2.5 - 4.5"},
+              {"item": "Magnesium", "result": "1.9", "unit": "mg/dL", "ref": "1.6 - 2.6"},
+              {"item": "Total Protein", "result": "6.8", "unit": "g/dL", "ref": "6.4 - 8.3"},
+              {"item": "Albumin", "result": "3.9", "unit": "g/dL", "ref": "3.5 - 5.2"},
+              {"item": "Globulin (Calculated)", "result": "2.9", "unit": "g/dL", "ref": "2.3 - 3.5"},
+              {"item": "A/G Ratio", "result": "1.34", "unit": "", "ref": "1.2-2.2"},
+              {"item": "AST (SGOT)", "result": "35", "unit": "U/L", "ref": "0 - 40"},
+              {"item": "ALT (SGPT)", "result": "42", "unit": "U/L", "ref": "0 - 40", "highlight": true},
+              {"item": "ALP (Alkaline Phosphatase)", "result": "110", "unit": "U/L", "ref": "35 - 105 (여성)", "highlight": true},
+              {"item": "GGT (Gamma-GT)", "result": "50", "unit": "U/L", "ref": "9-48 (여성)", "highlight": true},
+              {"item": "Total Bilirubin", "result": "0.7", "unit": "mg/dL", "ref": "0.2 - 1.2"},
+              {"item": "Direct Bilirubin", "result": "0.1", "unit": "mg/dL", "ref": "0-0.3"},
+              {"item": "LDH (Lactate Dehydrogenase)", "result": "190", "unit": "U/L", "ref": "135 - 225"},
+              {"item": "Uric Acid", "result": "5.0", "unit": "mg/dL", "ref": "2.4 - 5.7 (여성)"},
+              {"item": "CK (Creatine Kinase)", "result": "120", "unit": "U/L", "ref": "26-192 (여성)"}
+            ],
+            "lipids": [ 
+              {"item": "Total Cholesterol", "result": "205", "unit": "mg/dL", "ref": "< 200", "highlight": true},
+              {"item": "Triglyceride", "result": "155", "unit": "mg/dL", "ref": "< 150", "highlight": true},
+              {"item": "HDL-Cholesterol", "result": "48", "unit": "mg/dL", "ref": "> 60 (여성)", "highlight": true},
+              {"item": "LDL-Cholesterol (Calc.)", "result": "126", "unit": "mg/dL", "ref": "< 100 (고위험군)", "highlight": true},
+              {"item": "Non-HDL Cholesterol (Calc.)", "result": "157", "unit": "mg/dL", "ref": "< 130 (고위험군)", "highlight": true}
+            ],
+            "endoSpecial": [ 
+              {"item": "HbA1c (Glycohemoglobin)", "result": "7.7", "unit": "%", "ref": "4.0 - 6.0 (정상) / <6.5 (당뇨조절)", "highlight": true}, 
+              {"item": "25-OH Vitamin D", "result": "25", "unit": "ng/mL", "ref": "30 - 100 (충분)", "highlight": true},
+              {"item": "TSH (Thyroid Stim. Hormone)", "result": "2.3", "unit": "µIU/mL", "ref": "0.4 - 4.0"},
+              {"item": "Free T4 (Thyroxine)", "result": "1.1", "unit": "ng/dL", "ref": "0.8 - 1.8"},
+              {"item": "PTH, Intact (Parathyroid H)", "result": "55", "unit": "pg/mL", "ref": "15-65"}
+            ],
+            "tumorMarkers": [
+              {"item": "CA 15-3", "result": "32", "unit": "U/mL", "ref": "< 30", "highlight": true},
+              {"item": "CEA", "result": "2.8", "unit": "ng/mL", "ref": "< 5.0 (비흡연)"}
+            ],
+            "urinalysis": { 
+              "Color": "Yellow", "Clarity": "Clear", "Specific Gravity": "1.018", "pH": "5.5",
+              "Protein": "Negative", "Glucose": "Negative", "Ketone": "Negative", "Bilirubin": "Negative",
+              "Urobilinogen": "Normal", "Blood": "Negative", "Nitrite": "Negative", "Leukocyte Esterase": "Negative",
+              "WBC_UA": "0-2 /HPF", "RBC_UA": "0-1 /HPF", "EpithelialCells": "Few", "Casts": "None",
+              "Bacteria": "None", "Crystals": "None",
+              "proteinHighlight": false
+            }
+          }
+        ],
+        "medHistory": {
+          "activePrescriptions": [
+            {
+              "drugName": "Palbociclib cap", "dose": "125mg", "route": "PO", "frequency": "QD (1일 1회)",
+              "schedule": "3주 복용 후 1주 휴약", "startDate": "2025-03-20 (Cycle 1 시작일 가정)", "endDate": "진행중",
+              "prescriber": "Dr. K (종양내과)", "note": "현재 Cycle 2, Day 17 (2025-05-07 기준)"
+            },
+            {
+              "drugName": "Fulvestrant Inj", "dose": "500mg", "route": "IM", "frequency": "Q4W (4주마다)",
+              "startDate": "2025-03-20 (첫 투여일 가정)", "endDate": "진행중", "prescriber": "Dr. K (종양내과)",
+              "note": "병원 투여 약물. 최근 투여일: 2025-04-21"
+            },
+            {
+              "drugName": "경보이반드로네이트정 (Ibandronate)", "dose": "150mg", "route": "PO", "frequency": "QM (월 1회)",
+              "startDate": "2025-05-01", "endDate": "진행중", "prescriber": "Dr. K (종양내과)", "note": "매월 1일 아침 식전 복용"
+            },
+            {
+              "drugName": "디카맥스디정 (Calcium/Vit.D)", "dose": "1250mg/1000IU", "route": "PO", "frequency": "QD (1일 1회)",
+              "startDate": "2020-01-01 (가정)", "endDate": "진행중", "prescriber": "Dr. K (종양내과)", "note": ""
+            },
+            {
+              "drugName": "글루세라정 (Metformin)", "dose": "500mg", "route": "PO", "frequency": "BID (1일 2회)",
+              "startDate": "2018-01-01 (가정)", "endDate": "진행중", "prescriber": "Dr. L (내분비내과)", "note": "식후 복용"
+            },
+            {
+              "drugName": "디오반필름코팅정 (Valsartan)", "dose": "80mg", "route": "PO", "frequency": "QD (1일 1회)",
+              "startDate": "2010-01-01 (가정)", "endDate": "진행중", "prescriber": "Dr. M (순환기내과)", "note": ""
+            },
+            {
+              "drugName": "노바스크정 (Amlodipine)", "dose": "5mg", "route": "PO", "frequency": "QD (1일 1회)",
+              "startDate": "2010-01-01 (가정)", "endDate": "진행중", "prescriber": "Dr. M (순환기내과)", "note": ""
+            }
+          ],
+          "previousPrescriptions": [
+            {
+              "drugName": "드로넬정 (Risedronate)", "dose": "70mg", "route": "PO", "frequency": "QW (주 1회)",
+              "startDate": "2020-01-01 (가정)", "endDate": "2025-04-30", "prescriber": "Dr. K (종양내과)",
+              "note": "Ibandronate로 변경됨 (2025-04-07 처방 의사 소견 참고)"
+            },
+            {
+              "drugName": "Letrozole tab", "dose": "2.5mg", "route": "PO", "frequency": "QD",
+              "startDate": "2015-XX-XX", "endDate": "2022-XX-XX (재발 전까지)", "prescriber": "Dr. K (종양내과)",
+              "note": "초기 항호르몬 치료제. 내성 발현으로 중단."
+            }
+          ]
+        },
+        "pastHistory": {
+          "pathology_2015": [
+            "Invasive Ductal Carcinoma, Right Breast.",
+            "Size: 2.1 cm. Nuclear Grade: 2. Histologic Grade: 2.",
+            "Estrogen Receptor (ER): Positive (90%, Strong intensity)",
+            "Progesterone Receptor (PR): Positive (70%, Moderate intensity)",
+            "HER2/neu: Negative (IHC 1+, FISH non-amplified)",
+            "Axillary Lymph Nodes: 0/12 positive for metastasis."
+          ],
+          "geneticPanel_2015": [
+            "BRCA1: No Pathogenic Variant Detected",
+            "BRCA2: No Pathogenic Variant Detected",
+            "TP53: No Pathogenic Variant Detected",
+            "PTEN: No Pathogenic Variant Detected",
+            "ATM: No Pathogenic Variant Detected",
+            "CHEK2: No Pathogenic Variant Detected",
+            "PALB2: No Pathogenic Variant Detected",
+            "(기타 유전자 이상 소견 없음)"
+          ]
+        }
+      },
+        "P002": {
+          "demographics": {
+            "name": "이성훈",
+            "patientIdDisplay": "P002 (20250502-KNUH04)",
+            "birthDate": "1984-06-23",
+            "ageGender": "40세/남성 (2025년 기준)",
+            "allergy": "기록 없음",
+            "smoking": "없음",
+            "drinking": "없음",
+            "occupation": "대치동 고3 국어 강사 (현장 수업 + 인강)",
+            "socialNotes": [
+              "수면: 4-5시간/일",
+              "스트레스: 과다 (수험생 지도, 결혼 준비, 건강 악화로 인한 불안)",
+              "기타: 예비신랑 (결혼 3개월 앞둠)"
+            ],
+            "diagnosis": [
+              "크론병 (Crohn's disease) - 2024.11.14 진단",
+              "활동성 폐결핵 (Active pulmonary tuberculosis) - 2025.04.01 진단"
+            ]
+          },
+          "visitHistory": [
+            {
+              "visitDate": "2025-05-01",
+              "department": "소화기내과",
+              "visitType": "외래 (Outpatient)",
+              "reasonForVisit": "크론병 치료 중 결핵 발생으로 입원치료 후 퇴원하여 외래방문. 복통, 설사, 피로감, 호흡곤란, 식욕부진, 체중감소 지속 호소.",
+              "chiefComplaint": "여전히 배가 너무 아프고 설사도 계속돼요. 원래 약 먹을 땐 좀 괜찮았는데, 요즘은 진짜 수업하다 뛰쳐나올 뻔했어요. 피곤하고 숨도 차요. 식욕도 없고 한달 사이 3kg이 빠졌어요.",
+              "historyOfPresentIllness": "2024.11.14 크론병 진단 후 Mesalazine, Prednisolone으로 치료 중이었으나, 2025.04.01 활동성 결핵 진단받고 HRZE 요법 시작 (현재 1개월차). 결핵 치료 시작 후에도 크론병 증상(복통, 설사) 호전되지 않고 오히려 악화되는 양상 보이며, 전신 쇠약감, 호흡곤란, 식욕부진 및 체중 감소 동반됨. Prednisolone은 PRN으로 복용하였으나 최근 증상 조절 안됨.",
+              "physicalExam": {
+                "height": "178 cm",
+                "weight": "67.8 kg",
+                "bmi": "21.4 kg/m²",
+                "weightChange": "최근 4주간 3-4kg 감소",
+                "bp": "116/74 mmHg",
+                "hr": "84 bpm",
+                "rr": "18 회/분",
+                "bt": "36.6°C",
+                "generalAppearance": "Tired-looking, Alert",
+                "eyes": "Anicteric, no pallor",
+                "chest": "Clear breath sounds, No rale/wheezing",
+                "heart": "Regular rhythm, No murmur",
+                "abdomen": "Soft, mild tenderness RLQ, normoactive bowel sounds",
+                "extremities": "No edema",
+                "skin": "No rash",
+                "neuro": "No focal deficits"
+              },
+              "ros": {
+                "general": "발열(-), 체중감소(+), 오한(-)",
+                "gi": "식욕감퇴(+), 설사(+), 복통(+), 구역(+), 구토(+), 변비(-), 혈변(+)",
+                "respiratory": "기침(-), 객담(-), 호흡곤란(+)",
+                "constitutional": "피로감(+), 무기력감(+)",
+                "other": "배뇨 이상(-), 부종(-), 피부 발진(-)"
+              },
+              "physicianNote": "크론병 활성도 증가 및 결핵 치료 병행으로 인한 증상 악화 의심. Ustekinumab 치료 고려. 결핵약 부작용 모니터링 필요."
+            }
+          ],
+          "pastMedicalHistory": [
+            {"date": "1995-07-10", "condition": "뇌수막염 진단 및 치료"},
+            {"date": "2023-03-13", "condition": "수족부 백선 진단 및 치료"}
+          ],
+          "familyHistory": [
+            {"relation": "부", "condition": "폐결핵 과거력 (완치, 15년 전)"},
+            {"relation": "모", "condition": "궤양성 대장염 (10년 이상 식이 조절 중)"}
+          ],
+          "medHistory": {
+            "activePrescriptions": [
+              {
+                "category": "결핵 치료 (1개월차 / HRZE)",
+                "drugName": "유한짓정 (Isoniazid)", "dose": "100mg", "route": "P.O", "frequency": "3T daily (총 300mg/day)",
+                "startDate": "2025-04-01", "endDate": "진행중", "prescriber": "Dr. 감염내과 (가정)", "note": ""
+              },
+              {
+                "category": "결핵 치료 (1개월차 / HRZE)",
+                "drugName": "리팜핀정 (Rifampin)", "dose": "600mg", "route": "P.O", "frequency": "1T daily",
+                "startDate": "2025-04-01", "endDate": "진행중", "prescriber": "Dr. 감염내과 (가정)", "note": ""
+              },
+              {
+                "category": "결핵 치료 (1개월차 / HRZE)",
+                "drugName": "튜톨정 (Ethambutol)", "dose": "800mg", "route": "P.O", "frequency": "1T daily",
+                "startDate": "2025-04-01", "endDate": "진행중", "prescriber": "Dr. 감염내과 (가정)", "note": ""
+              },
+              {
+                "category": "결핵 치료 (1개월차 / HRZE)",
+                "drugName": "유한피라진아미드정 (Pyrazinamide)", "dose": "500mg", "route": "P.O", "frequency": "3T daily (총 1500mg/day)",
+                "startDate": "2025-04-01", "endDate": "진행중", "prescriber": "Dr. 감염내과 (가정)", "note": ""
+              },
+              {
+                "category": "크론병 치료 (보조)",
+                "drugName": "유산균제 (Lactobacillus)", "dose": "", "route": "P.O", "frequency": "1T BID",
+                "startDate": "2024-11-14 (가정)", "endDate": "진행중", "prescriber": "Dr. 소화기내과 (가정)", "note": ""
+              }
+            ],
+            "previousPrescriptions": [
+              {
+                "category": "크론병 치료 (기존)",
+                "drugName": "펜타사서방정 (Mesalazine)", "dose": "1g", "route": "P.O", "frequency": "1T TID",
+                "startDate": "2024-11-14", "endDate": "2025-05-01 (변경 예정)", "prescriber": "Dr. 소화기내과 (가정)", "note": "효과 미흡"
+              },
+              {
+                "category": "크론병 치료 (기존)",
+                "drugName": "소론도정 (Prednisolone)", "dose": "다양함", "route": "P.O", "frequency": "PRN tapering",
+                "note": "Take 3T PO qD PRN 1 week, then taper to 2T PO qD 1 week, then 1T PO qD 1 week. 증상 악화 시 간헐적 복용",
+                "startDate": "2024-11-14 (가정)", "endDate": "2025-05-01 (변경 예정)", "prescriber": "Dr. 소화기내과 (가정)"
+              }
+            ],
+            "plannedPrescriptions": [
+               {
+                "category": "크론병 치료 (예정)",
+                "drugName": "스텔라라 (Ustekinumab)", "dose": null, "route": null, "frequency": null,
+                "note": "시작 고려 중"
+              }
+            ]
+          },
+          "labRecords": [
+            {
+              "date": "2025-05-01",
+              "cbc": [
+                {"item": "WBC", "result": "5.08", "unit": "x10³/µL", "ref": "4-10"},
+                {"item": "Hb", "result": "9.5", "unit": "g/dL", "ref": "13-17 (남성)", "highlight": true},
+                {"item": "Platelet Count", "result": "183", "unit": "x10³/µL", "ref": "130-400"},
+                {"item": "ANC (Absolute Neutrophil Count)", "result": "3866", "unit": "/µL", "ref": "1500-8000"}
+              ],
+              "chemistry": [
+                {"item": "CRP (C-Reactive Protein)", "result": "2.41", "unit": "mg/dL", "ref": "0-0.5", "highlight": true},
+                {"item": "ALT (SGPT)", "result": "19", "unit": "IU/L", "ref": "1-40"},
+                {"item": "AST (SGOT)", "result": "20", "unit": "IU/L", "ref": "1-40"},
+                {"item": "Total Bilirubin", "result": "0.54", "unit": "mg/dL", "ref": "0.2-1.2"},
+                {"item": "Albumin", "result": "3.8", "unit": "g/dL", "ref": "3.3-5.2"},
+                {"item": "BUN (Blood Urea Nitrogen)", "result": "17", "unit": "mg/dL", "ref": "10-26"},
+                {"item": "Creatinine", "result": "1.08", "unit": "mg/dL", "ref": "0.7-1.4 (남성)"},
+                {"item": "eGFR", "result": "70", "unit": "mL/min/1.73m²", "ref": ">60"},
+                {"item": "Uric Acid", "result": "5.0", "unit": "mg/dL", "ref": "3.0-7.0 (남성)"}
+              ],
+              "stoolExam": [
+                  {"item": "Calprotectin, Stool", "result": null, "unit": "mg/kg", "ref": "<50"}
+              ]
+            },
+            {
+              "date": "2025-04-15",
+              "cbc": [
+                {"item": "WBC", "result": "6.1", "unit": "x10³/µL", "ref": "4-10"},
+                {"item": "Hb", "result": "10.2", "unit": "g/dL", "ref": "13-17 (남성)", "highlight": true},
+                {"item": "Platelet Count", "result": "181", "unit": "x10³/µL", "ref": "130-400"},
+                {"item": "ANC", "result": "2500", "unit": "/µL", "ref": "1500-8000"}
+              ],
+              "chemistry": [
+                {"item": "CRP", "result": "1.94", "unit": "mg/dL", "ref": "0-0.5", "highlight": true},
+                {"item": "ALT", "result": "24", "unit": "IU/L", "ref": "1-40"},
+                {"item": "AST", "result": "16", "unit": "IU/L", "ref": "1-40"},
+                {"item": "Total Bilirubin", "result": "0.57", "unit": "mg/dL", "ref": "0.2-1.2"},
+                {"item": "Albumin", "result": "3.4", "unit": "g/dL", "ref": "3.3-5.2"},
+                {"item": "BUN", "result": "20", "unit": "mg/dL", "ref": "10-26"},
+                {"item": "Creatinine", "result": "1.01", "unit": "mg/dL", "ref": "0.7-1.4 (남성)"},
+                {"item": "eGFR", "result": "87", "unit": "mL/min/1.73m²", "ref": ">60"},
+                {"item": "Uric Acid", "result": "5.2", "unit": "mg/dL", "ref": "3.0-7.0 (남성)"}
+              ]
+            },
+            {
+              "date": "2025-04-01",
+              "cbc": [
+                {"item": "WBC", "result": "8.53", "unit": "x10³/µL", "ref": "4-10"},
+                {"item": "Hb", "result": "10.9", "unit": "g/dL", "ref": "13-17 (남성)", "highlight": true},
+                {"item": "Platelet Count", "result": "182", "unit": "x10³/µL", "ref": "130-400"},
+                {"item": "ANC", "result": "3810", "unit": "/µL", "ref": "1500-8000"}
+              ],
+              "chemistry": [
+                {"item": "CRP", "result": "2.57", "unit": "mg/dL", "ref": "0-0.5", "highlight": true},
+                {"item": "ALT", "result": "26", "unit": "IU/L", "ref": "1-40"},
+                {"item": "AST", "result": "19", "unit": "IU/L", "ref": "1-40"},
+                {"item": "Total Bilirubin", "result": "0.53", "unit": "mg/dL", "ref": "0.2-1.2"},
+                {"item": "Albumin", "result": "3.9", "unit": "g/dL", "ref": "3.3-5.2"},
+                {"item": "BUN", "result": "21", "unit": "mg/dL", "ref": "10-26"},
+                {"item": "Creatinine", "result": "1.14", "unit": "mg/dL", "ref": "0.7-1.4 (남성)"},
+                {"item": "eGFR", "result": "73", "unit": "mL/min/1.73m²", "ref": ">60"},
+                {"item": "Uric Acid", "result": "5.1", "unit": "mg/dL", "ref": "3.0-7.0 (남성)"}
+              ]
+            },
+            {
+              "date": "2025-03-14",
+              "cbc": [
+                {"item": "WBC", "result": "5.23", "unit": "x10³/µL", "ref": "4-10"},
+                {"item": "Hb", "result": "11.5", "unit": "g/dL", "ref": "13-17 (남성)", "highlight": true},
+                {"item": "Platelet Count", "result": "180", "unit": "x10³/µL", "ref": "130-400"},
+                {"item": "ANC", "result": "4020", "unit": "/µL", "ref": "1500-8000"}
+              ],
+              "chemistry": [
+                {"item": "CRP", "result": "1.31", "unit": "mg/dL", "ref": "0-0.5", "highlight": true},
+                {"item": "ALT", "result": "20", "unit": "IU/L", "ref": "1-40"},
+                {"item": "AST", "result": "20", "unit": "IU/L", "ref": "1-40"},
+                {"item": "Total Bilirubin", "result": "0.51", "unit": "mg/dL", "ref": "0.2-1.2"},
+                {"item": "Albumin", "result": "3.5", "unit": "g/dL", "ref": "3.3-5.2"},
+                {"item": "BUN", "result": "20", "unit": "mg/dL", "ref": "10-26"},
+                {"item": "Creatinine", "result": "1.11", "unit": "mg/dL", "ref": "0.7-1.4 (남성)"},
+                {"item": "eGFR", "result": "80", "unit": "mL/min/1.73m²", "ref": ">60"},
+                {"item": "Uric Acid", "result": "5.1", "unit": "mg/dL", "ref": "3.0-7.0 (남성)"}
+              ]
+            },
+            {
+              "date": "2024-11-14",
+              "cbc": [
+                {"item": "WBC", "result": "7.5", "unit": "x10³/µL", "ref": "4-10"},
+                {"item": "Hb", "result": "13.1", "unit": "g/dL", "ref": "13-17 (남성)"},
+                {"item": "Platelet Count", "result": "200", "unit": "x10³/µL", "ref": "130-400"},
+                {"item": "ANC", "result": "3800", "unit": "/µL", "ref": "1500-8000"}
+              ],
+              "chemistry": [
+                {"item": "CRP", "result": "1.27", "unit": "mg/dL", "ref": "0-0.5", "highlight": true},
+                {"item": "ALT", "result": "17", "unit": "IU/L", "ref": "1-40"},
+                {"item": "AST", "result": "23", "unit": "IU/L", "ref": "1-40"},
+                {"item": "Total Bilirubin", "result": "0.61", "unit": "mg/dL", "ref": "0.2-1.2"},
+                {"item": "Albumin", "result": "3.6", "unit": "g/dL", "ref": "3.3-5.2"},
+                {"item": "BUN", "result": "20", "unit": "mg/dL", "ref": "10-26"},
+                {"item": "Creatinine", "result": "1.12", "unit": "mg/dL", "ref": "0.7-1.4 (남성)"},
+                {"item": "eGFR", "result": "85", "unit": "mL/min/1.73m²", "ref": ">60"},
+                {"item": "Uric Acid", "result": "4.9", "unit": "mg/dL", "ref": "3.0-7.0 (남성)"}
+              ],
+              "stoolExam": [
+                  {"item": "Calprotectin, Stool", "result": "130", "unit": "mg/kg", "ref": "<50", "highlight": true}
+              ]
+            }
+          ],
+          "imagingResults": [
+              {"date": "2025-04-01", "category": "Chest X-ray", "testName": "PA and Lateral", "summary": "활동성 폐결핵 의심 소견 (예시: 우상엽에 음영 증가 및 공동 형성 의심)"}
+          ],
+          "geneticPanel": {
+              "NOD2/CARD15": "No common variants detected (크론병 관련 유전자)"
+          }
+        }
+    }
+ }
+  
