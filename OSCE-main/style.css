@@ -1,16 +1,19 @@
 :root {
-  --bg: #eef2f5;
+  --bg: #e9edf3;
   --panel: #ffffff;
-  --line: #d8e0e7;
-  --text: #1f2a33;
-  --muted: #64717d;
-  --nav: #243342;
-  --nav-active: #0f6b9a;
+  --panel-soft: #f8fafc;
+  --line: #d3dbe7;
+  --line-soft: #e8edf4;
+  --text: #122033;
+  --muted: #5f6f85;
+  --nav: #18283f;
+  --nav-active: #0d7aa3;
   --accent: #0b6f99;
   --soft: #f7f9fb;
   --warn: #fff4cc;
   --low: #dceeff;
   --critical: #ffd6d6;
+  --shadow: 0 10px 25px rgba(19, 35, 59, .08);
 }
 
 * {
@@ -21,9 +24,9 @@ body {
   margin: 0;
   color: var(--text);
   background: var(--bg);
-  font-family: "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif;
+  font-family: Arial, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .topbar {
@@ -33,12 +36,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  min-height: 72px;
-  padding: 12px 22px;
-  background: #172432;
+  gap: 16px;
+  min-height: 58px;
+  padding: 9px 16px;
+  background: #0e1b2e;
   color: #fff;
-  border-bottom: 1px solid #0f1822;
+  border-bottom: 1px solid #06101e;
 }
 
 .brand {
@@ -60,7 +63,7 @@ body {
 
 .brand h1 {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
 }
 
@@ -78,17 +81,19 @@ body {
 
 .search-form input {
   width: 100%;
-  height: 38px;
+  height: 34px;
   padding: 0 12px;
-  border: 1px solid #8795a1;
+  border: 1px solid #3d536f;
+  border-radius: 4px;
   background: #fff;
   color: var(--text);
 }
 
 .search-form button {
   min-width: 78px;
-  height: 38px;
+  height: 34px;
   border: 0;
+  border-radius: 4px;
   background: #0f83b9;
   color: #fff;
   font-weight: 700;
@@ -100,10 +105,11 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   gap: 18px;
-  min-height: 108px;
-  padding: 16px 22px;
+  min-height: 92px;
+  padding: 12px 18px;
   background: var(--panel);
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
 }
 
 .patient-banner h2 {
@@ -139,12 +145,14 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: 24px;
-  padding: 3px 8px;
+  padding: 3px 9px;
   border: 1px solid #c9d3dc;
+  border-radius: 999px;
   background: #f8fafc;
   color: #22313f;
   font-size: 12px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .badge.lab,
@@ -161,17 +169,22 @@ body {
 .workspace {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr) 270px;
-  min-height: calc(100vh - 181px);
+  gap: 12px;
+  min-height: calc(100vh - 151px);
+  padding: 12px;
 }
 
 .sidebar {
   position: sticky;
-  top: 181px;
+  top: 151px;
   align-self: start;
-  height: calc(100vh - 181px);
+  height: calc(100vh - 175px);
   overflow-y: auto;
   background: var(--nav);
   padding: 14px 10px 70px;
+  border: 1px solid #102035;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 
 .loaded-patient {
@@ -187,23 +200,32 @@ body {
   width: 100%;
   min-height: 34px;
   margin: 0 0 4px;
-  padding: 7px 10px;
+  padding: 8px 10px 8px 13px;
   border: 0;
+  border-left: 3px solid transparent;
   background: transparent;
   color: #dbe5ee;
   text-align: left;
   cursor: pointer;
+  font-size: 13px;
 }
 
 .nav-item:hover,
 .nav-item.is-active {
-  background: var(--nav-active);
-  color: #fff;
+  background: #fff;
+  color: #0e2036;
+  border-left-color: #14a1d1;
+  font-weight: 800;
 }
 
 .content-shell {
   min-width: 0;
-  padding: 18px 20px 72px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
 .content-section {
@@ -218,6 +240,7 @@ body {
   margin-bottom: 12px;
   padding: 10px 12px;
   border: 1px solid var(--line);
+  border-radius: 8px;
   background: #f9fbfd;
   color: var(--muted);
 }
@@ -237,14 +260,16 @@ body {
 .panel {
   margin-bottom: 14px;
   border: 1px solid var(--line);
+  border-radius: 10px;
   background: var(--panel);
+  overflow: hidden;
 }
 
 .panel-title {
   margin: 0;
   padding: 9px 11px;
   border-bottom: 1px solid var(--line);
-  background: #f3f6f8;
+  background: #f6f8fb;
   font-size: 14px;
   font-weight: 800;
 }
@@ -261,8 +286,9 @@ body {
 
 .kv {
   min-height: 36px;
-  padding: 7px 9px;
+  padding: 8px 10px;
   border: 1px solid #e2e8ee;
+  border-radius: 8px;
   background: #fff;
 }
 
@@ -288,15 +314,21 @@ table {
 
 th,
 td {
-  border: 1px solid var(--line);
-  padding: 7px 8px;
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  padding: 8px 9px;
   vertical-align: top;
 }
 
 th {
-  background: #edf2f6;
-  color: #263746;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #f4f7fb;
+  color: #3c4d63;
+  font-size: 12px;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 tr:nth-child(even) td {
@@ -306,11 +338,36 @@ tr:nth-child(even) td {
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);
+  border-radius: 9px;
   background: #fff;
 }
 
 .table-wrap table {
   margin: 0;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.orders-table table {
+  min-width: 1180px;
+  table-layout: auto;
+}
+
+.orders-table th,
+.orders-table td {
+  white-space: nowrap;
+}
+
+.orders-table td:nth-child(11) {
+  min-width: 220px;
+  white-space: normal;
+}
+
+.orders-table td:nth-child(4) {
+  min-width: 150px;
+  font-weight: 800;
 }
 
 .lab-flag-h {
@@ -336,13 +393,16 @@ tr:nth-child(even) td {
 }
 
 .status-pill {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 2px 7px;
   border: 1px solid #c8d5df;
+  border-radius: 999px;
   background: #f5f8fa;
   color: #263746;
   font-size: 12px;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .status-pill.new_on_discharge {
@@ -365,6 +425,7 @@ tr:nth-child(even) td {
 .empty-state {
   padding: 12px;
   border: 1px solid var(--line);
+  border-radius: 8px;
   background: #f9fbfd;
   color: #4d5b66;
   white-space: pre-wrap;
@@ -409,6 +470,7 @@ tr:nth-child(even) td {
   margin: 0 0 12px 16px;
   padding: 10px 12px;
   border: 1px solid var(--line);
+  border-radius: 9px;
   background: #fff;
 }
 
@@ -432,13 +494,15 @@ tr:nth-child(even) td {
 
 .right-panel {
   position: sticky;
-  top: 181px;
+  top: 151px;
   align-self: start;
-  height: calc(100vh - 181px);
+  height: calc(100vh - 175px);
   overflow-y: auto;
   padding: 16px 14px 72px;
-  border-left: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: 10px;
   background: #f7fafc;
+  box-shadow: var(--shadow);
 }
 
 .right-panel h2 {
@@ -450,6 +514,7 @@ tr:nth-child(even) td {
   margin-bottom: 8px;
   padding: 9px;
   border: 1px solid var(--line);
+  border-radius: 8px;
   background: #fff;
 }
 

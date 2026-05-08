@@ -689,22 +689,22 @@ function renderMedicationReconciliation(items) {
 function renderMedicationOrders(orders) {
   const rows = orders.map((order) => `
     <tr>
-      <td>${escapeHtml(order.orderId || "")}</td>
-      <td>${escapeHtml(formatDateTime(order.orderDateTime || order.orderDate || ""))}</td>
-      <td>${escapeHtml(order.orderType || "")}</td>
-      <td>${escapeHtml(order.drugName || EMPTY_TEXT)}</td>
-      <td>${escapeHtml(order.dose || "")}</td>
-      <td>${escapeHtml(order.route || "")}</td>
-      <td>${escapeHtml(order.frequency || "")}</td>
-      <td>${escapeHtml(order.duration || "")}</td>
-      <td>${escapeHtml(order.status || "")}</td>
-      <td>${escapeHtml(order.prescriber || "")}</td>
+      <td class="nowrap">${escapeHtml(order.orderId || "")}</td>
+      <td class="nowrap">${escapeHtml(formatDateTime(order.orderDateTime || order.orderDate || ""))}</td>
+      <td class="nowrap">${escapeHtml(order.orderType || "")}</td>
+      <td class="nowrap">${escapeHtml(order.drugName || EMPTY_TEXT)}</td>
+      <td class="nowrap">${escapeHtml(order.dose || "")}</td>
+      <td class="nowrap">${escapeHtml(order.route || "")}</td>
+      <td class="nowrap">${escapeHtml(order.frequency || "")}</td>
+      <td class="nowrap">${escapeHtml(order.duration || "")}</td>
+      <td class="nowrap">${escapeHtml(order.status || "")}</td>
+      <td class="nowrap">${escapeHtml(order.prescriber || "")}</td>
       <td>${escapeHtml(order.note || "")}</td>
     </tr>
   `).join("");
   setHtml("orders", `
     <h2 class="section-title">Orders</h2>
-    ${rows ? table(["Order ID", "Order Date", "Type", "약물명", "용량", "경로", "빈도", "기간", "상태", "처방의", "비고"], rows) : emptyState("조회된 처방오더 기록이 없습니다.")}
+    ${rows ? `<div class="table-wrap orders-table">${table(["Order ID", "Order Date", "Type", "약물명", "용량", "경로", "빈도", "기간", "상태", "처방의", "비고"], rows)}</div>` : emptyState("조회된 처방오더 기록이 없습니다.")}
   `);
 }
 
