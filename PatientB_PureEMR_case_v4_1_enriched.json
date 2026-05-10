@@ -2,7 +2,7 @@
   "schemaVersion": "4.1",
   "caseMeta": {
     "caseId": "patient-b",
-    "patientId": "",
+    "patientId": "patient-b",
     "displayName": "김영수",
     "sourceType": "pdf",
     "sourceFileName": "환자B_EMR 기입내용.pdf",
@@ -13,7 +13,7 @@
     "notesForBuilder": "원자료를 변경하지 않고, 화면 표시용 보강 레이어(lab flag, med reconciliation, discharge order view)를 추가한 draft."
   },
   "patientHeader": {
-    "patientId": "",
+    "patientId": "patient-b",
     "mrn": "",
     "name": "김영수",
     "sex": "M",
