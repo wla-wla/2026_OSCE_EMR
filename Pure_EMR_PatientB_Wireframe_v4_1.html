@@ -1583,7 +1583,7 @@ const caseData = {
   "medicationAdministrationRecords": {
     "status": "no_source_data",
     "sourceLevel": "empty_not_provided",
-    "displayMessage": "입원 중 실제 투약시각/MAR 원자료 미기재",
+    "displayMessage": "입원 중 실제 투약시각/MAR -",
     "records": []
   },
   "dischargeMedications": [
@@ -1740,7 +1740,7 @@ const caseData = {
       "appearance": "",
       "patientReportedUse": "",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_home_medication_name_only",
       "note": "약물명/용량은 원자료 Home Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1753,7 +1753,7 @@ const caseData = {
       "appearance": "",
       "patientReportedUse": "",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_home_medication_name_only",
       "note": "약물명/용량은 원자료 Home Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1766,7 +1766,7 @@ const caseData = {
       "appearance": "",
       "patientReportedUse": "",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_home_medication_name_only",
       "note": "약물명/용량은 원자료 Home Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1779,7 +1779,7 @@ const caseData = {
       "appearance": "",
       "patientReportedUse": "",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_home_medication_name_only",
       "note": "약물명/용량은 원자료 Home Medications에서 가져옴. 외형정보는 추가하지 않음."
     }
@@ -1822,7 +1822,7 @@ const caseData = {
     "showReferenceRanges": true,
     "showDerivedMedicationReconciliation": true,
     "showEmptyEmrModules": true,
-    "emptyStateText": "원자료 미기재"
+    "emptyStateText": "-"
   }
 };
 const navGroups = [
@@ -1943,7 +1943,7 @@ function renderBasic() {
 }
 function renderTimeline() {
   const rows=(caseData.timeline||[]).map(e=>`<div class="event"><div class="event-date">${fmtDateTime(e.dateTime)}</div><div class="event-title">${val(e.title)}</div><div>${val(e.summary)}</div></div>`).join('');
-  return `<div class="timeline">${rows || '<div class="empty-state"><b>Timeline 없음</b>원자료 미기재</div>'}</div>`;
+  return `<div class="timeline">${rows || '<div class="empty-state"><b>Timeline 없음</b>-</div>'}</div>`;
 }
 function renderHpi() {
   const c=caseData.clinicalRecords,h=caseData.hpi,r=caseData.ros;
@@ -1970,15 +1970,15 @@ function noteBlock(n) {
   return `<div class="note"><div class="note-meta"><span>${fmtDateTime(n.dateTime)} ${esc(n.noteType || '')}</span><span>${esc(n.authorRole || '')}</span></div><div class="soap"><b>S</b><span>${val(n.subjective)}</span><b>O</b><span>${val(n.objective)}</span><b>A</b><span>${val(n.assessment)}</span><b>P</b><span>${val(n.plan)}</span></div>${n.freeText?`<div style="margin-top:8px">${esc(n.freeText)}</div>`:''}</div>`;
 }
 function renderNursing() {
-  return (caseData.clinicalRecords.nursingNotes||[]).map(noteBlock).join('') || '<div class="empty-state"><b>간호기록 없음</b>원자료 미기재</div>';
+  return (caseData.clinicalRecords.nursingNotes||[]).map(noteBlock).join('') || '<div class="empty-state"><b>간호기록 없음</b>-</div>';
 }
 function renderDischargePlan() {
-  return (caseData.clinicalRecords.dischargePlanningNotes||[]).map(noteBlock).join('') || '<div class="empty-state"><b>퇴원계획 없음</b>원자료 미기재</div>';
+  return (caseData.clinicalRecords.dischargePlanningNotes||[]).map(noteBlock).join('') || '<div class="empty-state"><b>퇴원계획 없음</b>-</div>';
 }
 function renderDiagnosis() {
   const rows=(caseData.problemList||[]).map((p,i)=>`<tr>${td(String(i+1))}${td(val(p.problem))}${td(pill(statusLabel(p.status),'active'))}${td(val(p.onsetDate))}${td(val(p.lastUpdated))}${td(val(p.note))}</tr>`);
   const diag=(caseData.diagnosisTimeline||[]).map(d=>`<div class="event"><div class="event-date">${fmtDateTime(d.dateTime || d.date)}</div><div class="event-title">${val(d.diagnosis)} ${pill(d.status||'')}</div><div>${val(d.note)}</div></div>`).join('');
-  return `${table(['#','Problem','Status','Onset','Updated','Note'],rows)}${section('Diagnosis Timeline', diag || '<div class="empty-state"><b>Diagnosis timeline 없음</b>시간대별 R/O → 확진 기록은 원자료 미기재</div>')}`;
+  return `${table(['#','Problem','Status','Onset','Updated','Note'],rows)}${section('Diagnosis Timeline', diag || '<div class="empty-state"><b>Diagnosis timeline 없음</b>시간대별 R/O → 확진 기록은 -</div>')}`;
 }
 function renderPMH() {
   const rows=(caseData.pastMedicalHistory||[]).map(p=>`<tr>${td(val(p.condition))}${td(val(p.diagnosedDate))}${td(pill(statusLabel(p.status), p.status==='suspected'?'warn':'active'))}${td(val(p.treatment))}${td(val(p.note))}</tr>`);
@@ -2048,7 +2048,7 @@ function renderOrders() {
 }
 function renderMAR() {
   const mar=caseData.medicationAdministrationRecords;
-  if(!mar || !mar.records || !mar.records.length) return `<div class="empty-state"><b>Medication Administration Record</b>${val(mar?.displayMessage || '원자료 미기재')}</div>`;
+  if(!mar || !mar.records || !mar.records.length) return `<div class="empty-state"><b>Medication Administration Record</b>${val(mar?.displayMessage || '-')}</div>`;
   const rows=mar.records.map(r=>`<tr>${td(val(r.time))}${td(val(r.drugName))}${td(val(r.dose))}${td(val(r.status))}${td(val(r.nurse))}</tr>`);
   return table(['Time','Drug','Dose','Status','Nurse'], rows);
 }
@@ -2058,7 +2058,7 @@ function renderDischargeMed() {
 }
 function renderPharmacy() {
   const notes=(caseData.pharmacyReviewRequests||[]).map(n=>`<div class="note"><div class="note-meta"><span>Pharmacist Review Request</span><span>${fmtDateTime(n.dateTime || n.date)}</span></div><div>${val(n.requestText || n.freeText || n.note)}</div></div>`).join('');
-  return notes || '<div class="empty-state"><b>약사 검토 요청 없음</b>원자료 미기재</div>';
+  return notes || '<div class="empty-state"><b>약사 검토 요청 없음</b>-</div>';
 }
 const renderers = {overview:renderOverview,basic:renderBasic,timeline:renderTimeline,hpi:renderHpi,er:renderER,nursing:renderNursing,dischargePlan:renderDischargePlan,diagnosis:renderDiagnosis,pmh:renderPMH,social:renderSocial,vitals:renderVitals,labs:renderLabs,tests:renderTests,homeMed:renderHomeMed,medId:renderMedId,medRec:renderMedRec,orders:renderOrders,mar:renderMAR,dischargeMed:renderDischargeMed,pharmacy:renderPharmacy};
 function selectTab(id) {
