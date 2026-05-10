@@ -210,6 +210,10 @@ body {
   font-size: 13px;
 }
 
+.sidebar .nav-item:nth-of-type(even) {
+  background: #1a2f4b;
+}
+
 .nav-item:hover,
 .nav-item.is-active {
   background: #fff;
