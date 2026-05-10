@@ -1665,6 +1665,6 @@
     "showReferenceRanges": true,
     "showDerivedMedicationReconciliation": true,
     "showEmptyEmrModules": true,
-    "emptyStateText": "원자료에 미기재"
+    "emptyStateText": "-"
   }
 }

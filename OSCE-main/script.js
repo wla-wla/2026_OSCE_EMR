@@ -8,7 +8,7 @@ const firebaseConfig = {
   databaseURL: "https://emr-3b199-default-rtdb.asia-southeast1.firebasedatabase.app/"
 };
 
-const EMPTY_TEXT = "원자료 미기재";
+const EMPTY_TEXT = "-";
 const patientFiles = {
   P001: "data/patients/P001.json",
   P002: "data/patients/P002.json",

@@ -1837,9 +1837,9 @@ const titles = Object.fromEntries(navGroups.flatMap(g=>g.items));
 const el = (id)=>document.getElementById(id);
 const esc = (v)=>String(v ?? '').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const blank = (v)=> v===undefined || v===null || v==='' || (Array.isArray(v)&&!v.length);
-const val = (v)=> blank(v) ? '<span class="empty">미기재</span>' : esc(v);
+const val = (v)=> blank(v) ? '<span class="empty">-</span>' : esc(v);
 const fmtDateTime = (s)=> {
-  if(blank(s)) return '<span class="empty">미기재</span>';
+  if(blank(s)) return '<span class="empty">-</span>';
   return esc(String(s).replace('T',' ').replace('+09:00',''));
 };
 const pill = (text, cls='') => `<span class="pill ${cls}">${esc(text)}</span>`;
@@ -1856,7 +1856,7 @@ function chipFlag(flag) {
 }
 function patientBanner() {
   const p=caseData.patientHeader, h=caseData.hospitalRecord;
-  const allergy = (p.allergies||[]).map(a=>a.substance).filter(Boolean).join(', ') || '미기재';
+  const allergy = (p.allergies||[]).map(a=>a.substance).filter(Boolean).join(', ') || '-';
   const badges = (p.safetyBadges||[]).map(b=>`<span class="badge ${esc(b.type || '')}">${esc(b.label)}</span>`).join('');
   el('patientBanner').innerHTML = `
     <div>
@@ -1902,10 +1902,10 @@ function rightPanel() {
   el('rightPanel').innerHTML = `
     <h3>Chart Summary</h3>
     <div class="right-block"><div class="right-label">Active Problems</div>${probs}</div>
-    <div class="right-block"><div class="right-label">Latest Vital</div>${lastVitals ? `BP ${esc(lastVitals.bp)}, HR ${esc(lastVitals.hr)}, RR ${esc(lastVitals.rr)}, SpO₂ ${esc(lastVitals.spo2)}% ${esc(lastVitals.o2Device)}` : '<span class="empty">미기재</span>'}</div>
+    <div class="right-block"><div class="right-label">Latest Vital</div>${lastVitals ? `BP ${esc(lastVitals.bp)}, HR ${esc(lastVitals.hr)}, RR ${esc(lastVitals.rr)}, SpO₂ ${esc(lastVitals.spo2)}% ${esc(lastVitals.o2Device)}` : '<span class="empty">-</span>'}</div>
     <div class="right-block"><div class="right-label">Abnormal Labs</div>${abn || '<span class="empty">해당 없음</span>'}</div>
-    <div class="right-block"><div class="right-label">Discharge Medications</div>${dc || '<span class="empty">미기재</span>'}</div>
-    <div class="right-block"><div class="right-label">Allergy</div><b>${esc((caseData.patientHeader.allergies||[]).map(a=>a.substance).join(', ') || '미기재')}</b></div>
+    <div class="right-block"><div class="right-label">Discharge Medications</div>${dc || '<span class="empty">-</span>'}</div>
+    <div class="right-block"><div class="right-label">Allergy</div><b>${esc((caseData.patientHeader.allergies||[]).map(a=>a.substance).join(', ') || '-')}</b></div>
   `;
 }
 function section(title, body, small='') { return `<div class="card"><div class="card-title"><span>${esc(title)}</span>${small?`<small>${esc(small)}</small>`:''}</div><div class="card-body">${body}</div></div>`; }
