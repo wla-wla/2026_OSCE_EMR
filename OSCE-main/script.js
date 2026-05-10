@@ -176,7 +176,7 @@ function clearChart() {
     <div>
       <p class="eyebrow">Patient Chart</p>
       <h2>환자를 조회해 주세요</h2>
-      <p class="muted">예: P001, P002, patient-a, 김영수</p>
+      <p class="muted">예: patient-a, 김영수</p>
     </div>
     <div id="safetyBadges" class="badge-row"></div>
   `;
@@ -677,7 +677,7 @@ function renderMedicationReconciliation(items) {
       <td>${escapeHtml(joinParts([item.dischargeDose, item.dischargeRoute, item.dischargeFrequency]))}</td>
       <td><span class="status-pill ${escapeAttr(item.reconciliationStatus || "")}">${escapeHtml(item.reconciliationStatus || EMPTY_TEXT)}</span></td>
       <td>${escapeHtml(item.verificationStatus || "")}</td>
-      <td>${escapeHtml(item.note || "")}</td>
+      <td>${escapeHtml(isDevPlaceholderNote(item.note) ? "" : (item.note || ""))}</td>
     </tr>
   `).join("");
   setHtml("medRec", `
