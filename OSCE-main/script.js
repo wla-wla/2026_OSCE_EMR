@@ -660,7 +660,7 @@ function renderMedicationIdentification(items) {
       <td>${escapeHtml(item.appearance || EMPTY_TEXT)}</td>
       <td>${escapeHtml(booleanText(item.matchedToHomeMedicationList))}</td>
       <td>${escapeHtml(item.verificationStatus || "")}</td>
-      <td>${escapeHtml(item.note || "")}</td>
+      <td>${escapeHtml(isDevPlaceholderNote(item.note) ? "" : (item.note || ""))}</td>
     </tr>
   `).join("");
   setHtml("medId", `
@@ -699,7 +699,7 @@ function renderMedicationOrders(orders) {
       <td class="nowrap">${escapeHtml(order.duration || "")}</td>
       <td class="nowrap">${escapeHtml(order.status || "")}</td>
       <td class="nowrap">${escapeHtml(order.prescriber || "")}</td>
-      <td>${escapeHtml(order.note || "")}</td>
+      <td>${escapeHtml(isDevPlaceholderNote(order.note) ? "" : (order.note || ""))}</td>
     </tr>
   `).join("");
   setHtml("orders", `
@@ -914,4 +914,11 @@ function escapeAttr(input) {
 
 function escapeAttrPath(input) {
   return String(input ?? "").replace(/["'<>\s]/g, "");
+}
+function isDevPlaceholderNote(note) {
+  if (!note || typeof note !== "string") return false;
+  const s = note.trim();
+  if (!s) return false;
+  const patterns = [/원자료/, /Current\s*Medications/i];
+  return patterns.some((p) => p.test(s));
 }
