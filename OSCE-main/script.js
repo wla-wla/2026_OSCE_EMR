@@ -176,7 +176,7 @@ function clearChart() {
     <div>
       <p class="eyebrow">Patient Chart</p>
       <h2>환자를 조회해 주세요</h2>
-      <p class="muted">예: P001, P002, patient-a, 김영수</p>
+      <p class="muted">예: patient-a, 김영수</p>
     </div>
     <div id="safetyBadges" class="badge-row"></div>
   `;
