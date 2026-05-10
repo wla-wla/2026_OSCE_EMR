@@ -1,4 +1,4 @@
-{
+﻿{
   "schemaVersion": "4.1",
   "caseMeta": {
     "caseId": "patient-c",
@@ -1180,7 +1180,7 @@
       "currentRoute": "PO",
       "currentFrequency": "qd",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -1193,7 +1193,7 @@
       "currentRoute": "PO",
       "currentFrequency": "qd",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -1206,7 +1206,7 @@
       "currentRoute": "PO",
       "currentFrequency": "tid",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -1219,7 +1219,7 @@
       "currentRoute": "PO",
       "currentFrequency": "bid",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -1232,7 +1232,7 @@
       "currentRoute": "PO",
       "currentFrequency": "qd",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -1245,7 +1245,7 @@
       "currentRoute": "PO",
       "currentFrequency": "bid",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -1258,7 +1258,7 @@
       "currentRoute": "PO",
       "currentFrequency": "qd",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -1271,7 +1271,7 @@
       "currentRoute": "PO",
       "currentFrequency": "qd",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -1284,7 +1284,7 @@
       "currentRoute": "PO",
       "currentFrequency": "qd",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
     }
@@ -1511,7 +1511,7 @@
       "appearance": "",
       "patientReportedUse": "아침 식후",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1524,7 +1524,7 @@
       "appearance": "",
       "patientReportedUse": "아침 식후",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1537,7 +1537,7 @@
       "appearance": "",
       "patientReportedUse": "매 식사와 함께",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1550,7 +1550,7 @@
       "appearance": "",
       "patientReportedUse": "아침, 저녁 식후",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1563,7 +1563,7 @@
       "appearance": "",
       "patientReportedUse": "저녁 식후",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1576,7 +1576,7 @@
       "appearance": "",
       "patientReportedUse": "아침, 저녁 식후",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1589,7 +1589,7 @@
       "appearance": "",
       "patientReportedUse": "아침 식후",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1602,7 +1602,7 @@
       "appearance": "",
       "patientReportedUse": "자기 전 공복",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medications에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -1615,7 +1615,7 @@
       "appearance": "",
       "patientReportedUse": "아침 식전",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medications에서 가져옴. 외형정보는 추가하지 않음."
     }

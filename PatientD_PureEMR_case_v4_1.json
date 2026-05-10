@@ -1,4 +1,4 @@
-{
+﻿{
   "schemaVersion": "4.1",
   "caseMeta": {
     "caseId": "patient-d",
@@ -559,7 +559,7 @@
       "currentRoute": "PO",
       "currentFrequency": "qAM",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medication List를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -572,7 +572,7 @@
       "currentRoute": "PO",
       "currentFrequency": "qHS",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medication List를 EMR reconciliation 화면에 표시하기 위해 재배치"
     },
@@ -585,7 +585,7 @@
       "currentRoute": "PO",
       "currentFrequency": "qHS",
       "reconciliationStatus": "current_medication_listed",
-      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 원자료 미기재",
+      "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
       "note": "원자료 Current Medication List를 EMR reconciliation 화면에 표시하기 위해 재배치"
     }
@@ -705,7 +705,7 @@
       "appearance": "",
       "patientReportedUse": "아침",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medication List에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -718,7 +718,7 @@
       "appearance": "",
       "patientReportedUse": "취침 전",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medication List에서 가져옴. 외형정보는 추가하지 않음."
     },
@@ -731,7 +731,7 @@
       "appearance": "",
       "patientReportedUse": "취침 전",
       "matchedToHomeMedicationList": true,
-      "verificationStatus": "식별 외형 원자료 미기재",
+      "verificationStatus": "식별 외형 -",
       "sourceLevel": "derived_from_medication_name_only",
       "note": "약물명/용량은 원자료 Current Medication List에서 가져옴. 외형정보는 추가하지 않음."
     }
