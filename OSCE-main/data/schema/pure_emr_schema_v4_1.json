@@ -27,5 +27,19 @@
     "displayPolicy"
   ],
   "emptyStateText": "원자료 미기재",
-  "sourceLevelPolicy": "sourceLevel fields are retained for data governance and are not displayed directly in the student-facing chart."
+  "sourceLevelPolicy": "sourceLevel fields are retained for data governance and are not displayed directly in the student-facing chart.",
+  "medicationFieldExtensions": {
+    "homeMedications": {
+      "brandName": "Optional product or brand name. Existing records without this field remain valid.",
+      "productName": "Optional alias for product or brand name.",
+      "tradeName": "Optional alias for product or brand name.",
+      "ingredient": "Optional ingredient name. When absent, UI may fall back to existing drugName for backward compatibility."
+    },
+    "dischargeMedications": {
+      "brandName": "Optional product or brand name. Existing records without this field remain valid.",
+      "productName": "Optional alias for product or brand name.",
+      "tradeName": "Optional alias for product or brand name.",
+      "ingredient": "Optional ingredient name. When absent, UI may fall back to existing drugName for backward compatibility."
+    }
+  }
 }
