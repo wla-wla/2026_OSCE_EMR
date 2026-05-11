@@ -517,7 +517,8 @@
   "homeMedications": [
     {
       "drugName": "Escitalopram",
-      "ingredient": "Escitalopram",
+      "brandName": "렉사프로정",
+      "ingredient": "Escitalopram Oxalate",
       "dose": "20 mg",
       "route": "PO",
       "frequency": "qAM",
@@ -528,7 +529,8 @@
     },
     {
       "drugName": "Trazodone",
-      "ingredient": "Trazodone",
+      "brandName": "트리티코정",
+      "ingredient": "Trazodone Hydrochloride",
       "dose": "50 mg",
       "route": "PO",
       "frequency": "qHS",
@@ -539,7 +541,8 @@
     },
     {
       "drugName": "Rosuvastatin",
-      "ingredient": "Rosuvastatin",
+      "brandName": "크레스토정",
+      "ingredient": "Rosuvastatin Calcium",
       "dose": "10 mg",
       "route": "PO",
       "frequency": "qHS",

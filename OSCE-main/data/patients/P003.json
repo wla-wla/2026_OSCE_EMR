@@ -1072,6 +1072,7 @@
   "homeMedications": [
     {
       "drugName": "트라젠타정",
+      "brandName": "트라젠타정",
       "ingredient": "Linagliptin",
       "dose": "5 mg 1T",
       "route": "PO",
@@ -1083,6 +1084,7 @@
     },
     {
       "drugName": "트리테이스정",
+      "brandName": "트리테이스정",
       "ingredient": "Ramipril",
       "dose": "2.5 mg 1T",
       "route": "PO",
@@ -1094,7 +1096,8 @@
     },
     {
       "drugName": "렌벨라정",
-      "ingredient": "Sevelamer carbonate",
+      "brandName": "렌벨라정",
+      "ingredient": "Sevelamer Carbonate",
       "dose": "800 mg 1T",
       "route": "PO",
       "frequency": "tid",
@@ -1105,7 +1108,8 @@
     },
     {
       "drugName": "카리메트과립",
-      "ingredient": "Polystyrene Sulfonate",
+      "brandName": "카리메트과립",
+      "ingredient": "Calcium Polystyrene Sulfonate",
       "dose": "5 g/포 1P",
       "route": "PO",
       "frequency": "bid",
@@ -1116,7 +1120,8 @@
     },
     {
       "drugName": "네프비타정",
-      "ingredient": "Ascorbic acid 외 8종",
+      "brandName": "네프비타정",
+      "ingredient": "Ascorbic Acid",
       "dose": "1T",
       "route": "PO",
       "frequency": "qd",
@@ -1127,7 +1132,8 @@
     },
     {
       "drugName": "타스나정",
-      "ingredient": "Sodium bicarbonate",
+      "brandName": "타스나정",
+      "ingredient": "Sodium Bicarbonate",
       "dose": "500 mg 1T",
       "route": "PO",
       "frequency": "bid",
@@ -1138,6 +1144,7 @@
     },
     {
       "drugName": "알로푸리놀정",
+      "brandName": "알로푸리놀정",
       "ingredient": "Allopurinol",
       "dose": "100 mg 1T",
       "route": "PO",
@@ -1149,7 +1156,8 @@
     },
     {
       "drugName": "훼로바유정",
-      "ingredient": "Ferrous fumarate",
+      "brandName": "훼로바유정",
+      "ingredient": "Dried Ferrous Sulfate",
       "dose": "1T",
       "route": "PO",
       "frequency": "qd",
@@ -1160,7 +1168,8 @@
     },
     {
       "drugName": "넥시움정",
-      "ingredient": "Esomeprazole",
+      "brandName": "넥시움정",
+      "ingredient": "Esomeprazole Magnesium Trihydrate",
       "dose": "20 mg 1T",
       "route": "PO",
       "frequency": "qd",

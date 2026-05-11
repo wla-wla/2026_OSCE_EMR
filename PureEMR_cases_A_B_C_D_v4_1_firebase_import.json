@@ -2661,7 +2661,8 @@
       "homeMedications": [
         {
           "drugName": "Amlodipine",
-          "ingredient": "",
+          "brandName": "아모디핀정",
+          "ingredient": "Amlodipine Camsylate",
           "dose": "5 mg",
           "route": "PO",
           "frequency": "qd",
@@ -2675,7 +2676,8 @@
         },
         {
           "drugName": "Hydrochlorothiazide",
-          "ingredient": "",
+          "brandName": "다이크로짇정",
+          "ingredient": "Hydrochlorothiazide",
           "dose": "25 mg",
           "route": "PO",
           "frequency": "qAM",
@@ -2689,7 +2691,8 @@
         },
         {
           "drugName": "Ramipril",
-          "ingredient": "",
+          "brandName": "트리테이스정",
+          "ingredient": "Ramipril",
           "dose": "5 mg",
           "route": "PO",
           "frequency": "qd",
@@ -2703,7 +2706,8 @@
         },
         {
           "drugName": "Atorvastatin",
-          "ingredient": "",
+          "brandName": "리피토정",
+          "ingredient": "Atorvastatin Calcium Trihydrate",
           "dose": "40 mg",
           "route": "PO",
           "frequency": "qHS",
@@ -2932,7 +2936,8 @@
       "dischargeMedications": [
         {
           "drugName": "Ramipril",
-          "ingredient": "",
+          "brandName": "트리테이스정",
+          "ingredient": "Ramipril",
           "dose": "5 mg",
           "route": "PO",
           "frequency": "qd",
@@ -2944,7 +2949,8 @@
         },
         {
           "drugName": "Carvedilol",
-          "ingredient": "",
+          "brandName": "딜라트렌정",
+          "ingredient": "Carvedilol",
           "dose": "3.125 mg",
           "route": "PO",
           "frequency": "bid",
@@ -2956,7 +2962,8 @@
         },
         {
           "drugName": "Furosemide",
-          "ingredient": "",
+          "brandName": "라식스정",
+          "ingredient": "Furosemide",
           "dose": "40 mg",
           "route": "PO",
           "frequency": "qAM",
@@ -2968,7 +2975,8 @@
         },
         {
           "drugName": "Amlodipine",
-          "ingredient": "",
+          "brandName": "아모디핀정",
+          "ingredient": "Amlodipine Camsylate",
           "dose": "5 mg",
           "route": "PO",
           "frequency": "qd",
@@ -2980,7 +2988,8 @@
         },
         {
           "drugName": "Hydrochlorothiazide",
-          "ingredient": "",
+          "brandName": "다이크로짇정",
+          "ingredient": "Hydrochlorothiazide",
           "dose": "25 mg",
           "route": "PO",
           "frequency": "qAM",
@@ -2992,7 +3001,8 @@
         },
         {
           "drugName": "Atorvastatin",
-          "ingredient": "",
+          "brandName": "리피토정",
+          "ingredient": "Atorvastatin Calcium Trihydrate",
           "dose": "40 mg",
           "route": "PO",
           "frequency": "qHS",
@@ -3004,7 +3014,8 @@
         },
         {
           "drugName": "Colchicine",
-          "ingredient": "",
+          "brandName": "콜킨정",
+          "ingredient": "Colchicine",
           "dose": "0.6 mg",
           "route": "PO",
           "frequency": "bid",
@@ -4242,6 +4253,7 @@
       "homeMedications": [
         {
           "drugName": "트라젠타정",
+          "brandName": "트라젠타정",
           "ingredient": "Linagliptin",
           "dose": "5 mg 1T",
           "route": "PO",
@@ -4253,6 +4265,7 @@
         },
         {
           "drugName": "트리테이스정",
+          "brandName": "트리테이스정",
           "ingredient": "Ramipril",
           "dose": "2.5 mg 1T",
           "route": "PO",
@@ -4264,7 +4277,8 @@
         },
         {
           "drugName": "렌벨라정",
-          "ingredient": "Sevelamer carbonate",
+          "brandName": "렌벨라정",
+          "ingredient": "Sevelamer Carbonate",
           "dose": "800 mg 1T",
           "route": "PO",
           "frequency": "tid",
@@ -4275,7 +4289,8 @@
         },
         {
           "drugName": "카리메트과립",
-          "ingredient": "Polystyrene Sulfonate",
+          "brandName": "카리메트과립",
+          "ingredient": "Calcium Polystyrene Sulfonate",
           "dose": "5 g/포 1P",
           "route": "PO",
           "frequency": "bid",
@@ -4286,7 +4301,8 @@
         },
         {
           "drugName": "네프비타정",
-          "ingredient": "Ascorbic acid 외 8종",
+          "brandName": "네프비타정",
+          "ingredient": "Ascorbic Acid",
           "dose": "1T",
           "route": "PO",
           "frequency": "qd",
@@ -4297,7 +4313,8 @@
         },
         {
           "drugName": "타스나정",
-          "ingredient": "Sodium bicarbonate",
+          "brandName": "타스나정",
+          "ingredient": "Sodium Bicarbonate",
           "dose": "500 mg 1T",
           "route": "PO",
           "frequency": "bid",
@@ -4308,6 +4325,7 @@
         },
         {
           "drugName": "알로푸리놀정",
+          "brandName": "알로푸리놀정",
           "ingredient": "Allopurinol",
           "dose": "100 mg 1T",
           "route": "PO",
@@ -4319,7 +4337,8 @@
         },
         {
           "drugName": "훼로바유정",
-          "ingredient": "Ferrous fumarate",
+          "brandName": "훼로바유정",
+          "ingredient": "Dried Ferrous Sulfate",
           "dose": "1T",
           "route": "PO",
           "frequency": "qd",
@@ -4330,7 +4349,8 @@
         },
         {
           "drugName": "넥시움정",
-          "ingredient": "Esomeprazole",
+          "brandName": "넥시움정",
+          "ingredient": "Esomeprazole Magnesium Trihydrate",
           "dose": "20 mg 1T",
           "route": "PO",
           "frequency": "qd",
@@ -5357,7 +5377,8 @@
       "homeMedications": [
         {
           "drugName": "Escitalopram",
-          "ingredient": "Escitalopram",
+          "brandName": "렉사프로정",
+          "ingredient": "Escitalopram Oxalate",
           "dose": "20 mg",
           "route": "PO",
           "frequency": "qAM",
@@ -5368,7 +5389,8 @@
         },
         {
           "drugName": "Trazodone",
-          "ingredient": "Trazodone",
+          "brandName": "트리티코정",
+          "ingredient": "Trazodone Hydrochloride",
           "dose": "50 mg",
           "route": "PO",
           "frequency": "qHS",
@@ -5379,7 +5401,8 @@
         },
         {
           "drugName": "Rosuvastatin",
-          "ingredient": "Rosuvastatin",
+          "brandName": "크레스토정",
+          "ingredient": "Rosuvastatin Calcium",
           "dose": "10 mg",
           "route": "PO",
           "frequency": "qHS",
