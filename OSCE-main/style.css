@@ -350,6 +350,47 @@ tr:nth-child(even) td {
   white-space: nowrap;
 }
 
+.p003-home-medications {
+  overflow-x: auto;
+}
+
+.p003-home-medications table {
+  min-width: 1120px;
+  table-layout: auto;
+}
+
+.p003-home-medications th:nth-child(-n+6),
+.p003-home-medications td:nth-child(-n+6) {
+  white-space: nowrap;
+}
+
+.p003-home-medications th:nth-child(1),
+.p003-home-medications td:nth-child(1) {
+  min-width: 104px;
+}
+
+.p003-home-medications th:nth-child(2),
+.p003-home-medications td:nth-child(2) {
+  min-width: 230px;
+}
+
+.p003-home-medications th:nth-child(3),
+.p003-home-medications td:nth-child(3) {
+  min-width: 96px;
+}
+
+.p003-home-medications th:nth-child(4),
+.p003-home-medications td:nth-child(4),
+.p003-home-medications th:nth-child(5),
+.p003-home-medications td:nth-child(5) {
+  min-width: 62px;
+}
+
+.p003-home-medications th:nth-child(6),
+.p003-home-medications td:nth-child(6) {
+  min-width: 132px;
+}
+
 .orders-table table {
   min-width: 1180px;
   table-layout: auto;
