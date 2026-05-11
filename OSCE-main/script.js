@@ -500,19 +500,21 @@ function renderVitals(vitals) {
 function renderLabPivot(labResults) {
   const grouped = new Map();
   const dateMap = new Map();
+  const fallbackDate = firstLabDate(labResults);
 
   labResults.forEach((lab) => {
     const key = lab.item || lab.testName || "Unknown";
+    const normalizedLab = withReference(lab);
     if (!grouped.has(key)) grouped.set(key, []);
-    grouped.get(key).push(withReference(lab));
-    const dateKey = lab.date || lab.dateTime || lab.label || "";
-    if (dateKey) dateMap.set(dateKey, lab.label || dateKey);
+    grouped.get(key).push(normalizedLab);
+    const dateKey = labDateKey(normalizedLab, fallbackDate);
+    if (dateKey) dateMap.set(dateKey, normalizedLab.label || dateMap.get(dateKey) || dateKey);
   });
 
   const dates = Array.from(dateMap.keys()).sort((a, b) => new Date(a) - new Date(b));
   const headers = ["검사명", "단위", "참고치", ...dates.map((date) => dateMap.get(date)), "Trend"];
   const rows = Array.from(grouped.entries()).sort(([a], [b]) => a.localeCompare(b)).map(([item, labs]) => {
-    const byDate = new Map(labs.map((lab) => [lab.date || lab.dateTime || lab.label || "", lab]));
+    const byDate = new Map(labs.map((lab) => [labDateKey(lab, fallbackDate), lab]));
     const first = labs[0] || {};
     const values = dates.map((date) => renderLabCell(byDate.get(date))).join("");
     return `
@@ -530,6 +532,17 @@ function renderLabPivot(labResults) {
     <h2 class="section-title">Lab Results</h2>
     ${rows ? `<div class="table-wrap">${table(headers, rows)}</div>` : emptyState("조회된 Lab 기록이 없습니다.")}
   `);
+}
+
+function firstLabDate(labResults) {
+  return (labResults || [])
+    .map((lab) => lab.date || lab.dateTime || "")
+    .filter(Boolean)
+    .sort((a, b) => new Date(a) - new Date(b))[0] || "";
+}
+
+function labDateKey(lab, fallbackDate = "") {
+  return lab.date || lab.dateTime || lab.label || fallbackDate || "";
 }
 
 function withReference(lab) {

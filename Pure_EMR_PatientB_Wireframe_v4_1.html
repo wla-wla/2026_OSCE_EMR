@@ -1235,9 +1235,9 @@ const caseData = {
       "sourceLevel": "original_value_with_reference_flag"
     },
     {
-      "date": "",
+      "date": "2026-05-16",
       "dateTime": "",
-      "label": "",
+      "label": "입원 당시",
       "category": "Lipid",
       "item": "LDL-C",
       "result": 138,
@@ -2002,7 +2002,10 @@ function renderVitals() {
 }
 function renderLabs() {
   const labs=caseData.labResults||[];
-  const dates=[...new Set(labs.map(l=>l.label || l.date || ''))];
+  const fallbackDate = labs.map(l=>l.date || l.dateTime || '').filter(Boolean).sort((a,b)=>new Date(a)-new Date(b))[0] || '';
+  const dateLabel = (d)=>labs.find(l=>(l.date || l.dateTime)===d && l.label)?.label || d;
+  const labDateKey = (l)=>l.label || dateLabel(l.date || l.dateTime || fallbackDate) || '';
+  const dates=[...new Set(labs.map(l=>labDateKey(l)))].filter(Boolean);
   const items=[...new Set(labs.map(l=>l.item))];
   const order=['Na','K','Cl','CO2','BUN','SCr','eGFR','Uric acid','NT-proBNP','WBC','Hb','Platelet','AST','ALT','LDL-C'];
   items.sort((a,b)=>(order.indexOf(a)<0?999:order.indexOf(a))-(order.indexOf(b)<0?999:order.indexOf(b)) || a.localeCompare(b));
@@ -2010,7 +2013,7 @@ function renderLabs() {
     const byItem=labs.filter(l=>l.item===item);
     const first=byItem[0]||{};
     const cells=dates.map(d=>{
-      const r=byItem.find(x=>(x.label||x.date||'')===d);
+      const r=byItem.find(x=>labDateKey(x)===d);
       if(!r) return td('<span class="empty">-</span>');
       const abnormal = r.flag && r.flag!=='N';
       const flagClass = ['H','HH'].includes(r.flag) ? 'flag-high' : ['L','LL'].includes(r.flag) ? 'flag-low' : '';
