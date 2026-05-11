@@ -660,7 +660,7 @@ function renderHomeMedications(meds) {
   `).join("");
   setHtml("homeMeds", `
     <h2 class="section-title">Home Medications</h2>
-    ${rows ? table(["상품명","성분명","Dose","Route","Freq","Schedule","Indication","Adherence","Last taken","Note"], rows) : emptyState("조회된 기존 복용약 기록이 없습니다.")}
+    ${rows ? table(["상품명","성분명","용량","경로","빈도","복용시간","적응증","순응도","마지막 복용","비고"], rows) : emptyState("조회된 기존 복용약 기록이 없습니다.")}
   `);
 }
 
@@ -760,7 +760,7 @@ function renderDischargeMedications(meds) {
   `).join("");
   setHtml("dischargeMeds", `
     <h2 class="section-title">Discharge Medications</h2>
-    ${rows ? table(["상품명","성분명","Dose","Route","Freq","Duration","Schedule","Change","Indication","Note"], rows) : emptyState("조회된 퇴원약 기록이 없습니다.")}
+    ${rows ? table(["상품명","성분명","용량","경로","빈도","기간","복용시간","기존약 대비","적응증","메모"], rows) : emptyState("조회된 퇴원약 기록이 없습니다.")}
   `);
 }
 

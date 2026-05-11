@@ -2037,8 +2037,8 @@ function renderTests() {
   return table(['Type','Test','Timing/Date','Summary','Findings','Impression'], rows);
 }
 function renderHomeMed() {
-  const rows=(caseData.homeMedications||[]).map(m=>`<tr>${td(val(m.brandName || m.productName || m.tradeName))}${td(`<b>${val(m.ingredient || m.drugName)}</b>`)}${td(val(m.dose))}${td(val(m.route))}${td(val(m.frequency))}${td(val(m.schedule))}${td(val(m.indication))}${td(val(m.adherence))}${td(val(m.lastTaken))}</tr>`);
-  return table(['상품명','성분명','Dose','Route','Freq','Schedule','Indication','Adherence','Last taken'], rows);
+  const rows=(caseData.homeMedications||[]).map(m=>`<tr>${td(val(m.brandName || m.productName || m.tradeName))}${td(`<b>${val(m.ingredient || m.drugName)}</b>`)}${td(val(m.dose))}${td(val(m.route))}${td(val(m.frequency))}${td(val(m.schedule))}${td(val(m.indication))}${td(val(m.adherence))}${td(val(m.lastTaken))}${td(val(m.note))}</tr>`);
+  return table(['상품명','성분명','용량','경로','빈도','복용시간','적응증','순응도','마지막 복용','비고'], rows);
 }
 function renderMedId() {
   const rows=(caseData.medicationIdentification||[]).map(m=>`<tr>${td(val(m.recordedAt))}${td(`<b>${val(m.reportedMedication)}</b>`)}${td(val(m.identifiedDrug))}${td(val(m.strength))}${td(val(m.dosageForm))}${td(val(m.appearance))}${td(val(m.verificationStatus))}${td(val(m.note))}</tr>`);
@@ -2060,7 +2060,7 @@ function renderMAR() {
 }
 function renderDischargeMed() {
   const rows=(caseData.dischargeMedications||[]).map(m=>`<tr class="status-${esc(m.changeFromHomeMed)}">${td(val(m.brandName || m.productName || m.tradeName))}${td(`<b>${val(m.ingredient || m.drugName)}</b>`)}${td(val(m.dose))}${td(val(m.route))}${td(val(m.frequency))}${td(val(m.duration))}${td(pill(statusLabel(m.changeFromHomeMed), m.changeFromHomeMed==='new'?'new':'active'))}${td(val(m.indication))}${td(val(m.note))}</tr>`);
-  return table(['상품명','성분명','Dose','Route','Freq','Duration','Change','Indication','Note'], rows);
+  return table(['상품명','성분명','용량','경로','빈도','기간','기존약 대비','적응증','메모'], rows);
 }
 function renderPharmacy() {
   const notes=(caseData.pharmacyReviewRequests||[]).map(n=>`<div class="note"><div class="note-meta"><span>Pharmacist Review Request</span><span>${fmtDateTime(n.dateTime || n.date)}</span></div><div>${val(n.requestText || n.freeText || n.note)}</div></div>`).join('');
