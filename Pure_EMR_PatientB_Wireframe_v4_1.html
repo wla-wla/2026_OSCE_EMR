@@ -323,8 +323,10 @@
   .flag.N { display:none; }
   .flag.C { background:#361313; color:#fff; }
   .lab-value { font-weight:800; white-space:nowrap; }
-  .lab-cell.abnormal { background:#fff9ed; }
-  .lab-cell.critical { background:#ffecec; }
+  .lab-cell.flag-high { background:var(--danger-bg); }
+  .lab-cell.flag-low { background:var(--blue-bg); }
+  .lab-cell.critical.flag-high { background:#ffecec; }
+  .lab-cell.critical.flag-low { background:#e6f1ff; }
   .status-continued { background:#f8fafc; }
   .status-new_on_discharge,.status-new { background:#f0fff4; }
   .status-discontinued { background:#fff4f4; }
@@ -1852,7 +1854,7 @@ function table(headers, rows, cls='') {
 function td(v, cls='') { return `<td class="${cls}">${v}</td>`; }
 function chipFlag(flag) {
   if(!flag || flag==='N') return '';
-  return `<span class="flag ${esc(flag)}">${esc(flag)}</span>`;
+  return `<span class="flag ${esc(flag)}" aria-label="${esc(flag)} flag" title="${esc(flag)}"></span>`;
 }
 function patientBanner() {
   const p=caseData.patientHeader, h=caseData.hospitalRecord;
@@ -2011,7 +2013,8 @@ function renderLabs() {
       const r=byItem.find(x=>(x.label||x.date||'')===d);
       if(!r) return td('<span class="empty">-</span>');
       const abnormal = r.flag && r.flag!=='N';
-      return td(`<span class="lab-value">${esc(r.displayResult ?? r.result)}</span>${chipFlag(r.flag)}`, `lab-cell ${abnormal?'abnormal':''} ${r.critical?'critical':''}`);
+      const flagClass = ['H','HH'].includes(r.flag) ? 'flag-high' : ['L','LL'].includes(r.flag) ? 'flag-low' : '';
+      return td(`<span class="lab-value">${esc(r.displayResult ?? r.result)}</span>${chipFlag(r.flag)}`, `lab-cell ${abnormal?'abnormal':''} ${flagClass} ${r.critical?'critical':''}`);
     }).join('');
     return `<tr>${td(`<b>${esc(item)}</b>`)}${td(val(first.unit))}${td(val(first.referenceText))}${cells}</tr>`;
   });

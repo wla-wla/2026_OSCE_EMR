@@ -557,7 +557,7 @@ function computeFlag(result, low, high) {
 function renderLabCell(lab) {
   if (!lab) return `<td></td>`;
   const flag = lab.flag && lab.flag !== "N" ? String(lab.flag).toUpperCase() : "";
-  return `<td class="${labFlagClass(flag)}">${escapeHtml(lab.displayResult ?? lab.result ?? EMPTY_TEXT)}${flag ? `<span class="flag">${escapeHtml(flag)}</span>` : ""}</td>`;
+  return `<td class="${labFlagClass(flag)}">${escapeHtml(lab.displayResult ?? lab.result ?? EMPTY_TEXT)}</td>`;
 }
 
 function labFlagClass(flag) {

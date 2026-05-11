@@ -10,9 +10,9 @@
   --nav-active: #0d7aa3;
   --accent: #0b6f99;
   --soft: #f7f9fb;
-  --warn: #fff4cc;
-  --low: #dceeff;
-  --critical: #ffd6d6;
+  --warn: #fff0f0;
+  --low: #ecf4ff;
+  --critical: #ffecec;
   --shadow: 0 10px 25px rgba(19, 35, 59, .08);
 }
 
@@ -372,11 +372,13 @@ tr:nth-child(even) td {
 
 .lab-flag-h {
   background: var(--warn) !important;
+  border-color: #ffc7c7;
   font-weight: 800;
 }
 
 .lab-flag-l {
   background: var(--low) !important;
+  border-color: #cbe0ff;
   font-weight: 800;
 }
 
@@ -386,7 +388,7 @@ tr:nth-child(even) td {
 }
 
 .flag {
-  display: inline-block;
+  display: none;
   margin-left: 4px;
   font-size: 11px;
   font-weight: 900;
