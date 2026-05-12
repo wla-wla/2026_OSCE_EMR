@@ -22,7 +22,7 @@
     "birthDate": "1969-03-18",
     "heightCm": 163,
     "weightKg": 55,
-    "bloodType": "",
+    "bloodType": "A",
     "allergies": [],
     "safetyBadges": [
       {
@@ -69,7 +69,7 @@
     "interviewDate": "2026-05-18",
     "admissionRoute": "응급실 경유",
     "department": "호흡기내과",
-    "ward": "",
+    "ward": "111병동",
     "room": "",
     "attendingPhysician": "",
     "insurance": "건강보험",
