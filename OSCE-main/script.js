@@ -916,10 +916,11 @@ function sortByDate(items) {
 }
 
 function vitalClass(vital, field) {
-  if (field === "bp" && (vital.bpFlag === "H" || vital.sbp >= 140 || vital.dbp >= 90)) return "lab-flag-h";
-  if (field === "hr" && (vital.heartRateFlag === "H" || vital.hr > 100)) return "lab-flag-h";
-  if (field === "rr" && vital.rr > 20) return "lab-flag-h";
-  if (field === "spo2" && (vital.spo2Flag === "L" || vital.spo2 < 92)) return "lab-flag-l";
+  const numeric = (value) => value !== null && value !== "" && Number.isFinite(Number(value));
+  if (field === "bp" && (vital.bpFlag === "H" || (numeric(vital.sbp) && Number(vital.sbp) >= 140) || (numeric(vital.dbp) && Number(vital.dbp) >= 90))) return "lab-flag-h";
+  if (field === "hr" && (vital.heartRateFlag === "H" || (numeric(vital.hr) && Number(vital.hr) > 100))) return "lab-flag-h";
+  if (field === "rr" && numeric(vital.rr) && Number(vital.rr) > 20) return "lab-flag-h";
+  if (field === "spo2" && (vital.spo2Flag === "L" || (numeric(vital.spo2) && Number(vital.spo2) < 92))) return "lab-flag-l";
   return "";
 }
 
