@@ -161,32 +161,7 @@
     "consultNotes": [],
     "dischargeSummary": null
   },
-  "diagnosisTimeline": [
-    {
-      "dateTime": "2026-05-14T02:30:00+09:00",
-      "diagnosis": "Severe persistent Asthma – acute exacerbation",
-      "status": "confirmed",
-      "department": "응급실/호흡기내과",
-      "sourceLevel": "original",
-      "note": "응급실 도착 후 천식 급성 악화 소견으로 판단되어 입원"
-    },
-    {
-      "dateTime": "2026-05-17T00:00:00+09:00",
-      "diagnosis": "Osteoporosis",
-      "status": "known/active",
-      "department": "호흡기내과",
-      "sourceLevel": "original",
-      "note": "BMD 요추 T-score -2.8"
-    },
-    {
-      "dateTime": "2026-05-17T00:00:00+09:00",
-      "diagnosis": "Hypothyroidism",
-      "status": "known/active",
-      "department": "호흡기내과",
-      "sourceLevel": "original",
-      "note": "TSH 5.5, Free T4 0.72"
-    }
-  ],
+  "diagnosisTimeline": [],
   "problemList": [
     {
       "problem": "Severe persistent asthma",
