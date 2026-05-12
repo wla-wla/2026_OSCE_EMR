@@ -731,7 +731,7 @@ function renderMedicationIdentification(items) {
 }
 
 function renderMedicationReconciliation(items) {
-  if (currentPatientCode === "P003") {
+  if (currentPatientCode === "P001" || currentPatientCode === "P003") {
     const rows = items.map((item) => `
       <tr>
         <td>${escapeHtml(item.drugName || EMPTY_TEXT)}</td>
@@ -743,9 +743,10 @@ function renderMedicationReconciliation(items) {
         <td>${escapeHtml(isDevPlaceholderNote(item.note) ? "" : (item.note || ""))}</td>
       </tr>
     `).join("");
+    const tableClass = currentPatientCode === "P001" ? "p001-med-rec-table" : "p003-med-rec-table";
     setHtml("medRec", `
       <h2 class="section-title">Medication Reconciliation</h2>
-      ${rows ? `<div class="table-wrap p003-med-rec-table">${table(["상품명", "성분명", "기존 복용", "퇴원 약물", "상태", "확인상태", "비고"], rows)}</div>` : emptyState("조회된 Medication Reconciliation 기록이 없습니다.")}
+      ${rows ? `<div class="table-wrap ${tableClass}">${table(["상품명", "성분명", "기존 복용", "퇴원 약물", "상태", "확인상태", "비고"], rows)}</div>` : emptyState("조회된 Medication Reconciliation 기록이 없습니다.")}
     `);
     return;
   }
@@ -767,7 +768,7 @@ function renderMedicationReconciliation(items) {
 }
 
 function renderMedicationOrders(orders) {
-  if (currentPatientCode === "P003") {
+  if (currentPatientCode === "P001" || currentPatientCode === "P003") {
     const rows = orders.map((order) => `
       <tr>
         <td>${escapeHtml(order.orderId || "")}</td>
@@ -779,12 +780,13 @@ function renderMedicationOrders(orders) {
         <td>${escapeHtml(order.route || "")}</td>
         <td>${escapeHtml(order.frequency || "")}</td>
         <td>${escapeHtml(order.duration || "")}</td>
-        <td>${escapeHtml(order.status || "")}</td>
+        <td>${currentPatientCode === "P001" ? `<span class="status-pill ${escapeAttr(order.status || "")}">${escapeHtml(order.status || "")}</span>` : escapeHtml(order.status || "")}</td>
       </tr>
     `).join("");
+    const tableClass = currentPatientCode === "P001" ? "p001-orders-table" : "p003-orders-table";
     setHtml("orders", `
       <h2 class="section-title">Orders</h2>
-      ${rows ? `<div class="table-wrap p003-orders-table">${table(["Order ID", "Order Date", "Type", "상품명", "성분명", "용량", "경로", "빈도", "기간", "상태"], rows)}</div>` : emptyState("조회된 처방오더 기록이 없습니다.")}
+      ${rows ? `<div class="table-wrap ${tableClass}">${table(["Order ID", "Order Date", "Type", "상품명", "성분명", "용량", "경로", "빈도", "기간", "상태"], rows)}</div>` : emptyState("조회된 처방오더 기록이 없습니다.")}
     `);
     return;
   }

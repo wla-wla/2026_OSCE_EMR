@@ -391,46 +391,62 @@ tr:nth-child(even) td {
   min-width: 132px;
 }
 
+.p001-med-rec-table table,
 .p003-med-rec-table table {
   min-width: 1180px;
   table-layout: auto;
 }
 
+.p001-med-rec-table th,
+.p001-med-rec-table td,
 .p003-med-rec-table th,
 .p003-med-rec-table td {
   white-space: nowrap;
 }
 
+.p001-med-rec-table th:nth-child(1),
+.p001-med-rec-table td:nth-child(1),
 .p003-med-rec-table th:nth-child(1),
 .p003-med-rec-table td:nth-child(1) {
   min-width: 110px;
 }
 
+.p001-med-rec-table th:nth-child(2),
+.p001-med-rec-table td:nth-child(2),
 .p003-med-rec-table th:nth-child(2),
 .p003-med-rec-table td:nth-child(2) {
   min-width: 190px;
 }
 
+.p001-med-rec-table th:nth-child(7),
+.p001-med-rec-table td:nth-child(7),
 .p003-med-rec-table th:nth-child(7),
 .p003-med-rec-table td:nth-child(7) {
   min-width: 300px;
 }
 
+.p001-orders-table table,
 .p003-orders-table table {
   min-width: 1160px;
   table-layout: auto;
 }
 
+.p001-orders-table th,
+.p001-orders-table td,
 .p003-orders-table th,
 .p003-orders-table td {
   white-space: nowrap;
 }
 
+.p001-orders-table th:nth-child(4),
+.p001-orders-table td:nth-child(4),
 .p003-orders-table th:nth-child(4),
 .p003-orders-table td:nth-child(4) {
   min-width: 110px;
 }
 
+.p001-orders-table th:nth-child(5),
+.p001-orders-table td:nth-child(5),
 .p003-orders-table th:nth-child(5),
 .p003-orders-table td:nth-child(5) {
   min-width: 220px;
@@ -496,6 +512,12 @@ tr:nth-child(even) td {
 .status-pill.new_on_discharge {
   border-color: #b9d5be;
   background: #eaf7ed;
+}
+
+.status-pill.NewMedicationsDuringAdmission {
+  border-color: #a7d8ae;
+  background: #e6f7e8;
+  color: #1f6b2b;
 }
 
 .status-pill.continued {
