@@ -731,6 +731,25 @@ function renderMedicationIdentification(items) {
 }
 
 function renderMedicationReconciliation(items) {
+  if (currentPatientCode === "P003") {
+    const rows = items.map((item) => `
+      <tr>
+        <td>${escapeHtml(item.drugName || EMPTY_TEXT)}</td>
+        <td>${escapeHtml(item.ingredient || EMPTY_TEXT)}</td>
+        <td>${escapeHtml(joinParts([item.homeDose, item.homeRoute, item.homeFrequency]))}</td>
+        <td>${escapeHtml(joinParts([item.dischargeDose, item.dischargeRoute, item.dischargeFrequency]))}</td>
+        <td><span class="status-pill ${escapeAttr(item.reconciliationStatus || "")}">${escapeHtml(item.reconciliationStatus || EMPTY_TEXT)}</span></td>
+        <td>${escapeHtml(item.verificationStatus || "")}</td>
+        <td>${escapeHtml(isDevPlaceholderNote(item.note) ? "" : (item.note || ""))}</td>
+      </tr>
+    `).join("");
+    setHtml("medRec", `
+      <h2 class="section-title">Medication Reconciliation</h2>
+      ${rows ? `<div class="table-wrap p003-med-rec-table">${table(["상품명", "성분명", "기존 복용", "퇴원 약물", "상태", "확인상태", "비고"], rows)}</div>` : emptyState("조회된 Medication Reconciliation 기록이 없습니다.")}
+    `);
+    return;
+  }
+
   const rows = items.map((item) => `
     <tr>
       <td>${escapeHtml(item.drugName || EMPTY_TEXT)}</td>
@@ -748,6 +767,28 @@ function renderMedicationReconciliation(items) {
 }
 
 function renderMedicationOrders(orders) {
+  if (currentPatientCode === "P003") {
+    const rows = orders.map((order) => `
+      <tr>
+        <td>${escapeHtml(order.orderId || "")}</td>
+        <td>${escapeHtml(formatDateTime(order.orderDateTime || order.orderDate || ""))}</td>
+        <td>${escapeHtml(order.orderType || "")}</td>
+        <td>${escapeHtml(order.drugName || EMPTY_TEXT)}</td>
+        <td>${escapeHtml(order.ingredient || EMPTY_TEXT)}</td>
+        <td>${escapeHtml(order.dose || "")}</td>
+        <td>${escapeHtml(order.route || "")}</td>
+        <td>${escapeHtml(order.frequency || "")}</td>
+        <td>${escapeHtml(order.duration || "")}</td>
+        <td>${escapeHtml(order.status || "")}</td>
+      </tr>
+    `).join("");
+    setHtml("orders", `
+      <h2 class="section-title">Orders</h2>
+      ${rows ? `<div class="table-wrap p003-orders-table">${table(["Order ID", "Order Date", "Type", "상품명", "성분명", "용량", "경로", "빈도", "기간", "상태"], rows)}</div>` : emptyState("조회된 처방오더 기록이 없습니다.")}
+    `);
+    return;
+  }
+
   const rows = orders.map((order) => `
     <tr>
       <td class="nowrap">${escapeHtml(order.orderId || "")}</td>
