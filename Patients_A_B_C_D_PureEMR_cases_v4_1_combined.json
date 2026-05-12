@@ -3377,7 +3377,7 @@
         "birthDate": "1964-04-15",
         "heightCm": 174,
         "weightKg": 64,
-        "bloodType": "",
+        "bloodType": "O",
         "allergies": [
           {
             "substance": "NKDA",
@@ -4984,37 +4984,44 @@
       ],
       "timeline": [
         {
-          "dateTime": "2025-08-21T00:00:00+09:00",
-          "category": "medication",
-          "title": "Metformin 중단",
+          "dateTime": "2016-06-02T09:00:00+09:00",
+          "category": "diagnosis",
+          "title": "HTN 진단",
           "sourceLevel": "original",
-          "summary": "renal function decline으로 Metformin D/C"
+          "summary": ""
         },
         {
-          "dateTime": "2026-01-01T00:00:00+09:00",
-          "category": "procedure",
+          "dateTime": "2021-08-24T00:00:00+09:00",
+          "category": "diagnosis",
+          "title": "T2DM 진단",
+          "sourceLevel": "original",
+          "summary": ""
+        },
+        {
+          "dateTime": "2025-10-16T09:00:00+09:00",
+          "category": "diagnosis",
+          "title": "CKD stage 5 진단",
+          "sourceLevel": "original",
+          "summary": ""
+        },
+        {
+          "dateTime": "2025-11-10T09:00:00+09:00",
+          "category": "surgery",
           "title": "AVF creation",
           "sourceLevel": "original",
-          "summary": "left forearm AVF creation"
+          "summary": ""
         },
         {
-          "dateTime": "2026-02-01T00:00:00+09:00",
+          "dateTime": "2026-02-02T09:00:00+09:00",
           "category": "dialysis",
-          "title": "혈액투석 시작",
+          "title": "HD 시작",
           "sourceLevel": "original",
-          "summary": "주 3회(월/수/토), 1회 4시간 혈액투석 시행"
+          "summary": ""
         },
         {
-          "dateTime": "2026-04-01T00:00:00+09:00",
-          "category": "diagnosis",
-          "title": "CKD Stage 5 진단",
-          "sourceLevel": "original",
-          "summary": "정밀검사 후 만성콩팥병 5기 진단"
-        },
-        {
-          "dateTime": "2026-05-18T00:00:00+09:00",
+          "dateTime": "2026-05-18T11:00:00+09:00",
           "category": "pharmacy",
-          "title": "혈액투석 후 약제팀 의뢰",
+          "title": "혈액투석 후 약제팀 복약상담",
           "sourceLevel": "original",
           "summary": "복약순응도 및 약물 이해도 확인 위해 복약지도 의뢰"
         }
