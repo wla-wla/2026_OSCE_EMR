@@ -1682,39 +1682,46 @@
       ],
       "timeline": [
         {
-          "dateTime": "2026-05-14T02:30:00+09:00",
+          "dateTime": "2026-05-14T03:20:00+09:00",
           "category": "admission",
-          "title": "응급실 내원/입원",
+          "title": "119 통해 응급실 내원",
           "sourceLevel": "original",
-          "summary": "급성 호흡곤란 및 식은땀으로 119 통해 응급실 내원, 천식 급성 악화로 입원"
+          "summary": "SpO₂ 91% RA. 산소·기관지확장제·스테로이드 투여 시작"
         },
         {
-          "dateTime": "2026-05-14T03:20:00+09:00",
-          "category": "nursing",
-          "title": "응급실/입원 초기 간호기록",
+          "dateTime": "2026-05-14T14:30:00+09:00",
+          "category": "admission",
+          "title": "호흡기내과 111병동 입원",
           "sourceLevel": "original",
-          "summary": "SpO₂ 91% RA, 천명음 확인, 산소 공급 및 기관지 확장제/스테로이드 투여"
+          "summary": "산소 공급 유지"
         },
         {
           "dateTime": "2026-05-15T09:00:00+09:00",
           "category": "nursing",
           "title": "증상 호전",
           "sourceLevel": "original",
-          "summary": "호흡곤란 일부 호전, 천명음 감소"
+          "summary": "천명음 감소. SpO₂ 94%. 산소 공급 중"
         },
         {
-          "dateTime": "2026-05-17T10:00:00+09:00",
+          "dateTime": "2026-05-16T09:00:00+09:00",
+          "category": "nursing",
+          "title": "증상 호전",
+          "sourceLevel": "original",
+          "summary": "천명음 소실. 산소 중단. 익일 BMD·PFT·TFT 예정"
+        },
+        {
+          "dateTime": "2026-05-17T09:00:00+09:00",
           "category": "diagnostics",
-          "title": "BMD/PFT/갑상선 검사",
+          "title": "증상 호전",
           "sourceLevel": "original",
-          "summary": "FEV1/FVC 저하, TSH 상승, 골다공증 소견 확인"
+          "summary": "BMD·TFT 완료. 이상 소견 확인. 약제팀 복약지도 의뢰"
         },
         {
-          "dateTime": "2026-05-18T00:00:00+09:00",
+          "dateTime": "2026-05-18T09:00:00+09:00",
           "category": "pharmacy",
-          "title": "약제팀 복약지도 의뢰",
+          "title": "약제팀 복약상담 예정",
           "sourceLevel": "original",
-          "summary": "복약순응도 및 흡입기 사용법 재교육 필요"
+          "summary": "약제팀 복약상담 예정"
         }
       ],
       "displayPolicy": {
