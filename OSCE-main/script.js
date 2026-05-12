@@ -641,7 +641,7 @@ function renderDiagnostics(diagnosticTests, procedures, surgicalHistory) {
     </tr>
   `).join("");
   const imagePanels = diagnosticTests.map(renderDiagnosticImages).filter(Boolean).join("");
-  const procedureRows = [...procedures, ...surgicalHistory].map((item) => typeof item === "object" ? `
+  const procedureRows = (procedures || []).map((item) => typeof item === "object" ? `
     <tr>
       <td>${escapeHtml(formatDateTime(item.dateTime || item.date || ""))}</td>
       <td>${escapeHtml(item.procedureName || item.procedure || item.name || EMPTY_TEXT)}</td>
