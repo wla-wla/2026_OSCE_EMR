@@ -1715,35 +1715,35 @@
         {
           "dateTime": "2026-05-14T03:20:00+09:00",
           "category": "nursing",
-          "title": "간호기록",
+          "title": "119 통해 응급실 내원",
           "sourceLevel": "original",
           "summary": "SpO₂ 91% RA. 산소 공급, 기관지 확장제 및 IV methylprednisolone 투여 진행."
         },
         {
           "dateTime": "2026-05-14T14:30:00+09:00",
           "category": "nursing",
-          "title": "간호기록",
+          "title": "호흡기내과 111병동 입원",
           "sourceLevel": "original",
           "summary": "호흡기내과 111병동으로 이동. 산소 공급 유지 중."
         },
         {
           "dateTime": "2026-05-15T09:00:00+09:00",
           "category": "nursing",
-          "title": "간호기록",
+          "title": "증상 호전",
           "sourceLevel": "original",
           "summary": "호흡곤란 호전, SpO₂ 94% on nasal cannula. 경구 prednisolone 변경 및 azithromycin 추가."
         },
         {
           "dateTime": "2026-05-16T09:00:00+09:00",
           "category": "nursing",
-          "title": "간호기록",
+          "title": "증상 호전",
           "sourceLevel": "original",
           "summary": "천명음 거의 소실, SpO₂ 95% RA. 산소 공급 중단."
         },
         {
           "dateTime": "2026-05-17T09:00:00+09:00",
           "category": "nursing",
-          "title": "간호기록",
+          "title": "증상 호전",
           "sourceLevel": "original",
           "summary": "BMD 및 TFT lab 시행 완료. 검사 결과 주치의에게 노티하고 약제팀 복약지도 의뢰."
         },
