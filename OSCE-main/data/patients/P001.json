@@ -92,45 +92,74 @@
       "management": "산소 공급, 기관지 확장제 및 스테로이드 투여 진행",
       "disposition": "111병동으로 이동"
     },
-    "admissionNote": {
-      "dateTime": "",
-      "authorRole": "physician",
-      "department": "",
-      "freeText": ""
-    },
+    "admissionNote": null,
     "progressNotes": [],
     "nursingNotes": [
       {
         "dateTime": "2026-05-14T03:20:00+09:00",
-        "noteType": "Nursing Note",
-        "S": "숨이 너무 차고 식은땀이 납니다. 누우면 더 답답합니다.",
-        "O": "BP 150/95 mmHg, HR 120/min, RR 35/min, SpO₂ 91% RA. 천명음 확인됨.",
-        "A": "Acute asthma exacerbation. 즉각적인 기관지 확장제 투여 및 산소 공급 필요.",
-        "P": "산소 공급, 활력징후 모니터링, 기관지 확장제 및 스테로이드 투여 진행. 111병동으로 이동."
+        "authorRole": "nurse",
+        "noteType": "nursing",
+        "department": "응급실",
+        "subjective": "숨이 너무 차고 식은땀이 나요. 누우면 더 답답해요.",
+        "objective": "BP 150/95 mmHg, HR 120/min, RR 35/min, SpO₂ 91% RA. 천명음 확인됨.",
+        "assessment": "Acute asthma exacerbation. 기관지 확장제 투여 및 산소 공급 시작.",
+        "plan": "산소 공급, 활력징후 모니터링, 기관지 확장제 및 IV methylprednisolone 투여 진행.",
+        "freeText": "",
+        "author": "nurse",
+        "recordType": "nursing"
+      },
+      {
+        "dateTime": "2026-05-14T14:30:00+09:00",
+        "authorRole": "nurse",
+        "noteType": "nursing",
+        "department": "호흡기내과",
+        "freeText": "호흡기내과 111병동으로 이동. 산소 공급 유지 중.",
+        "author": "nurse",
+        "recordType": "nursing"
       },
       {
         "dateTime": "2026-05-15T09:00:00+09:00",
-        "noteType": "Nursing Note",
-        "S": "어젯밤보다 숨은 좀 낫습니다.",
-        "O": "BP 135/85 mmHg, HR 95/min, RR 22/min, SpO₂ 94% RA. 천명음 감소.",
-        "A": "Asthma improving.",
-        "P": "경과 관찰 지속."
+        "authorRole": "nurse",
+        "noteType": "nursing",
+        "department": "호흡기내과",
+        "subjective": "어젯밤보다 숨은 좀 낫습니다.",
+        "objective": "BP 135/85 mmHg, HR 95/min, RR 22/min, SpO₂ 94% on nasal cannula. 천명음 감소.",
+        "assessment": "Asthma improving.",
+        "plan": "경과 관찰 지속. 경구 prednisolone로 변경 및 azithromycin 추가.",
+        "freeText": "",
+        "author": "nurse",
+        "recordType": "nursing"
       },
       {
-        "dateTime": "2026-05-17T10:00:00+09:00",
-        "noteType": "Nursing Note",
-        "S": "많이 나아졌어요. 오늘 검사 몇 가지 한다고 하던데요.",
-        "O": "BP 125/80 mmHg, HR 88/min, RR 18/min, SpO₂ 96% RA. 전반적 상태 호전됨. 금일 골밀도 검사, 폐기능 검사, 갑상선 기능 검사 시행 완료. 검사 결과 주치의에게 노티함.",
-        "A": "Asthma 안정화. 검사 결과 이상 소견 (FEV1/FVC 저하, TSH 상승, 골다공증) 확인됨. 복약지도 필요.",
-        "P": "약제팀 복약지도 의뢰 완료."
+        "dateTime": "2026-05-16T09:00:00+09:00",
+        "authorRole": "nurse",
+        "noteType": "nursing",
+        "department": "호흡기내과",
+        "subjective": "숨쉬기가 많이 편해졌어요. 이제 누워도 괜찮아요.",
+        "objective": "BP 128/82 mmHg, HR 90/min, RR 20/min, SpO₂ 95% RA. 천명음 거의 소실. 전반적 상태 호전.",
+        "assessment": "Asthma 안정화 중. 산소 공급 필요성 감소.",
+        "plan": "산소 공급 중단, 약물 투여 지속.",
+        "freeText": "",
+        "author": "nurse",
+        "recordType": "nursing"
+      },
+      {
+        "dateTime": "2026-05-17T09:00:00+09:00",
+        "authorRole": "nurse",
+        "noteType": "nursing",
+        "department": "호흡기내과",
+        "subjective": "많이 나아졌어요. 오늘 검사 몇 가지 한다고 하던데요.",
+        "objective": "BP 125/80 mmHg, HR 88/min, RR 18/min, SpO₂ 96% RA. 전반적 상태 호전됨. BMD 및 TFT lab 시행 완료. 검사 결과 주치의에게 노티함.",
+        "assessment": "Asthma 안정화. 검사 결과 이상 소견 확인됨. 복약지도 필요.",
+        "plan": "약제팀 복약지도 의뢰.",
+        "freeText": "",
+        "author": "nurse",
+        "recordType": "nursing"
       }
     ],
     "dischargePlanningNotes": [],
     "consultNotes": [],
-    "dischargeSummary": {
-      "dateTime": "",
-      "freeText": ""
-    }
+    "dischargeSummary": null
   },
   "diagnosisTimeline": [
     {
@@ -250,9 +279,13 @@
     "timelineText": "57세 여자 환자로 천식 20년 전 진단받아 호흡기내과 외래 f/u 중이던 환자로, 골다공증 및 갑상선기능저하증 동반하여 약물치료 중. 2026-05-14 새벽 급성 천식 악화로 응급실 경유 입원함. 구급대 도착 당시 숨을 내뱉는 것을 극도로 어려워하며 침대 끝에 엎드려 호흡하는 상태였음. 입원 후 약물 복약순응도 저하 및 흡입기 사용 미숙이 주요 악화 요인으로 추정됨. 입원 중 복약순응도 확인 및 흡입기 사용법 재교육 위해 약제팀 복약지도 의뢰됨."
   },
   "ros": {
-    "general": ["diaphoresis (+)"],
+    "general": [
+      "diaphoresis (+)"
+    ],
     "respiratory": [
-      "dyspnea(+)", "wheezing(+)", "chest tightness(+)"
+      "dyspnea(+)",
+      "wheezing(+)",
+      "chest tightness(+)"
     ],
     "cardiovascular": [],
     "gi": [],
@@ -315,8 +348,8 @@
       "result": 11.1,
       "displayResult": "11.1",
       "unit": "×10³/μL",
-      "refLow": 4.0,
-      "refHigh": 10.0,
+      "refLow": 4,
+      "refHigh": 10,
       "referenceText": "4.0-10.0 x10³/µL",
       "flag": "H",
       "flagSource": "education_general_reference",
@@ -334,8 +367,8 @@
       "result": 13.5,
       "displayResult": "13.5",
       "unit": "g/dL",
-      "refLow": 12.0,
-      "refHigh": 16.0,
+      "refLow": 12,
+      "refHigh": 16,
       "referenceText": "F: 12.0-16.0 g/dL",
       "flag": "",
       "flagSource": "education_general_reference",
@@ -354,7 +387,7 @@
       "displayResult": "6.5",
       "unit": "%",
       "refLow": 0,
-      "refHigh": 5.0,
+      "refHigh": 5,
       "referenceText": "0-5%",
       "flag": "H",
       "flagSource": "education_general_reference",
@@ -563,7 +596,7 @@
       "displayResult": "3.8",
       "unit": "g/dL",
       "refLow": 3.5,
-      "refHigh": 5.0,
+      "refHigh": 5,
       "referenceText": "3.5-5.0 g/dL",
       "flag": "",
       "flagSource": "education_general_reference",
@@ -715,7 +748,7 @@
       "displayResult": "3.2",
       "unit": "ng/mL",
       "refLow": null,
-      "refHigh": 5.0,
+      "refHigh": 5,
       "referenceText": "<5.0 ng/mL",
       "flag": "",
       "flagSource": "education_general_reference",
@@ -828,8 +861,8 @@
       "result": 8.2,
       "displayResult": "8.2",
       "unit": "×10³/μL",
-      "refLow": 4.0,
-      "refHigh": 10.0,
+      "refLow": 4,
+      "refHigh": 10,
       "referenceText": "4.0-10.0 x10³/µL",
       "flag": "",
       "flagSource": "education_general_reference",
@@ -847,8 +880,8 @@
       "result": 13.3,
       "displayResult": "13.3",
       "unit": "g/dL",
-      "refLow": 12.0,
-      "refHigh": 16.0,
+      "refLow": 12,
+      "refHigh": 16,
       "referenceText": "F: 12.0-16.0 g/dL",
       "flag": "",
       "flagSource": "education_general_reference",
@@ -867,7 +900,7 @@
       "displayResult": "4.9",
       "unit": "%",
       "refLow": 0,
-      "refHigh": 5.0,
+      "refHigh": 5,
       "referenceText": "0-5%",
       "flag": "",
       "flagSource": "education_general_reference",
@@ -1076,7 +1109,7 @@
       "displayResult": "3.6",
       "unit": "g/dL",
       "refLow": 3.5,
-      "refHigh": 5.0,
+      "refHigh": 5,
       "referenceText": "3.5-5.0 g/dL",
       "flag": "",
       "flagSource": "education_general_reference",
@@ -1133,7 +1166,7 @@
       "displayResult": "5.5",
       "unit": "µIU/mL",
       "refLow": 0.4,
-      "refHigh": 4.0,
+      "refHigh": 4,
       "referenceText": "0.4-4.0 µIU/mL",
       "flag": "H",
       "flagSource": "education_general_reference",
@@ -1678,38 +1711,38 @@
   "timeline": [
     {
       "dateTime": "2026-05-14T03:20:00+09:00",
-      "category": "admission",
-      "title": "119 통해 응급실 내원",
+      "category": "nursing",
+      "title": "간호기록",
       "sourceLevel": "original",
-      "summary": "SpO₂ 91% RA. 산소·기관지확장제·스테로이드 투여 시작"
+      "summary": "SpO₂ 91% RA. 산소 공급, 기관지 확장제 및 IV methylprednisolone 투여 진행."
     },
     {
       "dateTime": "2026-05-14T14:30:00+09:00",
-      "category": "admission",
-      "title": "호흡기내과 111병동 입원",
+      "category": "nursing",
+      "title": "간호기록",
       "sourceLevel": "original",
-      "summary": "산소 공급 유지"
+      "summary": "호흡기내과 111병동으로 이동. 산소 공급 유지 중."
     },
     {
       "dateTime": "2026-05-15T09:00:00+09:00",
       "category": "nursing",
-      "title": "증상 호전",
+      "title": "간호기록",
       "sourceLevel": "original",
-      "summary": "천명음 감소. SpO₂ 94%. 산소 공급 중"
+      "summary": "호흡곤란 호전, SpO₂ 94% on nasal cannula. 경구 prednisolone 변경 및 azithromycin 추가."
     },
     {
       "dateTime": "2026-05-16T09:00:00+09:00",
       "category": "nursing",
-      "title": "증상 호전",
+      "title": "간호기록",
       "sourceLevel": "original",
-      "summary": "천명음 소실. 산소 중단. 익일 BMD·PFT·TFT 예정"
+      "summary": "천명음 거의 소실, SpO₂ 95% RA. 산소 공급 중단."
     },
     {
       "dateTime": "2026-05-17T09:00:00+09:00",
-      "category": "diagnostics",
-      "title": "증상 호전",
+      "category": "nursing",
+      "title": "간호기록",
       "sourceLevel": "original",
-      "summary": "BMD·TFT 완료. 이상 소견 확인. 약제팀 복약지도 의뢰"
+      "summary": "BMD 및 TFT lab 시행 완료. 검사 결과 주치의에게 노티하고 약제팀 복약지도 의뢰."
     },
     {
       "dateTime": "2026-05-18T09:00:00+09:00",

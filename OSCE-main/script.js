@@ -396,30 +396,44 @@ function renderNotes(records) {
     ...nursing.map((note) => ({ ...note, group: "간호기록" })),
     ...dischargePlanning.map((note) => ({ ...note, group: "퇴원계획" })),
     ...consult.map((note) => ({ ...note, group: "협진기록" }))
-  ];
+  ].filter(hasNoteContent);
 
   setHtml("notes", `
     <h2 class="section-title">입원/경과/간호/퇴원계획</h2>
-    ${records.admissionNote ? renderNotePanel("입원기록", records.admissionNote) : ""}
+    ${hasNoteContent(records.admissionNote) ? renderNotePanel("입원기록", records.admissionNote) : ""}
     ${allNotes.length ? sortByDate(allNotes).map((note) => renderNotePanel(note.group, note)).join("") : emptyState("조회된 입원 중 기록이 없습니다.")}
-    ${records.dischargeSummary ? renderNotePanel("퇴원요약", records.dischargeSummary) : ""}
+    ${hasNoteContent(records.dischargeSummary) ? renderNotePanel("퇴원요약", records.dischargeSummary) : ""}
   `);
 }
 
+function hasNoteContent(note) {
+  if (!note) return false;
+  return [
+    note.subjective, note.objective, note.assessment, note.plan,
+    note.S, note.O, note.A, note.P, note.freeText
+  ].some((value) => value !== null && value !== undefined && String(value).trim() !== "");
+}
+
 function renderNotePanel(title, note) {
+  const author = note.authorRole || note.author;
+  const noteType = note.noteType || note.recordType;
+  const subjective = note.subjective || note.S;
+  const objective = note.objective || note.O;
+  const assessment = note.assessment || note.A;
+  const plan = note.plan || note.P;
   return `
     <div class="panel">
       <h3 class="panel-title">${escapeHtml(title)} ${note.dateTime || note.date ? `· ${escapeHtml(formatDateTime(note.dateTime || note.date))}` : ""}</h3>
       <div class="panel-body grid">
-        ${kv("작성자", note.authorRole)}
-        ${kv("기록구분", note.noteType)}
+        ${kv("작성자", author)}
+        ${kv("기록구분", noteType)}
         ${kv("진료과", note.department)}
       </div>
       <div class="panel-body">
-        ${note.subjective ? `<h4 class="subhead">Subjective</h4>${textBlock(note.subjective)}` : ""}
-        ${note.objective ? `<h4 class="subhead">Objective</h4>${textBlock(note.objective)}` : ""}
-        ${note.assessment ? `<h4 class="subhead">Assessment</h4>${textBlock(note.assessment)}` : ""}
-        ${note.plan ? `<h4 class="subhead">Plan</h4>${textBlock(note.plan)}` : ""}
+        ${subjective ? `<h4 class="subhead">Subjective</h4>${textBlock(subjective)}` : ""}
+        ${objective ? `<h4 class="subhead">Objective</h4>${textBlock(objective)}` : ""}
+        ${assessment ? `<h4 class="subhead">Assessment</h4>${textBlock(assessment)}` : ""}
+        ${plan ? `<h4 class="subhead">Plan</h4>${textBlock(plan)}` : ""}
         ${note.freeText ? textBlock(note.freeText) : ""}
       </div>
     </div>
