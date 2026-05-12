@@ -143,30 +143,30 @@
   "pastMedicalHistory": [
     {
       "condition": "Hypertension",
-      "diagnosedDate": "10년 전",
+      "diagnosedDate": "2016.06",
       "status": "chronic",
       "treatment": "on med",
-      "note": ""
+      "note": "Well-controlled"
     },
     {
       "condition": "Type 2 DM",
-      "diagnosedDate": "5년 전",
+      "diagnosedDate": "2021.08",
       "status": "chronic",
-      "treatment": "linagliptin monotherapy",
-      "note": "(25/08/21) Metformin D/C d/t renal function decline; Well-controlled"
+      "treatment": "on med",
+      "note": "On linagliptin"
     },
     {
       "condition": "CKD Stage 5",
-      "diagnosedDate": "2026년 4월",
+      "diagnosedDate": "2025년 10월",
       "status": "chronic",
-      "treatment": "HD since Feb 2026, 3x/week, 4 hrs/session",
-      "note": ""
+      "treatment": "on med",
+      "note": "HD since Feb 2026, 3x/week, 4 hrs/session"
     }
   ],
   "surgicalHistory": [
     {
       "procedure": "AVF creation, left forearm",
-      "date": "2026-01",
+      "date": "2026-11",
       "note": ""
     }
   ],
@@ -180,7 +180,7 @@
     "livingWith": "",
     "caregiver": "",
     "healthSupplements": "",
-    "adherence": "투석 시작 이후 처방 약물이 다수 추가되어 복약순응도 및 약물 이해도 확인 의뢰"
+    "adherence": ""
   },
   "familyHistory": [
     {
