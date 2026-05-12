@@ -1923,8 +1923,8 @@
         "age": 56,
         "ageSource": "provided",
         "birthDate": "1970-02-15",
-        "heightCm": null,
-        "weightKg": null,
+        "heightCm": "180cm",
+        "weightKg": "83.8kg",
         "bloodType": "",
         "allergies": [
           {
@@ -2772,7 +2772,7 @@
       ],
       "diagnosticTests": [
         {
-          "date": "",
+          "date": "2026-05-16",
           "dateTime": "",
           "timing": "",
           "testType": "Echo",
@@ -2784,7 +2784,7 @@
           "reportingDepartment": ""
         },
         {
-          "date": "",
+          "date": "2026-05-16",
           "dateTime": "",
           "timing": "",
           "testType": "ECG",
@@ -2796,7 +2796,7 @@
           "reportingDepartment": ""
         },
         {
-          "date": "",
+          "date": "2026-05-16",
           "dateTime": "",
           "timing": "admission",
           "testType": "CXR",
@@ -2808,7 +2808,7 @@
           "reportingDepartment": ""
         },
         {
-          "date": "",
+          "date": "2026-05-16",
           "dateTime": "",
           "timing": "pre-discharge",
           "testType": "CXR",
@@ -2820,7 +2820,7 @@
           "reportingDepartment": ""
         },
         {
-          "date": "",
+          "date": "2026-05-16",
           "dateTime": "",
           "timing": "",
           "testType": "Other",
