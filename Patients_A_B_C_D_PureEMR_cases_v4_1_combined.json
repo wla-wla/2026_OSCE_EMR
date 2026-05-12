@@ -3512,7 +3512,7 @@
         },
         {
           "condition": "CKD Stage 5",
-          "diagnosedDate": "2025년 10월",
+          "diagnosedDate": "2025.10",
           "status": "chronic",
           "treatment": "on med",
           "note": "HD since Feb 2026, 3x/week, 4 hrs/session"
