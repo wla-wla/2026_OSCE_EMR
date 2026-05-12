@@ -1131,6 +1131,23 @@
   ],
   "diagnosticTests": [
     {
+      "date": "2026-05-02",
+      "dateTime": "",
+      "timing": "입원 4일차",
+      "testType": "PFT",
+      "testName": "폐기능 검사",
+      "status": "completed",
+      "summary": "FEV1 1.55 L (65% predicted), FVC 2.70 L (87% predicted), FEV1/FVC 57%, FeNO 48 ppb, PEF 220 L/min",
+      "findings": "FEV1: 1.55 L (65% of predicted); FVC: 2.70 L (87% of predicted); FEV1/FVC: 57%; FeNO: 48 ppb; PEF: 220 L/min",
+      "impression": "FEV1/FVC 저하",
+      "reportingDepartment": "",
+      "sourceLevel": "original",
+      "interpretationFlags": [
+        "FEV1/FVC low",
+        "FeNO high"
+      ]
+    },
+    {
       "date": "2026-05-17",
       "dateTime": "",
       "timing": "입원 4일차",
@@ -1159,24 +1176,7 @@
       "date": "2026-05-17",
       "dateTime": "",
       "timing": "입원 4일차",
-      "testType": "PFT",
-      "testName": "폐기능 검사",
-      "status": "completed",
-      "summary": "FEV1 1.55 L (65% predicted), FVC 2.70 L (87% predicted), FEV1/FVC 57%, FeNO 48 ppb, PEF 220 L/min",
-      "findings": "FEV1: 1.55 L (65% of predicted); FVC: 2.70 L (87% of predicted); FEV1/FVC: 57%; FeNO: 48 ppb; PEF: 220 L/min",
-      "impression": "FEV1/FVC 저하",
-      "reportingDepartment": "",
-      "sourceLevel": "original",
-      "interpretationFlags": [
-        "FEV1/FVC low",
-        "FeNO high"
-      ]
-    },
-    {
-      "date": "2026-05-17",
-      "dateTime": "",
-      "timing": "입원 4일차",
-      "testType": "Thyroid function",
+      "testType": "TFT",
       "testName": "갑상선 기능 검사",
       "status": "completed",
       "summary": "TSH 5.5, Free T4 0.72",
