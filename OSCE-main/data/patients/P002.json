@@ -20,8 +20,8 @@
     "age": 56,
     "ageSource": "provided",
     "birthDate": "1970-02-15",
-    "heightCm": "180cm",
-    "weightKg": "83.8kg",
+    "heightCm": "180",
+    "weightKg": "83.8",
     "bloodType": "",
     "allergies": [
       {
