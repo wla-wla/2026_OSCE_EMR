@@ -93,7 +93,21 @@
       "disposition": "111병동으로 이동"
     },
     "admissionNote": null,
-    "progressNotes": [],
+    "progressNotes": [
+      {
+        "date": "2026-05-02",
+        "dateTime": "",
+        "recordType": "외래",
+        "noteType": "외래",
+        "department": "호흡기내과",
+        "authorRole": "",
+        "sourceLevel": "original",
+        "S": "요즘 기침이 심해졌어요. 잠에서 일주일에 3~4번은 깨요.",
+        "O": "경미한 천명음 청진됨.\nPFT:\n- FEV1 1.55L (65% pred)\n- FEV1/FVC 57%\n  → 중등도 폐쇄성 환기장애\n\nFeNO:\n- 48 ppb\n  → 호산구성 기도염증 시사\n\nPEF:\n- 220 L/min",
+        "A": "중증 지속성 천식.\n현 치료로 조절 불충분하여 step up 필요.",
+        "P": "렐바200 중단, 에너제어로 변경.\n흡입기 사용법 교육 시행."
+      }
+    ],
     "nursingNotes": [
       {
         "dateTime": "2026-05-14T03:20:00+09:00",
@@ -191,7 +205,7 @@
       "diagnosedDate": "2006-11-11",
       "status": "chronic",
       "treatment": "on med",
-      "note": "최근 2년간 3회 급성 악화로 응급실 내원 이력 있음"
+      "note": "최근 2년간 3회 급성 악화로 응급실 내원 이력 있음\n2주 전 렐바®에서 에너제어® 변경"
     },
     {
       "condition": "Osteoporosis",
@@ -1706,6 +1720,34 @@
     }
   ],
   "timeline": [
+    {
+      "dateTime": "2006-11-13",
+      "category": "diagnosis",
+      "title": "천식 진단",
+      "summary": "",
+      "sourceLevel": "original"
+    },
+    {
+      "dateTime": "2021-08-20",
+      "category": "diagnosis",
+      "title": "골다공증 진단",
+      "summary": "",
+      "sourceLevel": "original"
+    },
+    {
+      "dateTime": "2023-02-15",
+      "category": "diagnosis",
+      "title": "갑상샘기능저하증 진단",
+      "summary": "",
+      "sourceLevel": "original"
+    },
+    {
+      "dateTime": "2026-05-02",
+      "category": "medication",
+      "title": "렐바200® 중단, 에너제어®로 변경",
+      "summary": "",
+      "sourceLevel": "original"
+    },
     {
       "dateTime": "2026-05-14T03:20:00+09:00",
       "category": "nursing",
