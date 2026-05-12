@@ -116,51 +116,26 @@
       "freeText": ""
     }
   },
-  "diagnosisTimeline": [
-    {
-      "dateTime": "2026-02-01T00:00:00+09:00",
-      "diagnosis": "ESRD – on HD 3x/week",
-      "status": "active",
-      "department": "신장내과",
-      "sourceLevel": "original",
-      "note": "2026년 2월부터 주 3회 혈액투석 시행 중"
-    },
-    {
-      "dateTime": "2026-04-01T00:00:00+09:00",
-      "diagnosis": "CKD Stage 5",
-      "status": "confirmed",
-      "department": "신장내과",
-      "sourceLevel": "original",
-      "note": "2026년 4월 CKD Stage 5 진단"
-    },
-    {
-      "dateTime": "2025-08-21T00:00:00+09:00",
-      "diagnosis": "Type 2 Diabetes Mellitus",
-      "status": "active",
-      "department": "",
-      "sourceLevel": "original",
-      "note": "Metformin D/C d/t renal function decline"
-    }
-  ],
+  "diagnosisTimeline": [],
   "problemList": [
     {
-      "problem": "ESRD – on HD 3x/week",
+      "problem": "CKD stage 5",
       "status": "active",
-      "onsetDate": "2026-02",
+      "onsetDate": "",
       "lastUpdated": "",
-      "note": "월/수/토, 1회 4시간 혈액투석"
+      "note": ""
     },
     {
-      "problem": "Type 2 Diabetes Mellitus, well controlled",
+      "problem": "Type 2 DM",
       "status": "active",
-      "onsetDate": "5년 전",
+      "onsetDate": "",
       "lastUpdated": "",
-      "note": "현재 linagliptin monotherapy"
+      "note": ""
     },
     {
-      "problem": "Hypertension, well controlled",
+      "problem": "Type 2 DM",
       "status": "active",
-      "onsetDate": "10년 전",
+      "onsetDate": "",
       "lastUpdated": "",
       "note": ""
     }
