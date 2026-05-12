@@ -189,9 +189,9 @@
   ],
   "problemList": [
     {
-      "problem": "Severe persistent Asthma (Stage V) – acute exacerbation",
+      "problem": "Severe persistent asthma",
       "status": "active",
-      "onsetDate": "2026-05-14",
+      "onsetDate": "",
       "lastUpdated": "",
       "note": ""
     },
@@ -199,44 +199,37 @@
       "problem": "Osteoporosis",
       "status": "active",
       "onsetDate": "",
-      "lastUpdated": "2026-05-17",
-      "note": "T-score -2.8"
+      "lastUpdated": "",
+      "note": ""
     },
     {
       "problem": "Hypothyroidism",
       "status": "active",
       "onsetDate": "",
-      "lastUpdated": "2026-05-17",
-      "note": "TSH 5.5, free T4 0.72"
+      "lastUpdated": "",
+      "note": ""
     }
   ],
   "pastMedicalHistory": [
     {
-      "condition": "Severe persistent Asthma (Stage V) – acute exacerbation",
-      "diagnosedDate": "20년 전",
+      "condition": "Severe persistent asthma",
+      "diagnosedDate": "2006-11-11",
       "status": "chronic",
       "treatment": "on med",
-      "note": "f/u 호흡기내과 외래 (pf. 김강원)"
+      "note": "최근 2년간 3회 급성 악화로 응급실 내원 이력 있음"
     },
     {
       "condition": "Osteoporosis",
-      "diagnosedDate": "5년 전",
+      "diagnosedDate": "2021-08-15",
       "status": "chronic",
       "treatment": "on med",
-      "note": "(26/5/17) T-score: -2.8"
+      "note": ""
     },
     {
       "condition": "Hypothyroidism",
-      "diagnosedDate": "5년 전",
+      "diagnosedDate": "2023-02-05",
       "status": "chronic",
       "treatment": "on med",
-      "note": "(26/5/17) TSH 5.5, free T4 0.72"
-    },
-    {
-      "condition": "Menopause",
-      "diagnosedDate": "",
-      "status": "history",
-      "treatment": "",
       "note": ""
     }
   ],
@@ -255,9 +248,9 @@
     "exercise": "",
     "sleep": "",
     "livingWith": "",
-    "caregiver": "배우자가 119 신고함",
+    "caregiver": "",
     "healthSupplements": "",
-    "adherence": "입원 후 약물 복약순응도 저하 및 흡입기 사용 미숙이 주요 악화 요인으로 추정됨"
+    "adherence": ""
   },
   "familyHistory": [
     {
