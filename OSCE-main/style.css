@@ -350,6 +350,18 @@ tr:nth-child(even) td {
   white-space: nowrap;
 }
 
+.medication-nowrap-table table {
+  min-width: max-content;
+  table-layout: auto;
+}
+
+.medication-nowrap-table th,
+.medication-nowrap-table td,
+.orders-table th,
+.orders-table td {
+  white-space: nowrap;
+}
+
 .p003-home-medications {
   overflow-x: auto;
 }
@@ -464,7 +476,6 @@ tr:nth-child(even) td {
 
 .orders-table td:nth-child(11) {
   min-width: 220px;
-  white-space: normal;
 }
 
 .orders-table td:nth-child(4) {

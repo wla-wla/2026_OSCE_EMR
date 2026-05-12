@@ -707,7 +707,7 @@ function renderHomeMedications(meds) {
   }
   setHtml("homeMeds", `
     <h2 class="section-title">Home Medications</h2>
-    ${rows ? table(["상품명","성분명","용량","경로","빈도","복용시간","적응증","순응도","마지막 복용","비고"], rows) : emptyState("조회된 기존 복용약 기록이 없습니다.")}
+    ${rows ? `<div class="table-wrap medication-nowrap-table">${table(["상품명","성분명","용량","경로","빈도","복용시간","적응증","순응도","마지막 복용","비고"], rows)}</div>` : emptyState("조회된 기존 복용약 기록이 없습니다.")}
   `);
 }
 
@@ -726,7 +726,7 @@ function renderMedicationIdentification(items) {
   `).join("");
   setHtml("medId", `
     <h2 class="section-title">Medication Identification</h2>
-    ${rows ? table(["보고 약물명", "식별 결과", "함량", "제형", "외형", "목록 일치", "확인상태", "비고"], rows) : emptyState("조회된 약물 식별 기록이 없습니다.")}
+    ${rows ? `<div class="table-wrap medication-nowrap-table">${table(["보고 약물명", "식별 결과", "함량", "제형", "외형", "목록 일치", "확인상태", "비고"], rows)}</div>` : emptyState("조회된 약물 식별 기록이 없습니다.")}
   `);
 }
 
@@ -763,7 +763,7 @@ function renderMedicationReconciliation(items) {
   `).join("");
   setHtml("medRec", `
     <h2 class="section-title">Medication Reconciliation</h2>
-    ${rows ? table(["약물명", "기존 복용", "퇴원 약물", "상태", "확인상태", "비고"], rows) : emptyState("조회된 Medication Reconciliation 기록이 없습니다.")}
+    ${rows ? `<div class="table-wrap medication-nowrap-table">${table(["약물명", "기존 복용", "퇴원 약물", "상태", "확인상태", "비고"], rows)}</div>` : emptyState("조회된 Medication Reconciliation 기록이 없습니다.")}
   `);
 }
 
