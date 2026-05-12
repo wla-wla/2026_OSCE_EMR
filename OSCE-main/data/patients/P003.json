@@ -1065,8 +1065,8 @@
     {
       "drugName": "트라젠타정",
       "brandName": "트라젠타정",
-      "ingredient": "Linagliptin",
-      "dose": "5 mg 1T",
+      "ingredient": "Linagliptin 5 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "qd",
       "schedule": "아침 식후",
@@ -1077,8 +1077,8 @@
     {
       "drugName": "트리테이스정",
       "brandName": "트리테이스정",
-      "ingredient": "Ramipril",
-      "dose": "2.5 mg 1T",
+      "ingredient": "Ramipril 2.5 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "qd",
       "schedule": "아침 식후",
@@ -1089,11 +1089,11 @@
     {
       "drugName": "렌벨라정",
       "brandName": "렌벨라정",
-      "ingredient": "Sevelamer Carbonate",
-      "dose": "800 mg 1T",
+      "ingredient": "Sevelamer carbonate 800 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "tid",
-      "schedule": "매 식사와 함께",
+      "schedule": "식사와 함께",
       "duration": "",
       "indication": "",
       "originalText": "렌벨라정 (Sevelamer carbonate 800 mg) PO 1T tid w (매 식사와 함께)"
@@ -1101,11 +1101,11 @@
     {
       "drugName": "카리메트과립",
       "brandName": "카리메트과립",
-      "ingredient": "Calcium Polystyrene Sulfonate",
-      "dose": "5 g/포 1P",
+      "ingredient": "Polystyrene sulfonate 5 g",
+      "dose": "1P",
       "route": "PO",
       "frequency": "bid",
-      "schedule": "아침, 저녁 식후",
+      "schedule": "아침 저녁 식후",
       "duration": "",
       "indication": "",
       "originalText": "카리메트과립 (Polystyrene Sulfonate 5 g/포) PO 1P bid pc (아침, 저녁 식후)"
@@ -1113,7 +1113,7 @@
     {
       "drugName": "네프비타정",
       "brandName": "네프비타정",
-      "ingredient": "Ascorbic Acid",
+      "ingredient": "Ascorbic acid 외 8종",
       "dose": "1T",
       "route": "PO",
       "frequency": "qd",
@@ -1125,11 +1125,11 @@
     {
       "drugName": "타스나정",
       "brandName": "타스나정",
-      "ingredient": "Sodium Bicarbonate",
-      "dose": "500 mg 1T",
+      "ingredient": "Sodium bicarbonate 500 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "bid",
-      "schedule": "아침, 저녁 식후",
+      "schedule": "아침 저녁 식후",
       "duration": "",
       "indication": "",
       "originalText": "타스나정 (Sodium bicarbonate 500 mg) PO 1T bid pc (아침, 저녁 식후)"
@@ -1137,8 +1137,8 @@
     {
       "drugName": "알로푸리놀정",
       "brandName": "알로푸리놀정",
-      "ingredient": "Allopurinol",
-      "dose": "100 mg 1T",
+      "ingredient": "Allopurinol 100 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "qd",
       "schedule": "아침 식후",
@@ -1149,11 +1149,11 @@
     {
       "drugName": "훼로바유정",
       "brandName": "훼로바유정",
-      "ingredient": "Dried Ferrous Sulfate",
+      "ingredient": "Ferrous fumarate 256 mg",
       "dose": "1T",
       "route": "PO",
       "frequency": "qd",
-      "schedule": "자기 전 공복",
+      "schedule": "자기전",
       "duration": "",
       "indication": "",
       "originalText": "훼로바유정 (Ferrous fumarate) 1T PO qd (자기 전 공복)"
@@ -1161,8 +1161,8 @@
     {
       "drugName": "넥시움정",
       "brandName": "넥시움정",
-      "ingredient": "Esomeprazole Magnesium Trihydrate",
-      "dose": "20 mg 1T",
+      "ingredient": "Esomeprazole 20 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "qd",
       "schedule": "아침 식전",
@@ -1183,7 +1183,8 @@
       "reconciliationStatus": "current_medication_listed",
       "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
-      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
+      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치",
+      "ingredient": "Linagliptin"
     },
     {
       "drugName": "트리테이스정",
@@ -1196,24 +1197,26 @@
       "reconciliationStatus": "current_medication_listed",
       "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
-      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
+      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치",
+      "ingredient": "Ramipril"
     },
     {
       "drugName": "렌벨라정",
       "homeDose": "800 mg 1T",
       "homeRoute": "PO",
-      "homeFrequency": "tid",
+      "homeFrequency": "tid w",
       "currentDose": "800 mg 1T",
       "currentRoute": "PO",
       "currentFrequency": "tid",
       "reconciliationStatus": "current_medication_listed",
       "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
-      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
+      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치",
+      "ingredient": "Sevelamer carbonate"
     },
     {
       "drugName": "카리메트과립",
-      "homeDose": "5 g/포 1P",
+      "homeDose": "5 g 1P",
       "homeRoute": "PO",
       "homeFrequency": "bid",
       "currentDose": "5 g/포 1P",
@@ -1222,7 +1225,8 @@
       "reconciliationStatus": "current_medication_listed",
       "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
-      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
+      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치",
+      "ingredient": "Polystyrene sulfonate"
     },
     {
       "drugName": "네프비타정",
@@ -1235,7 +1239,8 @@
       "reconciliationStatus": "current_medication_listed",
       "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
-      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
+      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치",
+      "ingredient": "Ascorbic acid 외 8종"
     },
     {
       "drugName": "타스나정",
@@ -1248,7 +1253,8 @@
       "reconciliationStatus": "current_medication_listed",
       "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
-      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
+      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치",
+      "ingredient": "Sodium bicarbonate"
     },
     {
       "drugName": "알로푸리놀정",
@@ -1261,11 +1267,12 @@
       "reconciliationStatus": "current_medication_listed",
       "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
-      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
+      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치",
+      "ingredient": "Allopurinol"
     },
     {
       "drugName": "훼로바유정",
-      "homeDose": "1T",
+      "homeDose": "256 mg 1T",
       "homeRoute": "PO",
       "homeFrequency": "qd",
       "currentDose": "1T",
@@ -1274,7 +1281,8 @@
       "reconciliationStatus": "current_medication_listed",
       "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
-      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
+      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치",
+      "ingredient": "Ferrous fumarate"
     },
     {
       "drugName": "넥시움정",
@@ -1287,7 +1295,8 @@
       "reconciliationStatus": "current_medication_listed",
       "verificationStatus": "외부 복용력/지참약 상세 대조 기록 -",
       "sourceLevel": "derived_from_current_medication_list",
-      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치"
+      "note": "원자료 Current Medications를 EMR reconciliation 화면에 표시하기 위해 재배치",
+      "ingredient": "Esomeprazole"
     }
   ],
   "medicationOrders": [
@@ -1297,8 +1306,8 @@
       "orderDateTime": "",
       "orderType": "active_outpatient",
       "drugName": "트라젠타정",
-      "ingredient": "Linagliptin",
-      "dose": "5 mg 1T",
+      "ingredient": "Linagliptin 5 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "qd",
       "duration": "",
@@ -1315,8 +1324,8 @@
       "orderDateTime": "",
       "orderType": "active_outpatient",
       "drugName": "트리테이스정",
-      "ingredient": "Ramipril",
-      "dose": "2.5 mg 1T",
+      "ingredient": "Ramipril 2.5 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "qd",
       "duration": "",
@@ -1333,8 +1342,8 @@
       "orderDateTime": "",
       "orderType": "active_outpatient",
       "drugName": "렌벨라정",
-      "ingredient": "Sevelamer carbonate",
-      "dose": "800 mg 1T",
+      "ingredient": "Sevelamer carbonate 800 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "tid",
       "duration": "",
@@ -1351,8 +1360,8 @@
       "orderDateTime": "",
       "orderType": "active_outpatient",
       "drugName": "카리메트과립",
-      "ingredient": "Polystyrene Sulfonate",
-      "dose": "5 g/포 1P",
+      "ingredient": "Polystyrene sulfonate 5 g",
+      "dose": "1P",
       "route": "PO",
       "frequency": "bid",
       "duration": "",
@@ -1387,8 +1396,8 @@
       "orderDateTime": "",
       "orderType": "active_outpatient",
       "drugName": "타스나정",
-      "ingredient": "Sodium bicarbonate",
-      "dose": "500 mg 1T",
+      "ingredient": "Sodium bicarbonate 500 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "bid",
       "duration": "",
@@ -1405,8 +1414,8 @@
       "orderDateTime": "",
       "orderType": "active_outpatient",
       "drugName": "알로푸리놀정",
-      "ingredient": "Allopurinol",
-      "dose": "100 mg 1T",
+      "ingredient": "Allopurinol 100 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "qd",
       "duration": "",
@@ -1423,7 +1432,7 @@
       "orderDateTime": "",
       "orderType": "active_outpatient",
       "drugName": "훼로바유정",
-      "ingredient": "Ferrous fumarate",
+      "ingredient": "Ferrous fumarate 256 mg",
       "dose": "1T",
       "route": "PO",
       "frequency": "qd",
@@ -1441,8 +1450,8 @@
       "orderDateTime": "",
       "orderType": "active_outpatient",
       "drugName": "넥시움정",
-      "ingredient": "Esomeprazole",
-      "dose": "20 mg 1T",
+      "ingredient": "Esomeprazole 20 mg",
+      "dose": "1T",
       "route": "PO",
       "frequency": "qd",
       "duration": "",
@@ -1505,9 +1514,9 @@
   "medicationIdentification": [
     {
       "recordedAt": "",
-      "reportedMedication": "트라젠타정",
-      "identifiedDrug": "트라젠타정",
-      "strength": "5 mg 1T",
+      "reportedMedication": "Linagliptin",
+      "identifiedDrug": "Linagliptin",
+      "strength": "5 mg",
       "dosageForm": "",
       "appearance": "",
       "patientReportedUse": "아침 식후",
@@ -1518,9 +1527,9 @@
     },
     {
       "recordedAt": "",
-      "reportedMedication": "트리테이스정",
-      "identifiedDrug": "트리테이스정",
-      "strength": "2.5 mg 1T",
+      "reportedMedication": "Ramipril",
+      "identifiedDrug": "Ramipril",
+      "strength": "2.5 mg",
       "dosageForm": "",
       "appearance": "",
       "patientReportedUse": "아침 식후",
@@ -1531,9 +1540,9 @@
     },
     {
       "recordedAt": "",
-      "reportedMedication": "렌벨라정",
-      "identifiedDrug": "렌벨라정",
-      "strength": "800 mg 1T",
+      "reportedMedication": "Sevelamer carbonate",
+      "identifiedDrug": "Sevelamer carbonate",
+      "strength": "800 mg",
       "dosageForm": "",
       "appearance": "",
       "patientReportedUse": "매 식사와 함께",
@@ -1544,9 +1553,9 @@
     },
     {
       "recordedAt": "",
-      "reportedMedication": "카리메트과립",
-      "identifiedDrug": "카리메트과립",
-      "strength": "5 g/포 1P",
+      "reportedMedication": "Polystyrene sulfonate",
+      "identifiedDrug": "Polystyrene sulfonate",
+      "strength": "5 g",
       "dosageForm": "",
       "appearance": "",
       "patientReportedUse": "아침, 저녁 식후",
@@ -1557,9 +1566,9 @@
     },
     {
       "recordedAt": "",
-      "reportedMedication": "네프비타정",
-      "identifiedDrug": "네프비타정",
-      "strength": "1T",
+      "reportedMedication": "Ascorbic acid 외 8종",
+      "identifiedDrug": "Ascorbic acid 외 8종",
+      "strength": "-",
       "dosageForm": "",
       "appearance": "",
       "patientReportedUse": "저녁 식후",
@@ -1570,9 +1579,9 @@
     },
     {
       "recordedAt": "",
-      "reportedMedication": "타스나정",
-      "identifiedDrug": "타스나정",
-      "strength": "500 mg 1T",
+      "reportedMedication": "Sodium bicarbonate",
+      "identifiedDrug": "Sodium bicarbonate",
+      "strength": "500 mg",
       "dosageForm": "",
       "appearance": "",
       "patientReportedUse": "아침, 저녁 식후",
@@ -1583,9 +1592,9 @@
     },
     {
       "recordedAt": "",
-      "reportedMedication": "알로푸리놀정",
-      "identifiedDrug": "알로푸리놀정",
-      "strength": "100 mg 1T",
+      "reportedMedication": "Allopurinol",
+      "identifiedDrug": "Allopurinol",
+      "strength": "100 mg",
       "dosageForm": "",
       "appearance": "",
       "patientReportedUse": "아침 식후",
@@ -1596,9 +1605,9 @@
     },
     {
       "recordedAt": "",
-      "reportedMedication": "훼로바유정",
-      "identifiedDrug": "훼로바유정",
-      "strength": "1T",
+      "reportedMedication": "Ferrous fumarate",
+      "identifiedDrug": "Ferrous fumarate",
+      "strength": "256 mg",
       "dosageForm": "",
       "appearance": "",
       "patientReportedUse": "자기 전 공복",
@@ -1609,9 +1618,9 @@
     },
     {
       "recordedAt": "",
-      "reportedMedication": "넥시움정",
-      "identifiedDrug": "넥시움정",
-      "strength": "20 mg 1T",
+      "reportedMedication": "Esomeprazole",
+      "identifiedDrug": "Esomeprazole",
+      "strength": "20 mg",
       "dosageForm": "",
       "appearance": "",
       "patientReportedUse": "아침 식전",
