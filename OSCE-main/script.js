@@ -270,7 +270,7 @@ function renderSummary(patient) {
     <div class="panel">
       <h3 class="panel-title">최근 상태</h3>
       <div class="panel-body grid">
-        ${kv("최근 Vital", recentVital ? formatVitalBrief(recentVital) : EMPTY_TEXT)}
+        ${kv("최근 Vital", recentVital ? formatVitalBrief(recentVital, currentPatientCode) : EMPTY_TEXT)}
         ${kv("Lab 이상 표시", `${abnormalLabs}건`)}
         ${kv("활성 Problem", `${activeProblems}건`)}
         ${kv("활성 Order", `${activeOrders}건`)}
@@ -837,7 +837,7 @@ function renderRightSummary(patient) {
   const allergies = allergiesText(patient.patientHeader?.allergies);
   els.rightSummary.innerHTML = `
     <h2>Chart Summary</h2>
-    <div class="summary-metric"><span>최근 Vital</span><strong>${escapeHtml(latestVital ? formatVitalBrief(latestVital) : EMPTY_TEXT)}</strong></div>
+    <div class="summary-metric"><span>최근 Vital</span><strong>${escapeHtml(latestVital ? formatVitalBrief(latestVital, currentPatientCode) : EMPTY_TEXT)}</strong></div>
     <div class="summary-metric"><span>Lab 이상 표시</span><strong>${abnormalLabs}</strong></div>
     <div class="summary-metric"><span>Problem</span><strong>${(patient.problemList || []).length}</strong></div>
     <div class="summary-metric"><span>퇴원약</span><strong>${(patient.dischargeMedications || []).length}</strong></div>
@@ -912,7 +912,14 @@ function formatDateTime(input) {
   return String(input).replace("T", " ").replace("+09:00", "");
 }
 
-function formatVitalBrief(vital) {
+function formatVitalBrief(vital, patientCode = "") {
+  if (patientCode === "P003") {
+    return joinParts([
+      vital.bp ? `BP ${vital.bp}` : "",
+      vital.hr ? `HR ${vital.hr}/min` : "",
+      vital.rr ? `RR ${vital.rr}/min` : ""
+    ], ", ");
+  }
   return joinParts([
     vital.bp,
     vital.hr ? `HR ${vital.hr}` : "",
