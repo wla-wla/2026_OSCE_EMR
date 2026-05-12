@@ -240,21 +240,21 @@
     }
   ],
   "hpi": {
-    "onset": "2026-05-14 새벽 급성 천식 악화",
+    "onset": "2026-05-14 새벽",
     "location": "호흡기",
-    "duration": "내원 3일 전부터 기침/가래 시작",
+    "duration": "내원 3일 전부터 기침/가래 시작 → 수 시간 전",
     "character": "급성 호흡곤란, 심한 가슴 답답함, 천명음",
     "aggravatingFactors": "흡입기 사용 미숙 및 복약순응도 저하 추정",
-    "relievingFactors": "입원 후 치료로 호전",
+    "relievingFactors": "",
     "associatedSymptoms": "식은땀",
-    "timelineText": "57세 여자 환자로 천식 20년 전 진단받아 호흡기내과 외래 f/u 중이던 환자로, 골다공증 및 갑상선기능저하증 동반하여 약물치료 중. 2026-05-14 새벽 급성 천식 악화로 응급실 경유 입원함. 입원 후 약물 복약순응도 저하 및 흡입기 사용 미숙이 주요 악화 요인으로 추정됨. 입원 중 복약순응도 확인 및 흡입기 사용법 재교육 위해 약제팀 복약지도 의뢰됨."
+    "timelineText": "57세 여자 환자로 천식 20년 전 진단받아 호흡기내과 외래 f/u 중이던 환자로, 골다공증 및 갑상선기능저하증 동반하여 약물치료 중. 2026-05-14 새벽 급성 천식 악화로 응급실 경유 입원함. 구급대 도착 당시 숨을 내뱉는 것을 극도로 어려워하며 침대 끝에 엎드려 호흡하는 상태였음. 입원 후 약물 복약순응도 저하 및 흡입기 사용 미숙이 주요 악화 요인으로 추정됨. 입원 중 복약순응도 확인 및 흡입기 사용법 재교육 위해 약제팀 복약지도 의뢰됨."
   },
   "ros": {
-    "general": [],
+    "general": ["diaphoresis (+)"],
     "respiratory": [
-      "급성 호흡곤란",
-      "천명음",
-      "가슴 답답함"
+      "dyspnea(+)",
+      "wheezing(+)",
+      "chest tightness(+)"
     ],
     "cardiovascular": [],
     "gi": [],
@@ -1678,49 +1678,49 @@
     }
   ],
   "timeline": [
-  {
-    "dateTime": "2026-05-14T03:20:00+09:00",
-    "category": "admission",
-    "title": "119 통해 응급실 내원",
-    "sourceLevel": "original",
-    "summary": "SpO₂ 91% RA. 산소·기관지확장제·스테로이드 투여 시작"
-  },
-  {
-    "dateTime": "2026-05-14T14:30:00+09:00",
-    "category": "admission",
-    "title": "호흡기내과 111병동 입원",
-    "sourceLevel": "original",
-    "summary": "산소 공급 유지"
-  },
-  {
-    "dateTime": "2026-05-15T09:00:00+09:00",
-    "category": "nursing",
-    "title": "증상 호전",
-    "sourceLevel": "original",
-    "summary": "천명음 감소. SpO₂ 94%. 산소 공급 중"
-  },
-  {
-    "dateTime": "2026-05-16T09:00:00+09:00",
-    "category": "nursing",
-    "title": "증상 호전",
-    "sourceLevel": "original",
-    "summary": "천명음 소실. 산소 중단. 익일 BMD·PFT·TFT 예정"
-  },
-  {
-    "dateTime": "2026-05-17T09:00:00+09:00",
-    "category": "diagnostics",
-    "title": "증상 호전",
-    "sourceLevel": "original",
-    "summary": "BMD·TFT 완료. 이상 소견 확인. 약제팀 복약지도 의뢰"
-  },
-  {
-    "dateTime": "2026-05-18T09:00:00+09:00",
-    "category": "pharmacy",
-    "title": "약제팀 복약상담 예정",
-    "sourceLevel": "original",
-    "summary": "약제팀 복약상담 예정"
-  }
-],
+    {
+      "dateTime": "2026-05-14T03:20:00+09:00",
+      "category": "admission",
+      "title": "119 통해 응급실 내원",
+      "sourceLevel": "original",
+      "summary": "SpO₂ 91% RA. 산소·기관지확장제·스테로이드 투여 시작"
+    },
+    {
+      "dateTime": "2026-05-14T14:30:00+09:00",
+      "category": "admission",
+      "title": "호흡기내과 111병동 입원",
+      "sourceLevel": "original",
+      "summary": "산소 공급 유지"
+    },
+    {
+      "dateTime": "2026-05-15T09:00:00+09:00",
+      "category": "nursing",
+      "title": "증상 호전",
+      "sourceLevel": "original",
+      "summary": "천명음 감소. SpO₂ 94%. 산소 공급 중"
+    },
+    {
+      "dateTime": "2026-05-16T09:00:00+09:00",
+      "category": "nursing",
+      "title": "증상 호전",
+      "sourceLevel": "original",
+      "summary": "천명음 소실. 산소 중단. 익일 BMD·PFT·TFT 예정"
+    },
+    {
+      "dateTime": "2026-05-17T09:00:00+09:00",
+      "category": "diagnostics",
+      "title": "증상 호전",
+      "sourceLevel": "original",
+      "summary": "BMD·TFT 완료. 이상 소견 확인. 약제팀 복약지도 의뢰"
+    },
+    {
+      "dateTime": "2026-05-18T09:00:00+09:00",
+      "category": "pharmacy",
+      "title": "약제팀 복약상담 예정",
+      "sourceLevel": "original",
+      "summary": "약제팀 복약상담 예정"
+    }
+  ],
   "displayPolicy": {
     "showEducationTerms": false,
     "showInstructorGuide": false,
