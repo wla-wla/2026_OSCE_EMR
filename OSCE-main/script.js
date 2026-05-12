@@ -532,12 +532,11 @@ function renderLabPivot(labResults) {
     if (!grouped.has(key)) grouped.set(key, []);
     grouped.get(key).push(normalizedLab);
     const dateKey = labDateKey(normalizedLab, fallbackDate);
-    if (dateKey) dateMap.set(dateKey, normalizedLab.label || dateMap.get(dateKey) || dateKey);
+    if (dateKey) dateMap.set(dateKey, currentPatientCode === "P001" ? dateKey : (normalizedLab.label || dateMap.get(dateKey) || dateKey));
   });
 
   const dates = Array.from(dateMap.keys()).sort((a, b) => new Date(a) - new Date(b));
   const headers = ["검사명", "단위", "참고치", ...dates.map((date) => dateMap.get(date)), "Trend"];
-  const dateHeaderRow = ["", "", "", ...dates, ""];
   const rows = Array.from(grouped.entries()).sort(([a], [b]) => {
     const left = labOrderIndex.has(a) ? labOrderIndex.get(a) : Number.MAX_SAFE_INTEGER;
     const right = labOrderIndex.has(b) ? labOrderIndex.get(b) : Number.MAX_SAFE_INTEGER;
@@ -560,7 +559,7 @@ function renderLabPivot(labResults) {
 
   setHtml("labs", `
     <h2 class="section-title">Lab Results</h2>
-    ${rows ? `<div class="table-wrap lab-results-table">${table(headers, rows, labDateHeaderRow(dateHeaderRow))}</div>` : emptyState("조회된 Lab 기록이 없습니다.")}
+    ${rows ? `<div class="table-wrap">${table(headers, rows)}</div>` : emptyState("조회된 Lab 기록이 없습니다.")}
   `);
 }
 
@@ -852,12 +851,8 @@ function setHtml(id, html) {
   if (target) target.innerHTML = html;
 }
 
-function table(headers, rows, extraHeaderRows = "") {
-  return `<table><thead><tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr>${extraHeaderRows}</thead><tbody>${rows}</tbody></table>`;
-}
-
-function labDateHeaderRow(cells) {
-  return `<tr class="lab-date-row">${cells.map((cell) => `<th>${escapeHtml(cell)}</th>`).join("")}</tr>`;
+function table(headers, rows) {
+  return `<table><thead><tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>`;
 }
 
 function arrayTable(items, keys, labels) {
