@@ -9,6 +9,12 @@ const firebaseConfig = {
 };
 
 const EMPTY_TEXT = "-";
+const patientALabOrder = [
+  "WBC", "Hb", "Eosinophil", "BUN", "Scr", "eGFR", "Na", "K", "Ca", "P",
+  "Glucose", "Uric acid", "Albumin", "AST", "ALT", "Cholesterol", "LDL-C",
+  "HDL-C", "Triglyceride", "Troponin I (hs)", "CK-MB", "TSH", "Free T4", "총 IgE"
+];
+const patientAExcludedLabItems = new Set(["pCO2", "pH", "pO2", "SaO2", "HCO3"]);
 const patientFiles = {
   P001: "data/patients/P001.json",
   P002: "data/patients/P002.json",
@@ -515,9 +521,13 @@ function renderLabPivot(labResults) {
   const grouped = new Map();
   const dateMap = new Map();
   const fallbackDate = firstLabDate(labResults);
+  const labOrder = currentPatientCode === "P001" ? patientALabOrder : [];
+  const labOrderIndex = new Map(labOrder.map((item, index) => [item, index]));
+  const excludedLabItems = currentPatientCode === "P001" ? patientAExcludedLabItems : new Set();
 
   labResults.forEach((lab) => {
     const key = lab.item || lab.testName || "Unknown";
+    if (excludedLabItems.has(key)) return;
     const normalizedLab = withReference(lab);
     if (!grouped.has(key)) grouped.set(key, []);
     grouped.get(key).push(normalizedLab);
@@ -527,7 +537,13 @@ function renderLabPivot(labResults) {
 
   const dates = Array.from(dateMap.keys()).sort((a, b) => new Date(a) - new Date(b));
   const headers = ["검사명", "단위", "참고치", ...dates.map((date) => dateMap.get(date)), "Trend"];
-  const rows = Array.from(grouped.entries()).sort(([a], [b]) => a.localeCompare(b)).map(([item, labs]) => {
+  const dateHeaderRow = ["", "", "", ...dates, ""];
+  const rows = Array.from(grouped.entries()).sort(([a], [b]) => {
+    const left = labOrderIndex.has(a) ? labOrderIndex.get(a) : Number.MAX_SAFE_INTEGER;
+    const right = labOrderIndex.has(b) ? labOrderIndex.get(b) : Number.MAX_SAFE_INTEGER;
+    if (left !== right) return left - right;
+    return a.localeCompare(b);
+  }).map(([item, labs]) => {
     const byDate = new Map(labs.map((lab) => [labDateKey(lab, fallbackDate), lab]));
     const first = labs[0] || {};
     const values = dates.map((date) => renderLabCell(byDate.get(date))).join("");
@@ -544,7 +560,7 @@ function renderLabPivot(labResults) {
 
   setHtml("labs", `
     <h2 class="section-title">Lab Results</h2>
-    ${rows ? `<div class="table-wrap">${table(headers, rows)}</div>` : emptyState("조회된 Lab 기록이 없습니다.")}
+    ${rows ? `<div class="table-wrap lab-results-table">${table(headers, rows, labDateHeaderRow(dateHeaderRow))}</div>` : emptyState("조회된 Lab 기록이 없습니다.")}
   `);
 }
 
@@ -836,8 +852,12 @@ function setHtml(id, html) {
   if (target) target.innerHTML = html;
 }
 
-function table(headers, rows) {
-  return `<table><thead><tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>`;
+function table(headers, rows, extraHeaderRows = "") {
+  return `<table><thead><tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr>${extraHeaderRows}</thead><tbody>${rows}</tbody></table>`;
+}
+
+function labDateHeaderRow(cells) {
+  return `<tr class="lab-date-row">${cells.map((cell) => `<th>${escapeHtml(cell)}</th>`).join("")}</tr>`;
 }
 
 function arrayTable(items, keys, labels) {

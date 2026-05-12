@@ -411,6 +411,14 @@ tr:nth-child(even) td {
   font-weight: 800;
 }
 
+.lab-results-table .lab-date-row th {
+  background: var(--panel-soft);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .lab-flag-h {
   background: var(--warn) !important;
   border-color: #ffc7c7;
