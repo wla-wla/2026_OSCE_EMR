@@ -275,7 +275,7 @@
           "rr": 35,
           "bt": 36.9,
           "spo2": 91,
-          "o2Device": "O2 mask",
+          "o2Device": null,
           "weightKg": null,
           "heightCm": null,
           "bmi": null,
@@ -1690,7 +1690,7 @@
           "date": "2026-05-18",
           "dateTime": "",
           "requestType": "Pharmacist Review Request",
-          "freeText": "환자는 Severe persistent Asthma 급성 악화로 입원하였으며, 골다공증 및 갑상선기능저하증 동반하여 다수의 약물 복용 중임. 여러 약물 사용중임에도 검사 이상 소견 관찰되어 흡입기 사용 미숙 및 복약순응도 저하가 주요 악화 요인으로 추정되며, 퇴원 전 환자 교육 및 약물 사용 적절성 평가 필요하여 의뢰됨."
+          "freeText": "환자는 Severe persistent Asthma 급성 악화로 입원하였으며, 골다공증 및 갑상선기능저하증 동반하여 다수의 약물 복용 중임. 여러 약물 사용중임에도 검사 이상 소견 관찰되어 흡입기 사용 미숙 및 복약순응도 저하가 주요 악화 요인으로 추정되며, 입원 중 복약순응도 확인 및 흡입기 사용법 재교육 위해 약제팀 복약지도 의뢰됨."
         }
       ],
       "dataCompleteness": {
