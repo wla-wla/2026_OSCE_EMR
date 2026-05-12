@@ -15,6 +15,11 @@ const patientALabOrder = [
   "HDL-C", "Triglyceride", "Troponin I (hs)", "CK-MB", "TSH", "Free T4", "총 IgE"
 ];
 const patientAExcludedLabItems = new Set(["pCO2", "pH", "pO2", "SaO2", "HCO3"]);
+const patientCLabOrder = [
+  "WBC", "Hb", "Hct", "Platelet", "BUN", "Scr", "eGFR", "Na", "K", "Ca", "P",
+  "Glucose", "HbA1c", "Uric acid", "Albumin", "AST", "ALT", "Cholesterol",
+  "LDL-C", "HDL-C", "Triglyceride"
+];
 const patientFiles = {
   P001: "data/patients/P001.json",
   P002: "data/patients/P002.json",
@@ -521,7 +526,7 @@ function renderLabPivot(labResults) {
   const grouped = new Map();
   const dateMap = new Map();
   const fallbackDate = firstLabDate(labResults);
-  const labOrder = currentPatientCode === "P001" ? patientALabOrder : [];
+  const labOrder = currentPatientCode === "P001" ? patientALabOrder : (currentPatientCode === "P003" ? patientCLabOrder : []);
   const labOrderIndex = new Map(labOrder.map((item, index) => [item, index]));
   const excludedLabItems = currentPatientCode === "P001" ? patientAExcludedLabItems : new Set();
 
@@ -532,7 +537,7 @@ function renderLabPivot(labResults) {
     if (!grouped.has(key)) grouped.set(key, []);
     grouped.get(key).push(normalizedLab);
     const dateKey = labDateKey(normalizedLab, fallbackDate);
-    if (dateKey) dateMap.set(dateKey, currentPatientCode === "P001" ? dateKey : (normalizedLab.label || dateMap.get(dateKey) || dateKey));
+    if (dateKey) dateMap.set(dateKey, labHeaderLabel(normalizedLab, dateKey, dateMap.get(dateKey)));
   });
 
   const dates = Array.from(dateMap.keys()).sort((a, b) => new Date(a) - new Date(b));
@@ -561,6 +566,12 @@ function renderLabPivot(labResults) {
     <h2 class="section-title">Lab Results</h2>
     ${rows ? `<div class="table-wrap">${table(headers, rows)}</div>` : emptyState("조회된 Lab 기록이 없습니다.")}
   `);
+}
+
+function labHeaderLabel(lab, dateKey, existingLabel = "") {
+  if (currentPatientCode === "P001") return dateKey;
+  if (currentPatientCode === "P003" && dateKey) return dateKey.replace(/-/g, ".");
+  return lab.label || existingLabel || dateKey;
 }
 
 function firstLabDate(labResults) {
