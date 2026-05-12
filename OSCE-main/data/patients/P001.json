@@ -90,7 +90,7 @@
       "triageVital": "BP 150/95 mmHg, HR 120/min, RR 35/min, BT 36.9℃",
       "initialAssessment": "천식 급성 악화 소견",
       "management": "산소 공급, 기관지 확장제 및 스테로이드 투여 진행",
-      "disposition": "일반 병실로 이동"
+      "disposition": "111병동으로 이동"
     },
     "admissionNote": {
       "dateTime": "",
@@ -106,7 +106,7 @@
         "S": "숨이 너무 차고 식은땀이 납니다. 누우면 더 답답합니다.",
         "O": "BP 150/95 mmHg, HR 120/min, RR 35/min, SpO₂ 91% RA. 천명음 확인됨.",
         "A": "Acute asthma exacerbation. 즉각적인 기관지 확장제 투여 및 산소 공급 필요.",
-        "P": "산소 공급, 활력징후 모니터링, 기관지 확장제 및 스테로이드 투여 진행. 일반 병실로 이동."
+        "P": "산소 공급, 활력징후 모니터링, 기관지 확장제 및 스테로이드 투여 진행. 111병동으로 이동."
       },
       {
         "dateTime": "2026-05-15T09:00:00+09:00",
