@@ -90,7 +90,7 @@
     "codeStatus": ""
   },
   "clinicalRecords": {
-    "chiefComplaint": "두통",
+    "chiefComplaint": "만성피로, 식욕부진, 두통",
     "admissionReason": "62세 남자 환자로 10년 전 고혈압, 5년 전 제2형 당뇨병 진단받아 약물치료 중이던 중, 2025년 10월 만성콩팥병 5기(CKD Stage 5) 진단받았음. 2026년 2월부터 강원대학교병원 신장내과에서 주 3회(월/수/금), 1회 4시간 혈액투석 시행 중. 당일 혈액투석 종료 후 신장내과 외래 경유하여 약제팀으로 복약지도 의뢰됨.",
     "erRecord": {
       "dateTime": "",
@@ -166,7 +166,7 @@
   "surgicalHistory": [
     {
       "procedure": "AVF creation, left forearm",
-      "date": "2026-11",
+      "date": "2025-11",
       "note": ""
     }
   ],
@@ -195,7 +195,7 @@
     "onset": "2026년 4월 경",
     "location": "전신",
     "duration": "2달",
-    "character": "두통",
+    "character": "만성피로, 식욕부진, 두통",
     "aggravatingFactors": "혈액투석 개시",
     "relievingFactors": "",
     "associatedSymptoms": "",
