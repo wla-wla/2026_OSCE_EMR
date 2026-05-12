@@ -5137,7 +5137,7 @@
         "progressNotes": [],
         "nursingNotes": [
           {
-            "dateTime": "2026-05-18T00:00:00+09:00",
+            "dateTime": "2026-05-18T07:00:00+09:00",
             "noteType": "OPD Triage Nursing Note",
             "S": "최근 수일간 intermittent palpitations 및 dizziness 호소함. 오늘 아침 순간적으로 핑 도는 느낌 있었다고 진술함.",
             "O": "현재 chest pain 없음. 불안감은 약간 있으나 coherent하고 cooperative한 상태임.",
@@ -5154,7 +5154,7 @@
       },
       "diagnosisTimeline": [
         {
-          "dateTime": "",
+          "dateTime": "2026-01-03T9:30:00+09:00",
           "diagnosis": "Major depressive disorder",
           "status": "active",
           "department": "정신건강의학과",
@@ -5162,7 +5162,7 @@
           "note": "4개월 전 진단"
         },
         {
-          "dateTime": "2026-05-18T00:00:00+09:00",
+          "dateTime": "2026-05-18T08:00:00+09:00",
           "diagnosis": "Recent palpitations / dizziness",
           "status": "active_symptom",
           "department": "정신건강의학과",
@@ -5782,14 +5782,14 @@
           "summary": "4개월 전 진단"
         },
         {
-          "dateTime": "2026-05-18T00:00:00+09:00",
+          "dateTime": "2026-05-18T07:00:00+09:00",
           "category": "triage",
           "title": "OPD triage nursing note",
           "sourceLevel": "original",
           "summary": "최근 수일간 palpitations 및 dizziness, near-syncope 양상 호소"
         },
         {
-          "dateTime": "2026-05-18T00:00:00+09:00",
+          "dateTime": "2026-05-18T08:00:00+09:00",
           "category": "pharmacy",
           "title": "Medication review request",
           "sourceLevel": "original",
