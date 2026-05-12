@@ -217,29 +217,26 @@
     }
   ],
   "hpi": {
-    "onset": "2026년 2월 혈액투석 시작; 2026년 4월 CKD Stage 5 진단",
-    "location": "신장내과/인공투석실",
-    "duration": "고혈압 10년, 제2형 당뇨병 5년",
-    "character": "만성피로, 식욕부진, 투석 후 두통",
-    "aggravatingFactors": "투석 시작 이후 약물 개수 증가",
+    "onset": "2026년 4월 경",
+    "location": "전신",
+    "duration": "2달",
+    "character": "두통",
+    "aggravatingFactors": "혈액투석 개시",
     "relievingFactors": "",
-    "associatedSymptoms": "소변량 감소 및 알부민뇨 병력",
-    "timelineText": "62세 남자 환자로 10년 전 고혈압, 5년 전 제2형 당뇨병 진단받았음. 2026년 4월 CKD Stage 5 진단받았으며, 2026년 2월부터 강원대학교병원에서 주 3회 혈액투석 시행 중. 신장이식 고려 중이나 가족 내 적합자 없어 뇌사자 이식 대기 중. 투석 시작 이후 처방 약물이 다수 추가되었으며, 복약순응도 및 약물 이해도 확인을 위해 약제팀 복약지도 의뢰됨."
+    "associatedSymptoms": "",
+    "timelineText": "62세 남자 환자로 10년 전 고혈압, 5년 전 제2형 당뇨병 진단받았음. 2025년 10월 CKD Stage 5 진단받았으며, 2026년 2월부터 강원대학교병원에서 주 3회 혈액투석 시행 중임. 최근 두 달간 만성피로, 식욕부진, 두통을 호소함. 투석 시작 이후 발생한 혈액투석 부작용 또는 약물 투여 부적절이 원인으로 추정됨. 투석 시작 이후 처방 약물이 다수 추가되었으며, 복약순응도 및 약물 이해도 확인을 위해 약제팀 복약지도 의뢰됨."
   },
   "ros": {
     "general": [
-      "만성피로",
-      "식욕부진"
+      "chronic fatigue (+)",
+      "appetite decreased (+)"
     ],
     "respiratory": [],
     "cardiovascular": [],
     "gi": [],
-    "gu": [
-      "CKD Stage 5",
-      "HD 3x/week"
-    ],
+    "gu": [],
     "neuro": [
-      "투석 후 두통"
+      "headache (+)"
     ],
     "musculoskeletal": [],
     "skin": []
