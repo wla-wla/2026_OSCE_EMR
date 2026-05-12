@@ -472,7 +472,7 @@ function renderHistory(patient) {
     <h2 class="section-title">과거력/사회력/가족력</h2>
     <div class="panel">
       <h3 class="panel-title">과거력</h3>
-      <div class="panel-body">${arrayTable(patient.pastMedicalHistory || [], ["condition", "date", "treatment", "note"], ["Condition", "Date", "Treatment", "Note"])}</div>
+      <div class="panel-body">${arrayTable(patient.pastMedicalHistory || [], ["condition", "diagnosedDate", "treatment", "note"], ["Condition", "Diagnosed Date", "Treatment", "Note"])}</div>
     </div>
     <div class="panel">
       <h3 class="panel-title">수술력</h3>
